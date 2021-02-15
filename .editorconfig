@@ -1,0 +1,11 @@
+# 编辑器插件 EditorConfig 的配置文件
+
+root = true
+
+[*]
+charset = utf-8                 # 字符集
+indent_style = space            # 缩进样式
+indent_size = 2                 # 缩进尺寸
+trim_trailing_whitespace = true # 清理行尾空白
+end_of_line = lf                # 换行符
+insert_final_newline = true     # 文末插入空白行

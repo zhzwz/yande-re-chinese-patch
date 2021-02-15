@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Coder Zhao <coderzhaoziwei@outlook.com>",
+  "repository": "",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "init": "yarn init"
+  }
+}
