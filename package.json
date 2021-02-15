@@ -1,9 +1,9 @@
 {
-  "name": "",
+  "name": "yande.re-chinese-patch",
   "version": "0.0.1",
   "description": "",
   "author": "Coder Zhao <coderzhaoziwei@outlook.com>",
-  "repository": "",
+  "repository": "https://github.com/coderzhaoziwei/yande.re-chinese-patch.git",
   "private": true,
   "license": "MIT",
   "main": "index.js",
