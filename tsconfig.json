@@ -1,15 +1,12 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "target": "es5",
-    "module": "commonjs",
-    "strict": true,
-    "skipLibCheck": true,
-    "removeComments": true,
+    "module": "es6",
+    "outDir": "./dist/",
+    "allowJs": true,
+    "noImplicitAny": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./build"
-  },
-  "include": [
-    "source/index.ts"
-  ]
+    "forceConsistentCasingInFileNames": true
+  }
 }
