@@ -1,24 +1,21 @@
-# 如何使用此脚本？
+![](https://assets.yande.re/assets/logo_small-196563a7a400d7969eab6745d907cd9472ed8d8d5c4bdb86520f8c24cdc3f94f.png)
 
-### 前置需求
+## 前言
 
-使用主流浏览器（Chrome、Microsoft Edge、Safari、Opera Next、Firefox 等）安装浏览器插件 [Tampermonkey](https://www.tampermonkey.net/)。
+各位 ~~LSP~~ 动漫爱好者们一定熟悉 [Yande.re](https://yande.re) 站（以下简称 Y 站）。我在 Y 站学习的过程中遇到了一些晦涩难懂的标签名称，甚至个别单词在日语中有独特的含义，在使用搜索引擎多方查询之后方才明悟。
 
-### 安装方式
+创建此项目，旨在为朋友们节约查询时间，希望各位有更多的精力来好好学习。
 
-有待补充。
+## 必要条件
 
+使用浏览器安装浏览器插件 [Tampermonkey](https://www.tampermonkey.net/)。
 
-<!--
+> 主流浏览器有 Chrome、Microsoft Edge、Firefox、Safari 等，如果你的浏览器无法安装 Tampermonkey，那么也就无法安装脚本。
 
-yarn add webpack webpack-cli --dev
+## 安装
 
-touch webpack.config.js
+使用浏览器直接访问脚本链接，同意安装即可。
 
-yarn add typescript ts-loader --dev
+## 开源许可
 
-yarn add clean-webpack-plugin --dev
-
-yarn add eslint-config-prettier prettier --dev
-
--->
+MIT
