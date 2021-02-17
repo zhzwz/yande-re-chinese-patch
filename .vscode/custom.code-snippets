@@ -1,0 +1,24 @@
+{
+  "/* 单行注释 */": {
+    "scope": "javascript,typescript",
+    "prefix": "ll",
+    "body": ["/* ${1:comments} */"],
+    "description": "创建单行注释",
+  },
+  "/* 多行注释 */": {
+    "scope": "javascript,typescript",
+    "prefix": "lll",
+    "body": ["/**", " * ${1:comments}", " */"],
+    "description": "创建多行注释",
+  },
+  "console.log()": {
+		"scope": "javascript,typescript",
+		"prefix": "con",
+		"body": ["console.log($1)", ""],
+  },
+  "导入模块": {
+		"scope": "javascript,typescript",
+		"prefix": "imp",
+		"body": ["import $1 from '$1'", ""],
+  },
+}
