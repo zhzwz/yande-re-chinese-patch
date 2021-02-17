@@ -3,20 +3,17 @@ const config = require('./package.json')
 const { BannerPlugin } = require('webpack')
 
 const banner = `// ==UserScript==
-// @name         ${config.name}
-// @namespace    ${config.name.replace(/-/g, '.')}
+// @name         Yande.re 简体中文
+// @namespace    com.coderzhaoziwei.yandere
 // @version      ${config.version}
-// @author       ${config.author}
-// @description  ${config.description}
+// @author       Coder Zhao
+// @description  Y站简体中文补丁 | Simplified Chinese patch for Yande.re
 // @modified     ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString('en-DE')}
-// @license      ${config.license}
+// @license      MIT
 // @homepage     https://greasyfork.org/zh-CN/scripts/
 // @match        https://yande.re/*
 // @exclude      https://yande.re/exclude
-// @compatible   chrome
-// @grant        unsafeWindow
-// @grant        GM_addStyle
-// @grant        GM_setClipboard
+// @grant        none
 // ==/UserScript==
 `
 
@@ -24,8 +21,8 @@ const production = {
   mode: 'production',
   entry: './source/index.js',
   output: {
-    path: path.resolve(__dirname, 'bundles'),
-    filename: `yrcp.${config.version}.user.js`,
+    path: path.resolve(__dirname, 'dist'),
+    filename: `yandere.user.js`,
   },
   module: {
     rules: [
@@ -34,9 +31,9 @@ const production = {
       // { test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
     ],
   },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'], // 模块化引入文件的缺省类型
-  },
+  // resolve: {
+  //   extensions: ['.tsx', '.ts', '.js'], // 模块化引入文件的缺省类型
+  // },
   plugins: [
     new BannerPlugin({ banner, raw: true, entryOnly: true }),
   ],
