@@ -16,6 +16,8 @@
 
 使用浏览器直接访问脚本链接，同意安装即可。
 
+- [Github 仓库文件链接](https://github.com/coderzhaoziwei/yande-re-chinese-patch/raw/main/dist/yandere.user.js)
+
 ## 开源许可
 
 MIT
