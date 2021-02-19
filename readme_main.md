@@ -1,4 +1,4 @@
-![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png)
+![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png?2)
 
 # 目录 <!-- omit in toc -->
 

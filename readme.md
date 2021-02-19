@@ -1,4 +1,4 @@
-![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png)
+![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png?2)
 
 # 目录 <!-- omit in toc -->
 
@@ -51,99 +51,113 @@
 |17|breast grab|握乳|
 |18|breast hold|托乳|
 |19|breasts|乳|
-|20|bunny ears|兔耳|
-|21|cameltoe|阴户凸显|
-|22|censored|有码|
-|23|cheerleader|啦啦队队员|
-|24|chibi|Q版|
-|25|chinadress|旗袍|
-|26|christmas|圣诞|
-|27|cleavage|乳沟|
-|28|cream|奶油|
-|29|cum|精液|
-|30|dakimakura|抱枕|
-|31|dress|连衣裙|
-|32|dress shirt|衬衫|
-|33|erect nipples|乳尖|
-|34|extreme content|极端|
-|35|feet|足|
-|36|fellatio|口交|
-|37|fixed|修改|
-|38|footjob|足交|
-|39|futanari|扶她|
-|40|game cg|游戏CG|
-|41|garter|袜带|
-|42|garter belt|吊袜腰带|
-|43|gun|枪炮|
-|44|guro|猎奇|
-|45|headphones|耳机|
-|46|heels|高跟鞋|
-|47|horns|角|
-|48|japanese clothes|日式服装|
-|49|kimono|和服|
-|50|leotard|紧身连衣裤|
-|51|lingerie|贴身内衣|
-|52|loli|萝莉|
-|53|lolita fashion|洛丽塔|
-|54|maid|女仆|
-|55|male|男性|
-|56|masturbation|自摸|
-|57|megane|眼镜|
-|58|monochrome|黑白|
-|59|naked|裸体|
-|60|naked apron|裸体围裙|
-|61|neko|猫娘|
-|62|nekomimi|猫耳|
-|63|nipples|乳头|
-|64|no bra|无乳罩|
-|65|nopan|无内裤|
-|66|onsen|温泉|
-|67|open shirt|衬衫敞开|
-|68|pajama|睡衣|
-|69|pantsu|胖次|
-|70|panty pull|脱内裤|
-|71|pantyhose|吊带袜|
-|72|partial scan|局部扫描|
-|73|penis|阴茎|
-|74|pointy ears|尖耳朵|
-|75|pubic hair|阴毛|
-|76|pussy|阴户|
-|77|pussy juice|妹汁|
-|78|school swimsuit|学校泳衣|
-|79|see through|透视|
-|80|seifuku|制服|
-|81|sex|性交|
-|82|shimapan|条纹内裤|
-|83|shirt lift|衬衫提起|
-|84|skirt lift|裙摆提起|
-|85|stockings|长筒袜|
-|86|string panties|细绳内裤|
-|87|sweater|毛线衣|
-|88|swimsuits|泳衣|
-|89|sword|刀剑|
-|90|tagme|标签|
-|91|tail|兽尾|
-|92|tan lines|日晒线|
-|93|tattoo|文身|
-|94|tentacles|触手|
-|95|thighhighs|过膝袜|
-|96|thong|丁字裤|
-|97|topless|上身裸露|
-|98|torn clothes|衣服撕裂|
-|99|towel|浴巾|
-|100|transparent png|透明PNG|
-|101|uncensored|无码|
-|102|underboob|内衣裤|
-|103|undressing|脱衣服|
-|104|uniform|制服|
-|105|wallpaper|壁纸|
-|106|weapon|武器|
-|107|wet|湿身|
-|108|wet clothes|衣服打湿|
-|109|wings|翅膀|
-|110|witch|女巫|
-|111|yukata|浴衣|
-|112|yuri|百合|
+|20|bunny girl|兔女郎|
+|21|bunny ears|兔耳|
+|22|cameltoe|阴户凸显|
+|23|censored|有码|
+|24|cheerleader|啦啦队队员|
+|25|chibi|Q版|
+|26|chinadress|旗袍|
+|27|christmas|圣诞|
+|28|cleavage|乳沟|
+|29|cream|奶油|
+|30|cum|精液|
+|31|dakimakura|抱枕|
+|32|digital version|数字版|
+|33|disc cover|光盘封面|
+|34|dress|连衣裙|
+|35|dress shirt|衬衫|
+|36|erect nipples|乳尖|
+|37|extreme content|极端|
+|38|eyepatch|眼罩|
+|39|feet|足|
+|40|fellatio|口交|
+|41|fishnets|鱼网袜|
+|42|fixed|修改|
+|43|footjob|足交|
+|44|futanari|扶她|
+|45|game cg|游戏CG|
+|46|garter|袜带|
+|47|garter belt|吊袜腰带|
+|48|gun|枪炮|
+|49|guro|猎奇|
+|50|headphones|耳机|
+|51|heels|高跟鞋|
+|52|heterochromia|虹膜异色|
+|53|horns|角|
+|54|japanese clothes|日式服装|
+|55|kimono|和服|
+|56|kitsune|狐狸|
+|57|landscape|风景画|
+|58|leotard|紧身连衣裤|
+|59|lingerie|贴身内衣|
+|60|loli|萝莉|
+|61|lolita fashion|洛丽塔|
+|62|maid|女仆|
+|63|male|男性|
+|64|masturbation|自摸|
+|65|mecha|机甲|
+|66|megane|眼镜|
+|67|miko|巫女|
+|68|monochrome|黑白|
+|69|naked|裸体|
+|70|naked apron|裸体围裙|
+|71|neko|猫娘|
+|72|nekomimi|猫耳|
+|73|nipples|乳头|
+|74|no bra|无乳罩|
+|75|nopan|无内裤|
+|76|nurse|护士|
+|77|onsen|温泉|
+|78|open shirt|衬衫敞开|
+|79|pajama|睡衣|
+|80|pantsu|胖次|
+|81|panty pull|脱内裤|
+|82|pantyhose|吊带袜|
+|83|partial scan|局部扫描|
+|84|penis|阴茎|
+|85|pointy ears|尖耳朵|
+|86|pubic hair|阴毛|
+|87|pussy|阴户|
+|88|pussy juice|妹汁|
+|89|school swimsuit|学校泳衣|
+|90|see through|透视|
+|91|seifuku|制服|
+|92|sex|性交|
+|93|shimapan|条纹内裤|
+|94|shirt lift|衬衫提起|
+|95|sketch|素描|
+|96|skirt lift|裙摆提起|
+|97|stockings|长筒袜|
+|98|string panties|细绳内裤|
+|99|sweater|毛线衣|
+|100|swimsuits|泳衣|
+|101|sword|刀剑|
+|102|tagme|标签|
+|103|tail|兽尾|
+|104|tan lines|日晒线|
+|105|tattoo|文身|
+|106|tentacles|触手|
+|107|text|文本|
+|108|thighhighs|过膝袜|
+|109|thong|丁字裤|
+|110|topless|上身裸露|
+|111|torn clothes|衣服撕裂|
+|112|towel|浴巾|
+|113|transparent png|透明PNG|
+|114|uncensored|无码|
+|115|underboob|内衣裤|
+|116|undressing|脱衣服|
+|117|uniform|制服|
+|118|waitress|女服务生|
+|119|wallpaper|壁纸|
+|120|weapon|武器|
+|121|wet|湿身|
+|122|wet clothes|衣服打湿|
+|123|wings|翅膀|
+|124|witch|女巫|
+|125|yukata|浴衣|
+|126|yuri|百合|
 
 # 相关链接
 
