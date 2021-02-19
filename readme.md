@@ -30,7 +30,7 @@
 使用浏览器直接访问脚本链接，同意安装即可。
 
 - [Greasy Fork 脚本主页](https://greasyfork.org/zh-CN/scripts/421970)（推荐）
-- [Github 脚本文件直链](https://github.com/coderzhaoziwei/yande-re-chinese-patch/raw/main/dist/yandere.user.js)
+- [Github 脚本文件直链](https://github.com/coderzhaoziwei/yande-re-chinese-patch/raw/main/index.user.js)
 
 # 附：标签翻译表
 

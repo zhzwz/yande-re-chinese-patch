@@ -21,8 +21,8 @@ const production = {
   mode: 'production',
   entry: './index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: `yandere.user.js`,
+    path: path.resolve(__dirname, ''),
+    filename: `index.user.js`,
   },
   module: {
     rules: [
