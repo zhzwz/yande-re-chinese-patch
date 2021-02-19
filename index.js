@@ -1,4 +1,4 @@
-import tags from './data/tags.json'
+import tags from './tags.json'
 
 /* 遍历所有的 <a> 元素 */
 Array.from(document.getElementsByTagName('a')).forEach(a => {
@@ -9,5 +9,4 @@ Array.from(document.getElementsByTagName('a')).forEach(a => {
     const cn = tags[en]
     if (cn) a.innerText = `[${cn}]${en.replace(/_/g, ' ')}`
   }
-
 })
