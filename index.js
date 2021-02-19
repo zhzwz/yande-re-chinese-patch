@@ -10,3 +10,22 @@ Array.from(document.getElementsByTagName('a')).forEach(a => {
     if (cn) a.innerText = `[${cn}]${en.replace(/_/g, ' ')}`
   }
 })
+
+/* 导航栏主菜单 */
+Array.from(document.querySelectorAll("#main-menu>ul>li>a")).forEach(nav => {
+  if (nav.getAttribute("href") === "#") return
+  const en = nav.innerText
+  const cn = {
+    "My Account": "账户",
+    "Posts": "作品",
+    "Comments": "评论",
+    "Notes": "笔记",
+    "Artists": "画师",
+    "Tags": "标签",
+    "Forum": "论坛",
+    "Help": "帮助",
+    "More »": "更多>>",
+    "New Mail": "新消息",
+  }[en]
+  if (typeof cn === 'string') nav.innerText = cn
+})
