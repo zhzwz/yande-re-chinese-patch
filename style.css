@@ -1,0 +1,13 @@
+/* 标签前缀 */
+li.tag-type-artist a:nth-child(4)::before {
+  content: '[画师]';
+}
+li.tag-type-copyright a:nth-child(4)::before {
+  content: '[原作]';
+}
+li.tag-type-character a:nth-child(4)::before {
+  content: '[角色]';
+}
+li.tag-type-circle a:nth-child(4)::before {
+  content: '[公司]';
+}

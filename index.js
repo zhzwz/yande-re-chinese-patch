@@ -1,4 +1,9 @@
 import tags from './tags.json'
+import style from './style.css'
+
+const styleElement = document.createElement('style')
+styleElement.innerHTML = style
+document.head.appendChild(styleElement)
 
 /* 遍历所有的 <a> 元素 */
 Array.from(document.getElementsByTagName('a')).forEach(a => {

@@ -1,4 +1,4 @@
-![](./preview.png)
+![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png)
 
 # 目录 <!-- omit in toc -->
 
@@ -9,8 +9,6 @@
 - [标签翻译列表](#标签翻译列表)
 - [相关链接](#相关链接)
 - [开源许可](#开源许可)
-
-<!-- ![](https://assets.yande.re/assets/logo_small-196563a7a400d7969eab6745d907cd9472ed8d8d5c4bdb86520f8c24cdc3f94f.png) -->
 
 # 前言
 
@@ -38,7 +36,7 @@
 
 [Github 仓库](https://github.com/coderzhaoziwei/yande-re-chinese-patch) |
 [Greasy Fork 脚本主页](https://greasyfork.org/zh-CN/scripts/421970) |
-封面的原图 [Yande#388833](https://yande.re/post/show/388833)
+[封面原图 Yande#388833](https://yande.re/post/show/388833)
 
 # 开源许可
 

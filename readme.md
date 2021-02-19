@@ -1,4 +1,4 @@
-![](./preview.png)
+![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png)
 
 # 目录 <!-- omit in toc -->
 
@@ -9,8 +9,6 @@
 - [标签翻译列表](#标签翻译列表)
 - [相关链接](#相关链接)
 - [开源许可](#开源许可)
-
-<!-- ![](https://assets.yande.re/assets/logo_small-196563a7a400d7969eab6745d907cd9472ed8d8d5c4bdb86520f8c24cdc3f94f.png) -->
 
 # 前言
 
@@ -58,99 +56,100 @@
 |22|censored|有码|
 |23|cheerleader|啦啦队队员|
 |24|chibi|Q版|
-|25|christmas|圣诞|
-|26|cleavage|乳沟|
-|27|cream|奶油|
-|28|cum|精液|
-|29|dakimakura|抱枕|
-|30|dress|连衣裙|
-|31|dress shirt|衬衫|
-|32|erect nipples|乳尖|
-|33|extreme content|极端|
-|34|feet|足|
-|35|fellatio|口交|
-|36|fixed|修改|
-|37|footjob|足交|
-|38|futanari|扶她|
-|39|game cg|游戏CG|
-|40|garter|袜带|
-|41|garter belt|吊袜腰带|
-|42|gun|枪炮|
-|43|guro|猎奇|
-|44|headphones|耳机|
-|45|heels|高跟鞋|
-|46|horns|角|
-|47|japanese clothes|日式服装|
-|48|kimono|和服|
-|49|leotard|紧身连衣裤|
-|50|lingerie|贴身内衣|
-|51|loli|萝莉|
-|52|lolita fashion|洛丽塔|
-|53|maid|女仆|
-|54|male|男性|
-|55|masturbation|自摸|
-|56|megane|眼镜|
-|57|monochrome|黑白|
-|58|naked|裸体|
-|59|naked apron|裸体围裙|
-|60|neko|猫娘|
-|61|nekomimi|猫耳|
-|62|nipples|乳头|
-|63|no bra|无乳罩|
-|64|nopan|无内裤|
-|65|onsen|温泉|
-|66|open shirt|衬衫敞开|
-|67|pajama|睡衣|
-|68|pantsu|胖次|
-|69|panty pull|脱内裤|
-|70|pantyhose|吊带袜|
-|71|partial scan|局部扫描|
-|72|penis|阴茎|
-|73|pointy ears|尖耳朵|
-|74|pubic hair|阴毛|
-|75|pussy|阴户|
-|76|pussy juice|妹汁|
-|77|school swimsuit|学校泳衣|
-|78|see through|透视|
-|79|seifuku|制服|
-|80|sex|性交|
-|81|shimapan|条纹内裤|
-|82|shirt lift|衬衫提起|
-|83|skirt lift|裙摆提起|
-|84|stockings|长筒袜|
-|85|string panties|细绳内裤|
-|86|sweater|毛线衣|
-|87|swimsuits|泳衣|
-|88|sword|刀剑|
-|89|tagme|标签|
-|90|tail|兽尾|
-|91|tan lines|日晒线|
-|92|tattoo|文身|
-|93|tentacles|触手|
-|94|thighhighs|过膝袜|
-|95|thong|丁字裤|
-|96|topless|上身裸露|
-|97|torn clothes|衣服撕裂|
-|98|towel|浴巾|
-|99|transparent png|透明PNG|
-|100|uncensored|无码|
-|101|underboob|内衣裤|
-|102|undressing|脱衣服|
-|103|uniform|制服|
-|104|wallpaper|壁纸|
-|105|weapon|武器|
-|106|wet|湿身|
-|107|wet clothes|衣服打湿|
-|108|wings|翅膀|
-|109|witch|女巫|
-|110|yukata|浴衣|
-|111|yuri|百合|
+|25|chinadress|旗袍|
+|26|christmas|圣诞|
+|27|cleavage|乳沟|
+|28|cream|奶油|
+|29|cum|精液|
+|30|dakimakura|抱枕|
+|31|dress|连衣裙|
+|32|dress shirt|衬衫|
+|33|erect nipples|乳尖|
+|34|extreme content|极端|
+|35|feet|足|
+|36|fellatio|口交|
+|37|fixed|修改|
+|38|footjob|足交|
+|39|futanari|扶她|
+|40|game cg|游戏CG|
+|41|garter|袜带|
+|42|garter belt|吊袜腰带|
+|43|gun|枪炮|
+|44|guro|猎奇|
+|45|headphones|耳机|
+|46|heels|高跟鞋|
+|47|horns|角|
+|48|japanese clothes|日式服装|
+|49|kimono|和服|
+|50|leotard|紧身连衣裤|
+|51|lingerie|贴身内衣|
+|52|loli|萝莉|
+|53|lolita fashion|洛丽塔|
+|54|maid|女仆|
+|55|male|男性|
+|56|masturbation|自摸|
+|57|megane|眼镜|
+|58|monochrome|黑白|
+|59|naked|裸体|
+|60|naked apron|裸体围裙|
+|61|neko|猫娘|
+|62|nekomimi|猫耳|
+|63|nipples|乳头|
+|64|no bra|无乳罩|
+|65|nopan|无内裤|
+|66|onsen|温泉|
+|67|open shirt|衬衫敞开|
+|68|pajama|睡衣|
+|69|pantsu|胖次|
+|70|panty pull|脱内裤|
+|71|pantyhose|吊带袜|
+|72|partial scan|局部扫描|
+|73|penis|阴茎|
+|74|pointy ears|尖耳朵|
+|75|pubic hair|阴毛|
+|76|pussy|阴户|
+|77|pussy juice|妹汁|
+|78|school swimsuit|学校泳衣|
+|79|see through|透视|
+|80|seifuku|制服|
+|81|sex|性交|
+|82|shimapan|条纹内裤|
+|83|shirt lift|衬衫提起|
+|84|skirt lift|裙摆提起|
+|85|stockings|长筒袜|
+|86|string panties|细绳内裤|
+|87|sweater|毛线衣|
+|88|swimsuits|泳衣|
+|89|sword|刀剑|
+|90|tagme|标签|
+|91|tail|兽尾|
+|92|tan lines|日晒线|
+|93|tattoo|文身|
+|94|tentacles|触手|
+|95|thighhighs|过膝袜|
+|96|thong|丁字裤|
+|97|topless|上身裸露|
+|98|torn clothes|衣服撕裂|
+|99|towel|浴巾|
+|100|transparent png|透明PNG|
+|101|uncensored|无码|
+|102|underboob|内衣裤|
+|103|undressing|脱衣服|
+|104|uniform|制服|
+|105|wallpaper|壁纸|
+|106|weapon|武器|
+|107|wet|湿身|
+|108|wet clothes|衣服打湿|
+|109|wings|翅膀|
+|110|witch|女巫|
+|111|yukata|浴衣|
+|112|yuri|百合|
 
 # 相关链接
 
 [Github 仓库](https://github.com/coderzhaoziwei/yande-re-chinese-patch) |
 [Greasy Fork 脚本主页](https://greasyfork.org/zh-CN/scripts/421970) |
-封面的原图 [Yande#388833](https://yande.re/post/show/388833)
+[封面原图 Yande#388833](https://yande.re/post/show/388833)
 
 # 开源许可
 

@@ -17,7 +17,7 @@ const banner = `// ==UserScript==
 // ==/UserScript==
 `
 
-const production = {
+module.exports = {
   mode: 'production',
   entry: './index.js',
   output: {
@@ -26,14 +26,9 @@ const production = {
   },
   module: {
     rules: [
-      // { test: /\.css$/, use: './source/text_loader.js' },
-      // { test: /\.json$/, use: './source/text_loader.js' },
-      // { test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
+      { test: /\.css$/, use: './css_text_loader.js' },
     ],
   },
-  // resolve: {
-  //   extensions: ['.tsx', '.ts', '.js'], // 模块化引入文件的缺省类型
-  // },
   plugins: [
     new BannerPlugin({ banner, raw: true, entryOnly: true }),
   ],
@@ -42,5 +37,3 @@ const production = {
     minimizer: [],
   },
 }
-
-module.exports = [production]
