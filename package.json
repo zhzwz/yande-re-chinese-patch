@@ -1,6 +1,6 @@
 {
   "name": "yande-re-chinese-patch",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Coder Zhao",
   "description": "Yande.re Chinese Patch | Yande.re站浏览器端汉化脚本",
   "repository": "https://github.com/coderzhaoziwei/yande.re-chinese-patch.git",
@@ -8,8 +8,7 @@
   "private": true,
   "scripts": {
     "init": "yarn",
-    "format": "node source/action.js",
-    "webpack": "webpack"
+    "build": "node action.js && webpack"
   },
   "devDependencies": {
     "webpack": "^5.22.0",
