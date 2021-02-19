@@ -7,27 +7,27 @@ const banner = `// ==UserScript==
 // @namespace    com.coderzhaoziwei.yandere
 // @version      ${config.version}
 // @author       Coder Zhao
-// @description  Y站简体中文补丁 | Simplified Chinese patch for Yande.re
+// @description  Simplified Chinese patch for Yande.re | Y 站简体中文补丁
 // @modified     ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString('en-DE')}
 // @license      MIT
-// @homepage     https://greasyfork.org/zh-CN/scripts/
+// @homepage     https://greasyfork.org/zh-CN/scripts/421970
 // @match        https://yande.re/*
-// @exclude      https://yande.re/exclude
+// @exclude      https://yande.re/help
 // @grant        none
 // ==/UserScript==
 `
 
 const production = {
   mode: 'production',
-  entry: './source/index.js',
+  entry: './index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: `yandere.user.js`,
   },
   module: {
     rules: [
-      // { test: /\.css$/, use: './source/loader/text-loader.js' },
-      // { test: /\.json$/, use: './source/loader/text-loader.js' },
+      // { test: /\.css$/, use: './source/text_loader.js' },
+      // { test: /\.json$/, use: './source/text_loader.js' },
       // { test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
     ],
   },
