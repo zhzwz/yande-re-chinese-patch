@@ -1,14 +1,15 @@
 ![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png?2)
 
-# 目录 <!-- omit in toc -->
+<!-- omit in toc -->
+# 目录
 
 - [前言](#前言)
 - [使用方式](#使用方式)
   - [浏览器插件](#浏览器插件)
   - [安装脚本](#安装脚本)
-- [标签翻译列表](#标签翻译列表)
 - [相关链接](#相关链接)
 - [开源许可](#开源许可)
+- [附：标签翻译表](#附标签翻译表)
 
 # 前言
 
@@ -26,9 +27,19 @@
 
 ## 安装脚本
 
-使用浏览器直接访问脚本链接 [Greasy Fork 脚本主页](https://greasyfork.org/zh-CN/scripts/421970)，点击安装即可。
+使用浏览器直接访问 [Greasy Fork - Yande.re 简体中文 - 主页](https://greasyfork.org/zh-CN/scripts/421970)，点击安装即可。
 
-# 标签翻译列表
+# 相关链接
+
+[Github 仓库](https://github.com/coderzhaoziwei/yande-re-chinese-patch) |
+[Greasy Fork 脚本主页](https://greasyfork.org/zh-CN/scripts/421970) |
+[封面原图 Yande#388833](https://yande.re/post/show/388833)
+
+# 开源许可
+
+MIT
+
+# 附：标签翻译表
 
 ||English|简体中文|
 |:-:|:-|:-|
@@ -107,13 +118,13 @@
 |73|nekomimi|猫耳|
 |74|nipples|乳头|
 |75|no bra|无乳罩|
-|76|nopan|无内裤|
+|76|nopan|无胖次|
 |77|nurse|护士|
 |78|onsen|温泉|
 |79|open shirt|衬衫敞开|
 |80|pajama|睡衣|
 |81|pantsu|胖次|
-|82|panty pull|脱内裤|
+|82|panty pull|脱胖次|
 |83|pantyhose|吊带袜|
 |84|partial scan|局部扫描|
 |85|penis|阴茎|
@@ -125,47 +136,38 @@
 |91|see through|透视|
 |92|seifuku|制服|
 |93|sex|性交|
-|94|shimapan|条纹内裤|
+|94|shimapan|条纹胖次|
 |95|shirt lift|衬衫提起|
-|96|sketch|素描|
-|97|skirt lift|裙摆提起|
-|98|stockings|长筒袜|
-|99|string panties|细绳内裤|
-|100|sweater|毛线衣|
-|101|swimsuits|泳衣|
-|102|sword|刀剑|
-|103|tagme|标签|
-|104|tail|兽尾|
-|105|tan lines|日晒线|
-|106|tattoo|文身|
-|107|tentacles|触手|
-|108|text|文本|
-|109|thighhighs|过膝袜|
-|110|thong|丁字裤|
-|111|topless|上身裸露|
-|112|torn clothes|衣服撕裂|
-|113|towel|浴巾|
-|114|transparent png|透明PNG|
-|115|uncensored|无码|
-|116|underboob|内衣裤|
-|117|undressing|脱衣服|
-|118|uniform|制服|
-|119|waitress|女服务生|
-|120|wallpaper|壁纸|
-|121|weapon|武器|
-|122|wet|湿身|
-|123|wet clothes|衣服打湿|
-|124|wings|翅膀|
-|125|witch|女巫|
-|126|yukata|浴衣|
-|127|yuri|百合|
-
-# 相关链接
-
-[Github 仓库](https://github.com/coderzhaoziwei/yande-re-chinese-patch) |
-[Greasy Fork 脚本主页](https://greasyfork.org/zh-CN/scripts/421970) |
-[封面原图 Yande#388833](https://yande.re/post/show/388833)
-
-# 开源许可
-
-MIT
+|96|shota|正太|
+|97|sketch|素描|
+|98|skirt lift|裙摆提起|
+|99|stockings|长筒袜|
+|100|string panties|细绳胖次|
+|101|sweater|毛线衣|
+|102|swimsuits|泳衣|
+|103|sword|刀剑|
+|104|tagme|标签|
+|105|tail|兽尾|
+|106|tan lines|日晒线|
+|107|tattoo|文身|
+|108|tentacles|触手|
+|109|text|文本|
+|110|thighhighs|过膝袜|
+|111|thong|丁字裤|
+|112|topless|上身裸露|
+|113|torn clothes|衣服撕裂|
+|114|towel|浴巾|
+|115|transparent png|透明PNG|
+|116|uncensored|无码|
+|117|underboob|内衣裤|
+|118|undressing|脱衣服|
+|119|uniform|制服|
+|120|waitress|女服务生|
+|121|wallpaper|壁纸|
+|122|weapon|武器|
+|123|wet|湿身|
+|124|wet clothes|衣服打湿|
+|125|wings|翅膀|
+|126|witch|女巫|
+|127|yukata|浴衣|
+|128|yuri|百合|

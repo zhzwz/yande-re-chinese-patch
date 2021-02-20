@@ -1,14 +1,15 @@
 ![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png?2)
 
-# 目录 <!-- omit in toc -->
+<!-- omit in toc -->
+# 目录
 
 - [前言](#前言)
 - [使用方式](#使用方式)
   - [浏览器插件](#浏览器插件)
   - [安装脚本](#安装脚本)
-- [标签翻译列表](#标签翻译列表)
 - [相关链接](#相关链接)
 - [开源许可](#开源许可)
+- [附：标签翻译表](#附标签翻译表)
 
 # 前言
 
@@ -26,11 +27,7 @@
 
 ## 安装脚本
 
-使用浏览器直接访问脚本链接 [Greasy Fork 脚本主页](https://greasyfork.org/zh-CN/scripts/421970)，点击安装即可。
-
-# 标签翻译列表
-
-[[ TAGS ]]
+使用浏览器直接访问 [Greasy Fork - Yande.re 简体中文 - 主页](https://greasyfork.org/zh-CN/scripts/421970)，点击安装即可。
 
 # 相关链接
 
@@ -41,3 +38,7 @@
 # 开源许可
 
 MIT
+
+# 附：标签翻译表
+
+[[ TAGS ]]

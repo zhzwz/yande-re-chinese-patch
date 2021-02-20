@@ -87,3 +87,34 @@ Array.from(document.querySelectorAll("ul.submenu>li>a")).forEach(menu => {
   }[en]
   if (typeof cn === 'string') menu.innerText = cn
 })
+/* 部分操作按钮 */
+;(function() {
+  const translate = function(element, en, cn) {
+    if (element) element.innerText = element.innerText.replace(en, cn)
+  }
+  const list = [
+    [document.getElementById('highres-show'), 'View larger version', '显示高清图'],
+    [document.getElementById('highres'), 'Download larger version', '下载高清图'],
+    [document.getElementById('png'), 'Download PNG', '下载 PNG 图'],
+    [document.querySelector('li#add-to-favs>a'), 'Add to favorites', '添加收藏'],
+    [document.querySelector('li#set-avatar>a'), 'Set avatar', '设置头像'],
+    [document.querySelector('h4>a.js-posts-show-edit-tab'), 'Edit', '编辑'],
+    [document.querySelector('h4>a.js-posts-show-comments-tab'), 'Respond', '评论'],
+  ]
+  list.forEach(item => translate(...item))
+})()
+/* 页脚 */
+Array.from(document.querySelectorAll('#subnavbar>li>a')).forEach(a => {
+  const en = a.innerText
+  const cn = {
+    'List': '首页',
+    'Browse': '翻阅',
+    'Upload': '上传',
+    'Random': '随机',
+    'Popular': '热门',
+    'Image Search': '寻图',
+    'History': '历史',
+    'Help': '帮助',
+  }[en]
+  if (cn) a.innerText = cn
+})
