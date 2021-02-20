@@ -4,7 +4,7 @@
 // @version      0.0.8
 // @author       Coder Zhao
 // @description  Simplified Chinese patch for Yande.re | Y 站简体中文补丁
-// @modified     2021/2/20 10:22:34
+// @modified     2021/2/20 10:40:04
 // @license      MIT
 // @homepage     https://greasyfork.org/zh-CN/scripts/421970
 // @match        https://yande.re/*
@@ -75,6 +75,45 @@ if (document.querySelector("#resized_notice")) {
   .replace(/ link in the sidebar for a high-quality version./, "可以获取更高质量的版本。")
   .replace(/Hide this message<\/a>./, "不再提醒</a>")
 }
+
+/* 导航栏子菜单 */
+Array.from(document.querySelectorAll("ul.submenu>li>a")).forEach(menu => {
+  const en = menu.innerText
+  const cn = {
+    "My Profile": "我的资料",
+    "My Mail": "我的消息",
+    "My Favorites": "我的收藏",
+    "Settings": "设置",
+    "Change Password": "修改密码",
+    "Logout": "退出登录",
+    "View Posts": "浏览作品",
+    "Search Posts": "搜索作品",
+    "Upload": "上传",
+    "Random": "随机浏览",
+    "Popular": "热门",
+    "Image Search": "搜索图片",
+    "History": "历史",
+    "View Comments": "浏览评论",
+    "Search Comments": "搜索评论",
+    "View Notes": "浏览笔记",
+    "Search Notes": "搜索笔记",
+    "View Artists": "浏览画师",
+    "Search Artists": "搜索画师",
+    "Create": "创建",
+    "View Tags": "浏览标签",
+    "Search Tags": "搜索标签",
+    "Aliases": "别名",
+    "Implications": "含义",
+    "View Pools": "浏览 Pools",
+    "Search Pools": "搜索 Pools",
+    "Create New Pool": "创建 Pool",
+    "View Wiki Index": "浏览 Wiki 主页",
+    "Search Wiki": "搜索 Wiki",
+    "Create New Page": "创建新页面",
+    "Mark All Read": "全部标记已读",
+  }[en]
+  if (typeof cn === 'string') menu.innerText = cn
+})
 
 
 /***/ })
