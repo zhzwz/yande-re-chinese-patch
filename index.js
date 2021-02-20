@@ -34,3 +34,17 @@ Array.from(document.querySelectorAll("#main-menu>ul>li>a")).forEach(nav => {
   }[en]
   if (typeof cn === 'string') nav.innerText = cn
 })
+
+/**
+ * 提示信息
+ * EN: This image has been resized. Click on the `View larger version` link in the sidebar
+ *     for a high-quality version. Hide this message
+ * CN: 这张图片已经被压缩，单击侧边栏中的 `显示大图` 可以获取更高质量的版本。不再提醒
+ */
+if (document.querySelector("#resized_notice")) {
+  document.querySelector("#resized_notice").innerHTML = document.querySelector("#resized_notice").innerHTML
+  .replace(/^[\s]+This image has been resized. Click on the /, "这张图片已经被压缩，单击侧边栏中的")
+  .replace(/View larger version/, "显示大图")
+  .replace(/ link in the sidebar for a high-quality version./, "可以获取更高质量的版本。")
+  .replace(/Hide this message<\/a>./, "不再提醒</a>")
+}
