@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs')
 const tagsData = Object()
 const version = process.env['npm_package_version'] || ''

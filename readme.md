@@ -48,7 +48,7 @@ MIT
 |3|animal ears|兽耳|
 |4|anus|菊花|
 |5|areola|乳晕|
-|6|armor|装甲|
+|6|armor|护甲|
 |7|ass|屁股|
 |8|bandages|绷带|
 |9|bathing|沐浴|
@@ -58,7 +58,7 @@ MIT
 |13|blood|血腥|
 |14|bodysuit|紧身衣裤|
 |15|bondage|束缚|
-|16|bottomless|下身裸露|
+|16|bottomless|下身露出|
 |17|bra|乳罩|
 |18|breast grab|握乳|
 |19|breast hold|托乳|
@@ -89,85 +89,87 @@ MIT
 |44|footjob|足交|
 |45|futanari|扶她|
 |46|game cg|游戏CG|
-|47|garter|袜带|
-|48|garter belt|吊袜腰带|
-|49|gun|枪炮|
-|50|guro|猎奇|
-|51|headphones|耳机|
-|52|heels|高跟鞋|
-|53|heterochromia|虹膜异色|
-|54|horns|角|
-|55|japanese clothes|日式服装|
-|56|kimono|和服|
-|57|kitsune|狐狸|
-|58|landscape|风景画|
-|59|leotard|紧身连衣裤|
-|60|lingerie|贴身内衣|
-|61|loli|萝莉|
-|62|lolita fashion|洛丽塔|
-|63|maid|女仆|
-|64|male|男性|
-|65|masturbation|自摸|
-|66|mecha|机甲|
-|67|megane|眼镜|
-|68|miko|巫女|
-|69|monochrome|黑白|
-|70|naked|裸体|
-|71|naked apron|裸体围裙|
-|72|neko|猫娘|
-|73|nekomimi|猫耳|
-|74|nipples|乳头|
-|75|no bra|无乳罩|
-|76|nopan|无胖次|
-|77|nurse|护士|
-|78|onsen|温泉|
-|79|open shirt|衬衫敞开|
-|80|pajama|睡衣|
-|81|pantsu|胖次|
-|82|panty pull|脱胖次|
-|83|pantyhose|吊带袜|
-|84|partial scan|局部扫描|
-|85|penis|阴茎|
-|86|pointy ears|尖耳朵|
-|87|pubic hair|阴毛|
-|88|pussy|阴户|
-|89|pussy juice|妹汁|
-|90|school swimsuit|学校泳衣|
-|91|see through|透视|
-|92|seifuku|制服|
-|93|sex|性交|
-|94|shimapan|条纹胖次|
-|95|shirt lift|衬衫提起|
-|96|shota|正太|
-|97|sketch|素描|
-|98|skirt lift|裙摆提起|
-|99|stockings|长筒袜|
-|100|string panties|细绳胖次|
-|101|sweater|毛线衣|
-|102|swimsuits|泳衣|
-|103|sword|刀剑|
-|104|tagme|标签|
-|105|tail|兽尾|
-|106|tan lines|日晒线|
-|107|tattoo|文身|
-|108|tentacles|触手|
-|109|text|文本|
-|110|thighhighs|过膝袜|
-|111|thong|丁字裤|
-|112|topless|上身裸露|
-|113|torn clothes|衣服撕裂|
-|114|towel|浴巾|
-|115|transparent png|透明PNG|
-|116|uncensored|无码|
-|117|underboob|内衣裤|
-|118|undressing|脱衣服|
-|119|uniform|制服|
-|120|waitress|女服务生|
-|121|wallpaper|壁纸|
-|122|weapon|武器|
-|123|wet|湿身|
-|124|wet clothes|衣服打湿|
-|125|wings|翅膀|
-|126|witch|女巫|
-|127|yukata|浴衣|
-|128|yuri|百合|
+|47|gangbang|乱交|
+|48|garter|袜带|
+|49|garter belt|吊袜腰带|
+|50|gun|枪炮|
+|51|guro|猎奇|
+|52|handjob|手淫|
+|53|headphones|耳机|
+|54|heels|高跟鞋|
+|55|heterochromia|虹膜异色|
+|56|horns|角|
+|57|japanese clothes|日式服装|
+|58|kimono|和服|
+|59|kitsune|狐狸|
+|60|landscape|风景画|
+|61|leotard|紧身连衣裤|
+|62|lingerie|贴身内衣|
+|63|loli|萝莉|
+|64|lolita fashion|洛丽塔|
+|65|maid|女仆|
+|66|male|男性|
+|67|masturbation|自摸|
+|68|mecha|机甲|
+|69|megane|眼镜|
+|70|miko|巫女|
+|71|monochrome|黑白|
+|72|naked|裸体|
+|73|naked apron|裸体围裙|
+|74|neko|猫娘|
+|75|nekomimi|猫耳|
+|76|nipples|乳头|
+|77|no bra|无乳罩|
+|78|nopan|无胖次|
+|79|nurse|护士|
+|80|onsen|温泉|
+|81|open shirt|衬衫敞开|
+|82|pajama|睡衣|
+|83|pantsu|胖次|
+|84|panty pull|脱胖次|
+|85|pantyhose|吊带袜|
+|86|partial scan|局部扫描|
+|87|penis|阴茎|
+|88|pointy ears|尖耳朵|
+|89|pubic hair|阴毛|
+|90|pussy|阴户|
+|91|pussy juice|妹汁|
+|92|school swimsuit|学校泳衣|
+|93|see through|透视|
+|94|seifuku|制服|
+|95|sex|性交|
+|96|shimapan|条纹胖次|
+|97|shirt lift|衬衫提起|
+|98|shota|正太|
+|99|sketch|素描|
+|100|skirt lift|裙摆提起|
+|101|stockings|长筒袜|
+|102|string panties|细绳胖次|
+|103|sweater|毛线衣|
+|104|swimsuits|泳衣|
+|105|sword|刀剑|
+|106|tagme|标签|
+|107|tail|兽尾|
+|108|tan lines|日晒线|
+|109|tattoo|文身|
+|110|tentacles|触手|
+|111|text|文本|
+|112|thighhighs|过膝袜|
+|113|thong|丁字裤|
+|114|topless|上身露出|
+|115|torn clothes|衣服撕裂|
+|116|towel|浴巾|
+|117|transparent png|透明PNG|
+|118|uncensored|无码|
+|119|underboob|内衣裤|
+|120|undressing|脱衣服|
+|121|uniform|制服|
+|122|waitress|女服务生|
+|123|wallpaper|壁纸|
+|124|weapon|武器|
+|125|wet|湿身|
+|126|wet clothes|衣服打湿|
+|127|wings|翅膀|
+|128|witch|女巫|
+|129|yukata|浴衣|
+|130|yuri|百合|
