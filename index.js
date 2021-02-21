@@ -138,3 +138,24 @@ import style from './style.css'
     if (cn) a.innerText = cn
   })
 })()
+
+/**
+ * 翻页功能，使用键盘左右方向键控制。
+ */
+;(function() {
+  window.addEventListener('keyup', function(event) {
+    /* 在输入的情况下，方向键禁止触发翻页。 */
+    if (/^(TEXTAREA|INPUT)$/.test(document.activeElement.tagName)) return
+
+    const prev = document.querySelector('.pagination>.previous_page')
+    const next = document.querySelector('.pagination>.next_page')
+    if (event.key == 'ArrowLeft'  && prev) {
+      prev.click()
+      return event.preventDefault()
+    }
+    if (event.key == 'ArrowRight' && next) {
+      next.click()
+      return event.preventDefault()
+    }
+  })
+})()

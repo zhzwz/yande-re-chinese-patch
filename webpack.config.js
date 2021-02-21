@@ -12,7 +12,7 @@ const banner = `// ==UserScript==
 // @license      MIT
 // @homepage     https://greasyfork.org/zh-CN/scripts/421970
 // @match        https://yande.re/*
-// @exclude      https://yande.re/help
+// @exclude      https://yande.re/forum/*
 // @grant        none
 // ==/UserScript==
 `
