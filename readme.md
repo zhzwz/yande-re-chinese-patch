@@ -168,7 +168,7 @@ MIT
 |116|towel|浴巾|
 |117|transparent png|透明PNG|
 |118|uncensored|无码|
-|119|underboob|内衣裤|
+|119|underboob|南半球|
 |120|undressing|脱衣服|
 |121|uniform|制服|
 |122|waitress|女服务生|
