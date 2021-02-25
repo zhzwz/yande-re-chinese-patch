@@ -90,6 +90,8 @@ import style from './style.css'
  * EN: This image has been resized. Click on the `View larger version` link in the sidebar
  *     for a high-quality version. Hide this message
  * CN: 这张图片已经被压缩，单击侧边栏中的 `显示高清图` 可以获取更高质量的版本。不再提醒
+ *
+ * EN: This post belongs to a parent post.
  */
 ;(function() {
   const element = document.querySelector('#resized_notice')
@@ -100,6 +102,21 @@ import style from './style.css'
       .replace(/ link in the sidebar for a high-quality version./, '可以获取更高质量的版本。')
       .replace(/Hide this message<\/a>./, '不再提醒</a>')
   }
+
+  Array.from(document.querySelectorAll('.status-notice')).forEach(element => {
+    element.innerHTML = element.innerHTML
+      .replace(/^[\s]+This image has been resized. Click on the /, '这张图片已经被压缩，单击侧边栏中的')
+      .replace(/View larger version/, '显示高清图')
+      .replace(/ link in the sidebar for a high-quality version./, '可以获取更高质量的版本。')
+      .replace(/Hide this message<\/a>./, '不再提醒</a>')
+
+      .replace(/This post belongs to a /, '一个')
+      .replace(/parent post<\/a>\./, '作品集</a>包含了这张图片。')
+  })
+
+  // status-notice
+
+  /* This post belongs to a parent post. */
 })()
 
 /**
@@ -161,7 +178,7 @@ import style from './style.css'
 })()
 
 /**
- * 默认显示隐藏的作品，设置开关在页面的左下角。
+ * 默认显示隐藏的作品，并提供可开关的选项。
  */
 ;(function() {
   const SET_JS_HIDE = 'set-javascript-hide'
