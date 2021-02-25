@@ -1,6 +1,6 @@
 {
   "/* 单行注释 */": {
-    "scope": "javascript,typescript",
+    "scope": "javascript,typescript,css",
     "prefix": "ll",
     "body": ["/* ${1:comments} */"],
     "description": "创建单行注释",

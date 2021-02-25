@@ -7,7 +7,7 @@ const banner = `// ==UserScript==
 // @namespace    com.coderzhaoziwei.yandere
 // @version      ${config.version}
 // @author       Coder Zhao
-// @description  Simplified Chinese patch for Yande.re | Y 站简体中文补丁
+// @description  Y 站简体中文补丁 | 显示隐藏作品 | 方向键翻页 | Simplified Chinese patch for Yande.re
 // @modified     ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString('en-DE')}
 // @license      MIT
 // @homepage     https://greasyfork.org/zh-CN/scripts/421970

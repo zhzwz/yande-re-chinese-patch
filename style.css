@@ -11,3 +11,78 @@ li.tag-type-character a:nth-child(4)::before {
 li.tag-type-circle a:nth-child(4)::before {
   content: '[公司]';
 }
+
+
+body {
+  font-size: 12px;
+  padding: 12px 4px;
+}
+#title {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0 0 !important;
+}
+#main-menu {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: center;
+}
+
+
+#post-list {
+  display: flex;
+  flex-direction: row;
+}
+#post-list > .sidebar {
+  width: auto;
+  max-width: 200px;
+  flex: 0 0 auto;
+}
+#post-list > .content {
+  width: auto;
+  flex: 0 1 auto;
+}
+
+#post-list-posts {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#post-list-posts > li {
+  width: auto !important;
+  height: auto !important;
+  margin: 0 8px 8px 0 !important; /* 图片区域间距 */
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+#post-list-posts > li.javascript-hide:not(.set-javascript-hide) {
+  display: block !important;
+  position: relative;
+}
+#post-list-posts > li.javascript-hide::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  box-shadow: 0px 0px 8px rgb(255, 0, 0) inset;
+}
+#post-list-posts > li > .inner {
+  width: auto !important;
+  height: 150px !important;
+  display: flex;
+  align-items: center;
+}
+#post-list-posts > li > .inner > .thumb {
+  height: auto;
+}
+#post-list-posts > li > .largeimg.directlink {
+  height: 12px;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  overflow: hidden;
+}
+
+

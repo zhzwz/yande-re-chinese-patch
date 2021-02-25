@@ -145,7 +145,7 @@ import style from './style.css'
 ;(function() {
   window.addEventListener('keyup', function(event) {
     /* 在输入的情况下，方向键禁止触发翻页。 */
-    if (/^(TEXTAREA|INPUT)$/.test(document.activeElement.tagName)) return
+    if (/^(TEXTAREA|INPUT|SELECT|BUTTON)$/.test(document.activeElement.tagName)) return
 
     const prev = document.querySelector('.pagination>.previous_page')
     const next = document.querySelector('.pagination>.next_page')
@@ -158,4 +158,33 @@ import style from './style.css'
       return event.preventDefault()
     }
   })
+})()
+
+/**
+ * 默认显示隐藏的作品，设置开关在页面的左下角。
+ */
+;(function() {
+  const SET_JS_HIDE = 'set-javascript-hide'
+  const INPUT_HTML = `<input type="checkbox" id="${SET_JS_HIDE}"> <label for="${SET_JS_HIDE}">显示隐藏的作品</label>`
+
+  const target = document.getElementById('post-list-posts')
+  if (target && target.parentNode) {
+    const div = document.createElement('div')
+    target.parentNode.insertBefore(div, target)
+    div.innerHTML = INPUT_HTML
+    div.setAttribute('style', 'user-select: none; text-align: right;')
+  } else return
+
+  const checkbox = document.getElementById(SET_JS_HIDE)
+  checkbox.checked = JSON.parse(localStorage.getItem(SET_JS_HIDE))
+  update()
+  checkbox.addEventListener('change', update)
+
+  function update() {
+    Array.from(document.querySelectorAll('.javascript-hide')).forEach(element => {
+      if (checkbox.checked) element.removeClassName(SET_JS_HIDE)
+      else element.addClassName(SET_JS_HIDE)
+    })
+    localStorage.setItem(SET_JS_HIDE, checkbox.checked)
+  }
 })()
