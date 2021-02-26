@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      0.0.17
+// @version      0.0.18
 // @author       Coder Zhao
 // @description  Y 站简体中文补丁 | 显示隐藏作品 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/2/26 11:51:50
+// @modified     2021/2/26 12:13:29
 // @license      MIT
 // @homepage     https://greasyfork.org/zh-CN/scripts/421970
 // @match        https://yande.re/*
@@ -120,6 +120,7 @@ const tags_namespaceObject = JSON.parse('{"anal":"肛门","angel":"天使","anim
  */
 ;(function() {
   Array.from(document.querySelectorAll('.status-notice')).forEach(element => {
+    console.log(element.innerHTML)
     element.innerHTML = element.innerHTML
       .replace(/^[\s]+This image has been resized. Click on the /, '这张图片已经被压缩，单击侧边栏中的')
       .replace(/View larger version/, '显示高清图')
@@ -128,10 +129,11 @@ const tags_namespaceObject = JSON.parse('{"anal":"肛门","angel":"天使","anim
       // This post belongs to a parent post.
       .replace(/This post belongs to a /, '这张图片从属于一个').replace(/parent post<\/a>\./, '相关父作品</a>。')
       // This post has child posts. (post #728160, 746235)
+      // This post has a child post. (post #383703)
       .replace(/This post has /, '这张图片从属于一个')
       .replace(/child posts<\/a>\. \(post #/, '作品集</a>。相关子作品：')
-      .replace(/<\/a>, <a /, '</a> | <a ')
-      .replace(/<\/a>\)/, '</a>')
+      .replace(/a child post<\/a>\. \(post #/, '作品集</a>。相关子作品：')
+      .replace(/<\/a>, <a /, '</a> | <a ').replace(/<\/a>\)/, '</a>')
   })
   // This post has <a href="/post?tags=parent%3A728162">child posts</a>. (post #<a href="/post/show/728160">728160</a>, <a href="/post/show/746235">746235</a>)
 })()
