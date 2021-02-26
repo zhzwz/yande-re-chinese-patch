@@ -92,31 +92,25 @@ import style from './style.css'
  * CN: 这张图片已经被压缩，单击侧边栏中的 `显示高清图` 可以获取更高质量的版本。不再提醒
  *
  * EN: This post belongs to a parent post.
+ * EN: This post has child posts. (post #728160, 746235)
+  </div>
  */
 ;(function() {
-  const element = document.querySelector('#resized_notice')
-  if (element) {
-    element.innerHTML = element.innerHTML
-      .replace(/^[\s]+This image has been resized. Click on the /, '这张图片已经被压缩，单击侧边栏中的')
-      .replace(/View larger version/, '显示高清图')
-      .replace(/ link in the sidebar for a high-quality version./, '可以获取更高质量的版本。')
-      .replace(/Hide this message<\/a>./, '不再提醒</a>')
-  }
-
   Array.from(document.querySelectorAll('.status-notice')).forEach(element => {
     element.innerHTML = element.innerHTML
       .replace(/^[\s]+This image has been resized. Click on the /, '这张图片已经被压缩，单击侧边栏中的')
       .replace(/View larger version/, '显示高清图')
       .replace(/ link in the sidebar for a high-quality version./, '可以获取更高质量的版本。')
-      .replace(/Hide this message<\/a>./, '不再提醒</a>')
-
-      .replace(/This post belongs to a /, '一个')
-      .replace(/parent post<\/a>\./, '作品集</a>包含了这张图片。')
+      .replace(/Hide this message<\/a>\./, '不再提醒</a>')
+      // This post belongs to a parent post.
+      .replace(/This post belongs to a /, '这张图片从属于一个').replace(/parent post<\/a>\./, '相关父作品</a>。')
+      // This post has child posts. (post #728160, 746235)
+      .replace(/This post has /, '这张图片从属于一个')
+      .replace(/child posts<\/a>\. \(post #/, '作品集</a>。相关子作品：')
+      .replace(/<\/a>, <a /, '</a> | <a ')
+      .replace(/<\/a>\)/, '</a>')
   })
-
-  // status-notice
-
-  /* This post belongs to a parent post. */
+  // This post has <a href="/post?tags=parent%3A728162">child posts</a>. (post #<a href="/post/show/728160">728160</a>, <a href="/post/show/746235">746235</a>)
 })()
 
 /**
