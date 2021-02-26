@@ -24,6 +24,9 @@ body {
   justify-content: center;
   margin: 0 0 0 0 !important;
 }
+#site-title {
+  display: flex !important;
+}
 #main-menu {
   padding: 0 !important;
   margin: 0 !important;

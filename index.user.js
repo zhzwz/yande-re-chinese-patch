@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      0.0.16
+// @version      0.0.17
 // @author       Coder Zhao
 // @description  Y 站简体中文补丁 | 显示隐藏作品 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/2/26 11:50:15
+// @modified     2021/2/26 11:51:50
 // @license      MIT
 // @homepage     https://greasyfork.org/zh-CN/scripts/421970
 // @match        https://yande.re/*
