@@ -7,13 +7,14 @@ const banner = `// ==UserScript==
 // @namespace    com.coderzhaoziwei.yandere
 // @version      ${config.version}
 // @author       Coder Zhao
-// @description  Y 站简体中文补丁 | 显示隐藏作品 | 方向键翻页 | Simplified Chinese patch for Yande.re
+// @description  Y 站简体中文补丁 | 界面布局优化 | 显示隐藏作品 | 方向键翻页 | Simplified Chinese patch for Yande.re
 // @modified     ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString('en-DE')}
 // @license      MIT
 // @homepage     https://greasyfork.org/zh-CN/scripts/421970
 // @match        https://yande.re/*
 // @exclude      https://yande.re/forum/*
 // @match        https://yande.in/*
+// @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
 // @grant        none
 // ==/UserScript==
 `

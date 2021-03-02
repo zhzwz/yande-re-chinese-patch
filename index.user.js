@@ -1,15 +1,16 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      0.0.18
+// @version      1.0.1
 // @author       Coder Zhao
-// @description  Y 站简体中文补丁 | 显示隐藏作品 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/2/26 12:13:29
+// @description  Y 站简体中文补丁 | 界面布局优化 | 显示隐藏作品 | 方向键翻页 | Simplified Chinese patch for Yande.re
+// @modified     2021/3/2 12:18:34
 // @license      MIT
 // @homepage     https://greasyfork.org/zh-CN/scripts/421970
 // @match        https://yande.re/*
 // @exclude      https://yande.re/forum/*
 // @match        https://yande.in/*
+// @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
 // @grant        none
 // ==/UserScript==
 
@@ -22,9 +23,9 @@
 
 
 ;// CONCATENATED MODULE: ./tags.json
-const tags_namespaceObject = JSON.parse('{"anal":"肛门","angel":"天使","animal_ears":"兽耳","anus":"菊花","areola":"乳晕","armor":"护甲","ass":"屁股","bandages":"绷带","bathing":"沐浴","bikini":"比基尼","bikini_armor":"比基尼护甲","bikini_top":"比基尼乳罩","blood":"血腥","bodysuit":"紧身衣裤","bondage":"束缚","bottomless":"下身露出","bra":"乳罩","breast_grab":"握乳","breast_hold":"托乳","breasts":"乳","bunny_ears":"兔耳","bunny_girl":"兔女郎","cameltoe":"阴户凸显","censored":"有码","cheerleader":"啦啦队队员","chibi":"Q版","chinadress":"旗袍","christmas":"圣诞","cleavage":"乳沟","cream":"奶油","cum":"精液","dakimakura":"抱枕","digital_version":"数字版","disc_cover":"光盘封面","dress":"连衣裙","dress_shirt":"衬衫","erect_nipples":"乳尖","extreme_content":"极端","eyepatch":"眼罩","feet":"足","fellatio":"口交","fishnets":"鱼网袜","fixed":"修改","footjob":"足交","futanari":"扶她","game_cg":"游戏CG","gangbang":"乱交","garter":"袜带","garter_belt":"吊袜腰带","gun":"枪炮","guro":"猎奇","halloween":"万圣节前夜","handjob":"手淫","headphones":"耳机","heels":"高跟鞋","heterochromia":"虹膜异色","horns":"角","japanese_clothes":"日式服装","kimono":"和服","kitsune":"狐狸","landscape":"风景画","leotard":"紧身连衣裤","lingerie":"贴身内衣","loli":"萝莉","lolita_fashion":"洛丽塔","maid":"女仆","male":"男性","masturbation":"自摸","mecha":"机甲","megane":"眼镜","miko":"巫女","monochrome":"黑白","naked":"裸体","naked_apron":"裸体围裙","neko":"猫","nekomimi":"猫耳","nipples":"乳头","no_bra":"无乳罩","nopan":"无胖次","nurse":"护士","onsen":"温泉","open_shirt":"衬衫敞开","pajama":"睡衣","pantsu":"胖次","panty_pull":"胖次褪下","pantyhose":"吊带袜","partial_scan":"局部扫描","penis":"阴茎","pointy_ears":"尖耳朵","pubic_hair":"阴毛","pussy":"阴户","pussy_juice":"妹汁","school_swimsuit":"学校泳衣","see_through":"透视","seifuku":"制服","sex":"性交","shimapan":"条纹胖次","shirt_lift":"衬衫掀起","shota":"正太","sketch":"素描","skirt_lift":"裙摆掀起","stockings":"长筒袜","string_panties":"细绳胖次","sweater":"毛线衣","swimsuits":"泳衣","sword":"刀剑","tagme":"标签","tail":"兽尾","tan_lines":"日晒线","tattoo":"文身","tentacles":"触手","text":"文本","thighhighs":"过膝袜","thong":"丁字裤","topless":"上身露出","torn_clothes":"衣服撕裂","towel":"浴巾","transparent_png":"透明PNG","uncensored":"无码","underboob":"南半球","undressing":"脱衣服","uniform":"制服","waitress":"女服务生","wallpaper":"壁纸","weapon":"武器","wet":"湿身","wet_clothes":"衣服打湿","wings":"翅膀","witch":"女巫","yukata":"浴衣","yuri":"百合"}');
+const tags_namespaceObject = JSON.parse('{"anal":"肛交","angel":"天使","animal_ears":"兽耳","anus":"肛门露出","areola":"乳晕","armor":"盔甲|装甲","artist_revision":"画师修改","ass":"臀部","ass_grab":"持股|捏臀","bandages":"绷带","bathing":"沐浴","bikini":"比基尼","bikini_armor":"比基尼装甲|轻薄盔甲","bikini_top":"比基尼乳罩","blood":"血腥","bloomers":"灯笼裤|宽松短裤","bodysuit":"紧身衣裤","bondage":"束缚","bottomless":"下身露出","bra":"乳罩","breast_grab":"握乳","breast_hold":"托乳","breasts":"乳","bunny_ears":"兔耳","bunny_girl":"兔女郎","calendar":"日历","cameltoe":"阴户凸显","censored":"有码","cheerleader":"啦啦队队员","chibi":"Q版","chinadress":"旗袍","christmas":"圣诞","cleavage":"乳沟","cream":"奶油","cum":"精液","dakimakura":"抱枕","digital_version":"数字版","disc_cover":"光盘封面","dress":"连衣裙","dress_shirt":"衬衫","erect_nipples":"乳尖","extreme_content":"极端","eyepatch":"眼罩","feet":"足","fellatio":"口交","fishnets":"鱼网袜","fixed":"修改","footjob":"足交","futanari":"扶她","game_cg":"游戏CG","gangbang":"乱交","garter":"袜带","garter_belt":"吊袜腰带","gun":"枪炮","guro":"猎奇","halloween":"万圣节前夜","handjob":"打手枪","headphones":"耳机","heels":"高跟鞋","heterochromia":"虹膜异色","horns":"角","japanese_clothes":"日式服装","kimono":"和服","kitsune":"狐狸","landscape":"风景画","leotard":"紧身连衣裤","lingerie":"贴身内衣","loli":"萝莉","lolita_fashion":"洛丽塔","maid":"女仆","male":"男性","masturbation":"手淫|自摸","mecha":"机甲","megane":"眼镜","miko":"巫女","monochrome":"单色","naked":"裸体","naked_apron":"裸体围裙","neko":"猫","nekomimi":"猫耳","nipples":"乳头","no_bra":"无乳罩","nopan":"无胖次","nurse":"护士","onsen":"温泉","open_shirt":"衬衫敞开","pajama":"睡衣","pantsu":"胖次","panty_pull":"胖次脱下","pantyhose":"吊带袜","partial_scan":"局部扫描","penis":"阴茎","pointy_ears":"尖耳朵","pubic_hair":"阴毛","pussy":"阴户","pussy_juice":"妹汁","school_swimsuit":"学校泳衣","see_through":"透视","seifuku":"制服","sex":"性交","shimapan":"条纹胖次","shirt_lift":"衬衫掀起","shota":"正太","sketch":"素描","skirt_lift":"裙摆掀起","stockings":"长筒袜","string_panties":"细绳胖次","sweater":"毛衣","swimsuits":"泳衣","sword":"刀剑","symmetrical_docking":"乳乳相接","tagme":"标签","tail":"兽尾","tan_lines":"日晒线","tattoo":"文身","tentacles":"触手","text":"文本","thighhighs":"过膝袜","thong":"丁字裤","topless":"上身露出","torn_clothes":"破衣","towel":"浴巾","transparent_png":"背景透明","uncensored":"无码","underboob":"南半球|下乳露出","undressing":"脱衣","uniform":"制服","waitress":"女侍","wallpaper":"壁纸","weapon":"武器","wet":"湿身","wet_clothes":"湿衣","wings":"翅膀","witch":"女巫","yukata":"浴衣","yuri":"百合"}');
 ;// CONCATENATED MODULE: ./style.css
-/* harmony default export */ const style = ("/* 标签前缀 */\nli.tag-type-artist a:nth-child(4)::before {\n  content: '[画师]';\n}\nli.tag-type-copyright a:nth-child(4)::before {\n  content: '[原作]';\n}\nli.tag-type-character a:nth-child(4)::before {\n  content: '[角色]';\n}\nli.tag-type-circle a:nth-child(4)::before {\n  content: '[公司]';\n}\n\n/* 字体大小 */\nbody {\n  font-size: 12px;\n  padding: 12px 4px;\n}\n\n/* 标题居中 */\n#title {\n  display: flex;\n  justify-content: center;\n  margin: 0 0 0 0 !important;\n}\n#site-title {\n  display: flex !important;\n}\n#main-menu {\n  padding: 0 !important;\n  margin: 0 !important;\n  display: flex !important;\n  justify-content: center;\n}\n\n/* 通知居中 */\n.status-notice {\n  text-align: center;\n}\n\n/* 图片区域 */\n#post-list {\n  display: flex;\n  flex-direction: row;\n}\n#post-list > .sidebar {\n  width: auto;\n  max-width: 200px;\n  flex: 0 0 auto;\n}\n#post-list > .content {\n  width: auto;\n  flex: 0 1 auto;\n}\n\n#post-list-posts {\n  display: flex !important;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n#post-list-posts > li {\n  width: auto !important;\n  height: auto !important;\n  margin: 0 8px 8px 0 !important; /* 图片区域间距 */\n  border: 1px solid rgba(0, 0, 0, 0);\n}\n#post-list-posts > li.javascript-hide:not(.set-javascript-hide) {\n  display: block !important;\n  position: relative;\n}\n#post-list-posts > li.javascript-hide::after {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  box-shadow: 0px 0px 12px rgb(255, 0, 0) inset;\n  pointer-events: none;\n}\n#post-list-posts > li > .inner {\n  width: auto !important;\n  height: 150px !important;\n  display: flex;\n  align-items: center;\n}\n#post-list-posts > li > .inner > .thumb {\n  height: auto;\n}\n#post-list-posts > li > .largeimg.directlink {\n  height: 12px;\n  font-size: 12px;\n  line-height: 12px;\n  padding: 0;\n  margin: 2px 0 0 0;\n  overflow: hidden;\n}\n");
+/* harmony default export */ const style = ("/* 标签前缀 */\nli.tag-type-artist a:nth-child(4)::before {\n  content: '[画师]';\n}\nli.tag-type-copyright a:nth-child(4)::before {\n  content: '[原作]';\n}\nli.tag-type-character a:nth-child(4)::before {\n  content: '[角色]';\n}\nli.tag-type-circle a:nth-child(4)::before {\n  content: '[公司]';\n}\n\n/* 字体大小 */\nbody {\n  font-size: 12px;\n  padding: 12px 4px;\n}\n\n/* 标题居中 */\n#title {\n  display: flex;\n  justify-content: center;\n  margin: 0 0 0 0 !important;\n}\n#site-title {\n  display: flex !important;\n}\n#main-menu {\n  padding: 0 !important;\n  margin: 0 !important;\n  display: flex !important;\n  justify-content: center;\n}\n\n/* 通知居中 */\n.status-notice {\n  text-align: center;\n}\n\n/* 图片区域 */\n#post-list {\n  display: flex;\n  flex-direction: row;\n}\n#post-list > .sidebar {\n  width: auto;\n  max-width: 200px;\n  flex: 0 0 auto;\n}\n#post-list > .content {\n  width: auto;\n  flex: 0 1 auto;\n}\n\n#post-list-posts {\n  display: flex !important;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n#post-list-posts > li {\n  width: auto !important;\n  height: auto !important;\n  margin: 0 8px 8px 0 !important; /* 图片区域间距 */\n  border: 1px solid rgba(0, 0, 0, 0);\n}\n#post-list-posts > li.javascript-hide:not(.set-javascript-hide) {\n  display: block !important;\n  position: relative;\n}\n#post-list-posts > li.javascript-hide::after {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  box-shadow: 0px 0px 12px rgb(255, 0, 0) inset;\n  pointer-events: none;\n}\n#post-list-posts > li > .inner {\n  width: auto !important;\n  height: 150px !important;\n  display: flex;\n  align-items: center;\n}\n#post-list-posts > li > .inner > .thumb {\n  height: auto;\n}\n#post-list-posts > li > .largeimg.directlink {\n  height: 12px;\n  font-size: 12px;\n  line-height: 12px;\n  padding: 0;\n  margin: 2px 0 0 0;\n  overflow: hidden;\n}\n\n/* checkbox 显示隐藏的作品 */\n#script-addition-checkbox {\n  user-select: none;\n  text-align: right;\n  font-weight: 100;\n  padding: 8px 12px;\n}\n");
 ;// CONCATENATED MODULE: ./index.js
 
 (function() {
@@ -116,6 +117,7 @@ const tags_namespaceObject = JSON.parse('{"anal":"肛门","angel":"天使","anim
  *
  * EN: This post belongs to a parent post.
  * EN: This post has child posts. (post #728160, 746235)
+ * EN: This post has a child post. (post #383703)
   </div>
  */
 ;(function() {
@@ -126,16 +128,14 @@ const tags_namespaceObject = JSON.parse('{"anal":"肛门","angel":"天使","anim
       .replace(/View larger version/, '显示高清图')
       .replace(/ link in the sidebar for a high-quality version./, '可以获取更高质量的版本。')
       .replace(/Hide this message<\/a>\./, '不再提醒</a>')
-      // This post belongs to a parent post.
+      /* 相关父作品 */
       .replace(/This post belongs to a /, '这张图片从属于一个').replace(/parent post<\/a>\./, '相关父作品</a>。')
-      // This post has child posts. (post #728160, 746235)
-      // This post has a child post. (post #383703)
+      /* 相关子作品 */
       .replace(/This post has /, '这张图片从属于一个')
       .replace(/child posts<\/a>\. \(post #/, '作品集</a>。相关子作品：')
       .replace(/a child post<\/a>\. \(post #/, '作品集</a>。相关子作品：')
       .replace(/<\/a>, <a /, '</a> | <a ').replace(/<\/a>\)/, '</a>')
   })
-  // This post has <a href="/post?tags=parent%3A728162">child posts</a>. (post #<a href="/post/show/728160">728160</a>, <a href="/post/show/746235">746235</a>)
 })()
 
 /**
@@ -209,6 +209,7 @@ const tags_namespaceObject = JSON.parse('{"anal":"肛门","angel":"天使","anim
     target.parentNode.insertBefore(div, target)
     div.innerHTML = INPUT_HTML
     div.setAttribute('style', 'user-select: none; text-align: right;')
+    div.setAttribute('id', 'script-addition-checkbox')
   } else return
 
   const checkbox = document.getElementById(SET_JS_HIDE)

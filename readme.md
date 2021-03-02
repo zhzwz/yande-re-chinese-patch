@@ -4,10 +4,10 @@
 # 目录
 
 - [前言](#前言)
-- [主要功能](#主要功能)
+- [功能](#功能)
 - [使用方式](#使用方式)
-  - [浏览器插件](#浏览器插件)
-  - [安装脚本](#安装脚本)
+  - [安装浏览器插件](#安装浏览器插件)
+  - [安装脚本程序](#安装脚本程序)
 - [相关链接](#相关链接)
 - [开源许可](#开源许可)
 - [附：标签翻译表](#附标签翻译表)
@@ -18,23 +18,33 @@
 
 此项目旨在为 ~~LSP~~ 同学们节约查询时间，祝各位有更多的精力好好学习。我只是一位业余选手，翻译主要依靠搜索引擎。如果你是一位~~老司机~~专业学者，知道某单词或词组有更好的翻译方式，请务必提供帮助。
 
-# 主要功能
+无法访问国际互联网的中国用户，可以使用 Y 站镜像站点 `https://yande.in/` 正常浏览。脚本程序已经兼容这个站点。
 
-- 已翻译 100 多个标签
-- 使用**左/右方向键**翻页
-- 快捷切换是否显示被隐藏的作品
+# 功能
+
+- 翻译标签 130＋
+- 界面布局优化
+- 显示隐藏作品
+- 左/右方向键翻页
+- 兼容镜像站点
 
 # 使用方式
 
-## 浏览器插件
+## 安装浏览器插件
 
 首先你需要为你的浏览器安装一个用户脚本管理器，推荐使用插件 [Tampermonkey](https://www.tampermonkey.net/)。
 
 > 主流浏览器有 Chrome、Microsoft Edge、Firefox、Safari 等，如果你的浏览器无法安装 Tampermonkey，那么也就无法安装脚本。
 
-## 安装脚本
+## 安装脚本程序
 
 使用浏览器直接访问 [Greasy Fork - Yande.re 简体中文 - 主页](https://greasyfork.org/zh-CN/scripts/421970)，点击安装即可。
+
+如果你没有 Greasy Fork 的账号，访问以上链接可能会提示你：`此脚本不再在本网站上匿名可用。请登录并检查您的 Greasy Fork 账号设置。`
+
+因为脚本程序涉及成人内容，所以在 Greasy Fork 站点必须登录才可以浏览或安装。
+
+如果你不想注册成为 Greasy Fork 的用户，可以访问成人脚本站点 [Sleasy Fork](https://sleazyfork.org/zh-CN/scripts/421970) 直接安装，或者直接获取[仓库文件](https://github.com/coderzhaoziwei/yande-re-chinese-patch/raw/main/index.user.js)来安装。
 
 # 相关链接
 
@@ -50,134 +60,139 @@ MIT
 
 ||English|简体中文|
 |:-:|:-|:-|
-|1|anal|肛门|
+|1|anal|肛交|
 |2|angel|天使|
 |3|animal ears|兽耳|
-|4|anus|菊花|
+|4|anus|肛门露出|
 |5|areola|乳晕|
-|6|armor|护甲|
-|7|ass|屁股|
-|8|bandages|绷带|
-|9|bathing|沐浴|
-|10|bikini|比基尼|
-|11|bikini armor|比基尼护甲|
-|12|bikini top|比基尼乳罩|
-|13|blood|血腥|
-|14|bodysuit|紧身衣裤|
-|15|bondage|束缚|
-|16|bottomless|下身露出|
-|17|bra|乳罩|
-|18|breast grab|握乳|
-|19|breast hold|托乳|
-|20|breasts|乳|
-|21|bunny ears|兔耳|
-|22|bunny girl|兔女郎|
-|23|cameltoe|阴户凸显|
-|24|censored|有码|
-|25|cheerleader|啦啦队队员|
-|26|chibi|Q版|
-|27|chinadress|旗袍|
-|28|christmas|圣诞|
-|29|cleavage|乳沟|
-|30|cream|奶油|
-|31|cum|精液|
-|32|dakimakura|抱枕|
-|33|digital version|数字版|
-|34|disc cover|光盘封面|
-|35|dress|连衣裙|
-|36|dress shirt|衬衫|
-|37|erect nipples|乳尖|
-|38|extreme content|极端|
-|39|eyepatch|眼罩|
-|40|feet|足|
-|41|fellatio|口交|
-|42|fishnets|鱼网袜|
-|43|fixed|修改|
-|44|footjob|足交|
-|45|futanari|扶她|
-|46|game cg|游戏CG|
-|47|gangbang|乱交|
-|48|garter|袜带|
-|49|garter belt|吊袜腰带|
-|50|gun|枪炮|
-|51|guro|猎奇|
-|52|halloween|万圣节前夜|
-|53|handjob|手淫|
-|54|headphones|耳机|
-|55|heels|高跟鞋|
-|56|heterochromia|虹膜异色|
-|57|horns|角|
-|58|japanese clothes|日式服装|
-|59|kimono|和服|
-|60|kitsune|狐狸|
-|61|landscape|风景画|
-|62|leotard|紧身连衣裤|
-|63|lingerie|贴身内衣|
-|64|loli|萝莉|
-|65|lolita fashion|洛丽塔|
-|66|maid|女仆|
-|67|male|男性|
-|68|masturbation|自摸|
-|69|mecha|机甲|
-|70|megane|眼镜|
-|71|miko|巫女|
-|72|monochrome|黑白|
-|73|naked|裸体|
-|74|naked apron|裸体围裙|
-|75|neko|猫|
-|76|nekomimi|猫耳|
-|77|nipples|乳头|
-|78|no bra|无乳罩|
-|79|nopan|无胖次|
-|80|nurse|护士|
-|81|onsen|温泉|
-|82|open shirt|衬衫敞开|
-|83|pajama|睡衣|
-|84|pantsu|胖次|
-|85|panty pull|胖次褪下|
-|86|pantyhose|吊带袜|
-|87|partial scan|局部扫描|
-|88|penis|阴茎|
-|89|pointy ears|尖耳朵|
-|90|pubic hair|阴毛|
-|91|pussy|阴户|
-|92|pussy juice|妹汁|
-|93|school swimsuit|学校泳衣|
-|94|see through|透视|
-|95|seifuku|制服|
-|96|sex|性交|
-|97|shimapan|条纹胖次|
-|98|shirt lift|衬衫掀起|
-|99|shota|正太|
-|100|sketch|素描|
-|101|skirt lift|裙摆掀起|
-|102|stockings|长筒袜|
-|103|string panties|细绳胖次|
-|104|sweater|毛线衣|
-|105|swimsuits|泳衣|
-|106|sword|刀剑|
-|107|tagme|标签|
-|108|tail|兽尾|
-|109|tan lines|日晒线|
-|110|tattoo|文身|
-|111|tentacles|触手|
-|112|text|文本|
-|113|thighhighs|过膝袜|
-|114|thong|丁字裤|
-|115|topless|上身露出|
-|116|torn clothes|衣服撕裂|
-|117|towel|浴巾|
-|118|transparent png|透明PNG|
-|119|uncensored|无码|
-|120|underboob|南半球|
-|121|undressing|脱衣服|
-|122|uniform|制服|
-|123|waitress|女服务生|
-|124|wallpaper|壁纸|
-|125|weapon|武器|
-|126|wet|湿身|
-|127|wet clothes|衣服打湿|
-|128|wings|翅膀|
-|129|witch|女巫|
-|130|yukata|浴衣|
-|131|yuri|百合|
+|6|armor|盔甲|装甲|
+|7|artist revision|画师修改|
+|8|ass|臀部|
+|9|ass grab|持股|捏臀|
+|10|bandages|绷带|
+|11|bathing|沐浴|
+|12|bikini|比基尼|
+|13|bikini armor|比基尼装甲|轻薄盔甲|
+|14|bikini top|比基尼乳罩|
+|15|blood|血腥|
+|16|bloomers|灯笼裤|宽松短裤|
+|17|bodysuit|紧身衣裤|
+|18|bondage|束缚|
+|19|bottomless|下身露出|
+|20|bra|乳罩|
+|21|breast grab|握乳|
+|22|breast hold|托乳|
+|23|breasts|乳|
+|24|bunny ears|兔耳|
+|25|bunny girl|兔女郎|
+|26|calendar|日历|
+|27|cameltoe|阴户凸显|
+|28|censored|有码|
+|29|cheerleader|啦啦队队员|
+|30|chibi|Q版|
+|31|chinadress|旗袍|
+|32|christmas|圣诞|
+|33|cleavage|乳沟|
+|34|cream|奶油|
+|35|cum|精液|
+|36|dakimakura|抱枕|
+|37|digital version|数字版|
+|38|disc cover|光盘封面|
+|39|dress|连衣裙|
+|40|dress shirt|衬衫|
+|41|erect nipples|乳尖|
+|42|extreme content|极端|
+|43|eyepatch|眼罩|
+|44|feet|足|
+|45|fellatio|口交|
+|46|fishnets|鱼网袜|
+|47|fixed|修改|
+|48|footjob|足交|
+|49|futanari|扶她|
+|50|game cg|游戏CG|
+|51|gangbang|乱交|
+|52|garter|袜带|
+|53|garter belt|吊袜腰带|
+|54|gun|枪炮|
+|55|guro|猎奇|
+|56|halloween|万圣节前夜|
+|57|handjob|打手枪|
+|58|headphones|耳机|
+|59|heels|高跟鞋|
+|60|heterochromia|虹膜异色|
+|61|horns|角|
+|62|japanese clothes|日式服装|
+|63|kimono|和服|
+|64|kitsune|狐狸|
+|65|landscape|风景画|
+|66|leotard|紧身连衣裤|
+|67|lingerie|贴身内衣|
+|68|loli|萝莉|
+|69|lolita fashion|洛丽塔|
+|70|maid|女仆|
+|71|male|男性|
+|72|masturbation|手淫|自摸|
+|73|mecha|机甲|
+|74|megane|眼镜|
+|75|miko|巫女|
+|76|monochrome|单色|
+|77|naked|裸体|
+|78|naked apron|裸体围裙|
+|79|neko|猫|
+|80|nekomimi|猫耳|
+|81|nipples|乳头|
+|82|no bra|无乳罩|
+|83|nopan|无胖次|
+|84|nurse|护士|
+|85|onsen|温泉|
+|86|open shirt|衬衫敞开|
+|87|pajama|睡衣|
+|88|pantsu|胖次|
+|89|panty pull|胖次脱下|
+|90|pantyhose|吊带袜|
+|91|partial scan|局部扫描|
+|92|penis|阴茎|
+|93|pointy ears|尖耳朵|
+|94|pubic hair|阴毛|
+|95|pussy|阴户|
+|96|pussy juice|妹汁|
+|97|school swimsuit|学校泳衣|
+|98|see through|透视|
+|99|seifuku|制服|
+|100|sex|性交|
+|101|shimapan|条纹胖次|
+|102|shirt lift|衬衫掀起|
+|103|shota|正太|
+|104|sketch|素描|
+|105|skirt lift|裙摆掀起|
+|106|stockings|长筒袜|
+|107|string panties|细绳胖次|
+|108|sweater|毛衣|
+|109|swimsuits|泳衣|
+|110|sword|刀剑|
+|111|symmetrical docking|乳乳相接|
+|112|tagme|标签|
+|113|tail|兽尾|
+|114|tan lines|日晒线|
+|115|tattoo|文身|
+|116|tentacles|触手|
+|117|text|文本|
+|118|thighhighs|过膝袜|
+|119|thong|丁字裤|
+|120|topless|上身露出|
+|121|torn clothes|破衣|
+|122|towel|浴巾|
+|123|transparent png|背景透明|
+|124|uncensored|无码|
+|125|underboob|南半球|下乳露出|
+|126|undressing|脱衣|
+|127|uniform|制服|
+|128|waitress|女侍|
+|129|wallpaper|壁纸|
+|130|weapon|武器|
+|131|wet|湿身|
+|132|wet clothes|湿衣|
+|133|wings|翅膀|
+|134|witch|女巫|
+|135|yukata|浴衣|
+|136|yuri|百合|
