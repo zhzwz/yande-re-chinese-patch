@@ -1,11 +1,11 @@
-![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png?2)
+![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png)
 
 <!-- omit in toc -->
 # 目录
 
 - [前言](#前言)
 - [功能](#功能)
-- [使用方式](#使用方式)
+- [安装](#安装)
   - [安装浏览器插件](#安装浏览器插件)
   - [安装脚本程序](#安装脚本程序)
 - [相关链接](#相关链接)
@@ -28,28 +28,26 @@
 - 左/右方向键翻页
 - 兼容镜像站点
 
-# 使用方式
+# 安装
 
 ## 安装浏览器插件
 
 首先你需要为你的浏览器安装一个用户脚本管理器，推荐使用插件 [Tampermonkey](https://www.tampermonkey.net/)。
 
-> 主流浏览器有 Chrome、Microsoft Edge、Firefox、Safari 等，如果你的浏览器无法安装 Tampermonkey，那么也就无法安装脚本。
+> 主流浏览器有 Chrome、Microsoft Edge、Firefox、Safari 等，如果你的浏览器无法安装 Tampermonkey，那么也就无法安装此脚本程序。
 
 ## 安装脚本程序
 
-使用浏览器直接访问 [Greasy Fork - Yande.re 简体中文 - 主页](https://greasyfork.org/zh-CN/scripts/421970)，点击安装即可。
+使用浏览器直接访问 [Greasy Fork - Yande.re 简体中文 - 主页](https://greasyfork.org/scripts/421970)，点击安装即可。
 
 如果你没有 Greasy Fork 的账号，访问以上链接可能会提示你：`此脚本不再在本网站上匿名可用。请登录并检查您的 Greasy Fork 账号设置。`
 
-因为脚本程序涉及成人内容，所以在 Greasy Fork 站点必须登录才可以浏览或安装。
-
-如果你不想注册成为 Greasy Fork 的用户，可以访问成人脚本站点 [Sleasy Fork](https://sleazyfork.org/zh-CN/scripts/421970) 直接安装，或者直接获取[仓库文件](https://github.com/coderzhaoziwei/yande-re-chinese-patch/raw/main/index.user.js)来安装。
+因为此脚本程序涉及成人内容，所以在 Greasy Fork 站点必须登录才可以浏览或安装。如果你不想注册成为 Greasy Fork 的用户，可以访问成人脚本站点 [Sleasy Fork](https://sleazyfork.org/scripts/421970) 直接安装，或者直接获取[仓库文件](https://github.com/coderzhaoziwei/yande-re-chinese-patch/raw/main/index.user.js)来安装。
 
 # 相关链接
 
 [Github 仓库](https://github.com/coderzhaoziwei/yande-re-chinese-patch) |
-[Greasy Fork 脚本主页](https://greasyfork.org/zh-CN/scripts/421970) |
+[Greasy Fork 脚本主页](https://greasyfork.org/scripts/421970) |
 [封面原图 Yande#388833](https://yande.re/post/show/388833)
 
 # 开源许可
@@ -65,17 +63,17 @@ MIT
 |3|animal ears|兽耳|
 |4|anus|肛门露出|
 |5|areola|乳晕|
-|6|armor|盔甲|装甲|
+|6|armor|盔甲/装甲|
 |7|artist revision|画师修改|
 |8|ass|臀部|
-|9|ass grab|持股|捏臀|
+|9|ass grab|持股/捏臀|
 |10|bandages|绷带|
 |11|bathing|沐浴|
 |12|bikini|比基尼|
-|13|bikini armor|比基尼装甲|轻薄盔甲|
+|13|bikini armor|比基尼装甲/轻薄盔甲|
 |14|bikini top|比基尼乳罩|
 |15|blood|血腥|
-|16|bloomers|灯笼裤|宽松短裤|
+|16|bloomers|灯笼裤/宽松短裤|
 |17|bodysuit|紧身衣裤|
 |18|bondage|束缚|
 |19|bottomless|下身露出|
@@ -131,7 +129,7 @@ MIT
 |69|lolita fashion|洛丽塔|
 |70|maid|女仆|
 |71|male|男性|
-|72|masturbation|手淫|自摸|
+|72|masturbation|自摸/手淫|
 |73|mecha|机甲|
 |74|megane|眼镜|
 |75|miko|巫女|
@@ -184,15 +182,16 @@ MIT
 |122|towel|浴巾|
 |123|transparent png|背景透明|
 |124|uncensored|无码|
-|125|underboob|南半球|下乳露出|
+|125|underboob|南半球/下乳露出|
 |126|undressing|脱衣|
 |127|uniform|制服|
 |128|waitress|女侍|
 |129|wallpaper|壁纸|
 |130|weapon|武器|
-|131|wet|湿身|
-|132|wet clothes|湿衣|
-|133|wings|翅膀|
-|134|witch|女巫|
-|135|yukata|浴衣|
-|136|yuri|百合|
+|131|wedding dress|婚纱|
+|132|wet|湿身|
+|133|wet clothes|湿衣|
+|134|wings|翅膀|
+|135|witch|女巫|
+|136|yukata|浴衣|
+|137|yuri|百合|
