@@ -1,9 +1,9 @@
-![version](https://img.shields.io/github/package-json/v/coderzhaoziwei/yande-re-chinese-patch?style=flat-square)
-![size](https://img.shields.io/github/languages/code-size/coderzhaoziwei/yande-re-chinese-patch)
-![MIT](https://shields.io/badge/license-MIT-blue?style=flat-square)
-![star](https://img.shields.io/github/stars/coderzhaoziwei/yande-re-chinese-patch?label=star&style=social)
+[![version](https://img.shields.io/github/package-json/v/coderzhaoziwei/yande-re-chinese-patch)]()
+[![size](https://img.shields.io/github/languages/code-size/coderzhaoziwei/yande-re-chinese-patch)]()
+[![MIT](https://shields.io/badge/license-MIT-blue)]()
+[![star](https://img.shields.io/github/stars/coderzhaoziwei/yande-re-chinese-patch?label=star&style=social)](https://github.com/coderzhaoziwei/yande-re-chinese-patch/stargazers)
 
-![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png)
+[![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png)](https://yande.re/post/show/388833)
 
 <!-- omit in toc -->
 # 目录
