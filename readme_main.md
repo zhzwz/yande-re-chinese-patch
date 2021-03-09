@@ -1,3 +1,8 @@
+![version](https://img.shields.io/github/package-json/v/coderzhaoziwei/yande-re-chinese-patch?style=flat-square)
+![size](https://img.shields.io/github/languages/code-size/coderzhaoziwei/yande-re-chinese-patch)
+![MIT](https://shields.io/badge/license-MIT-blue?style=flat-square)
+![star](https://img.shields.io/github/stars/coderzhaoziwei/yande-re-chinese-patch?label=star&style=social)
+
 ![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png)
 
 <!-- omit in toc -->
