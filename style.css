@@ -103,3 +103,9 @@ body {
   font-weight: 100;
   padding: 8px 12px;
 }
+
+/* 隐藏浏览器默认显示的滚动条 */
+body::-webkit-scrollbar {
+  display: none;
+  width: 0px !important;
+}
