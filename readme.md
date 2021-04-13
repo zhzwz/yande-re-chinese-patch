@@ -88,116 +88,127 @@ MIT
 |23|breasts|乳|
 |24|bunny ears|兔耳|
 |25|bunny girl|兔女郎|
-|26|calendar|日历|
-|27|cameltoe|阴户凸显|
-|28|censored|有码|
-|29|cheerleader|啦啦队队员|
-|30|chibi|Q版|
-|31|chinadress|旗袍|
-|32|christmas|圣诞|
-|33|cleavage|乳沟|
-|34|cream|奶油|
-|35|cum|精液|
-|36|dakimakura|抱枕|
-|37|digital version|数字版|
-|38|dildo|假阳具|
-|39|disc cover|光盘封面|
-|40|dress|连衣裙|
-|41|dress shirt|衬衫|
-|42|erect nipples|乳尖|
-|43|extreme content|极端|
-|44|eyepatch|眼罩|
-|45|feet|足|
-|46|fellatio|口交|
-|47|fishnets|鱼网袜|
-|48|fixed|修改|
-|49|footjob|足交|
-|50|futanari|扶她|
-|51|game cg|游戏CG|
-|52|gangbang|乱交|
-|53|garter|袜带|
-|54|garter belt|吊袜腰带|
-|55|gun|枪炮|
-|56|guro|猎奇|
-|57|halloween|万圣节前夜|
-|58|handjob|打手枪|
-|59|headphones|耳机|
-|60|heels|高跟鞋|
-|61|heterochromia|虹膜异色|
-|62|horns|角|
-|63|japanese clothes|日式服装|
-|64|kimono|和服|
-|65|kitsune|狐狸|
-|66|landscape|风景画|
-|67|leotard|紧身连衣裤|
-|68|lingerie|贴身内衣|
-|69|loli|萝莉|
-|70|lolita fashion|洛丽塔|
-|71|maid|女仆|
-|72|male|男性|
-|73|masturbation|自摸/手淫|
-|74|mecha|机甲|
-|75|megane|眼镜|
-|76|miko|巫女|
-|77|monochrome|单色|
-|78|naked|裸体|
-|79|naked apron|裸体围裙|
-|80|neko|猫|
-|81|nekomimi|猫耳|
-|82|nipples|乳头|
-|83|no bra|无乳罩|
-|84|nopan|无胖次|
-|85|nurse|护士|
-|86|onsen|温泉|
-|87|open shirt|衬衫敞开|
-|88|pajama|睡衣|
-|89|pantsu|胖次|
-|90|panty pull|胖次脱下|
-|91|pantyhose|吊带袜|
-|92|partial scan|局部扫描|
-|93|penis|阴茎|
-|94|pointy ears|尖耳朵|
-|95|pubic hair|阴毛|
-|96|pussy|阴户|
-|97|pussy juice|妹汁|
-|98|school swimsuit|学校泳衣|
-|99|see through|透视|
-|100|seifuku|制服|
-|101|sex|性交|
-|102|shimapan|条纹胖次|
-|103|shirt lift|衬衫掀起|
-|104|shota|正太|
-|105|sketch|素描|
-|106|skirt lift|裙摆掀起|
-|107|stockings|长筒袜|
-|108|string panties|细绳胖次|
-|109|sweater|毛衣|
-|110|swimsuits|泳衣|
-|111|sword|刀剑|
-|112|symmetrical docking|乳乳相接|
-|113|tagme|标签|
-|114|tail|兽尾|
-|115|tan lines|日晒线|
-|116|tattoo|文身|
-|117|tentacles|触手|
-|118|text|文本|
-|119|thighhighs|过膝袜|
-|120|thong|丁字裤|
-|121|topless|上身露出|
-|122|torn clothes|破衣|
-|123|towel|浴巾|
-|124|transparent png|背景透明|
-|125|uncensored|无码|
-|126|underboob|南半球/下乳露出|
-|127|undressing|脱衣|
-|128|uniform|制服|
-|129|waitress|女侍|
-|130|wallpaper|壁纸|
-|131|weapon|武器|
-|132|wedding dress|婚纱|
-|133|wet|湿身|
-|134|wet clothes|湿衣|
-|135|wings|翅膀|
-|136|witch|女巫|
-|137|yukata|浴衣|
-|138|yuri|百合|
+|26|buruma|运动短裤|
+|27|calendar|日历|
+|28|cameltoe|阴户凸显|
+|29|censored|有码|
+|30|cheerleader|啦啦队队员|
+|31|chibi|Q版|
+|32|chinadress|旗袍|
+|33|christmas|圣诞|
+|34|cleavage|乳沟|
+|35|cream|奶油|
+|36|crossdress|变装|
+|37|cum|精液|
+|38|dakimakura|抱枕|
+|39|digital version|数字版|
+|40|dildo|假阳具|
+|41|disc cover|光盘封面|
+|42|dress|连衣裙|
+|43|dress shirt|衬衫|
+|44|elf|精灵|
+|45|erect nipples|乳尖|
+|46|extreme content|极端|
+|47|eyepatch|眼罩|
+|48|feet|足|
+|49|fellatio|口交|
+|50|fishnets|鱼网袜|
+|51|fixed|修改|
+|52|footjob|足交|
+|53|futanari|扶她|
+|54|game cg|游戏CG|
+|55|gangbang|乱交|
+|56|garter|袜带|
+|57|garter belt|吊袜腰带|
+|58|guitar|吉他|
+|59|gun|枪炮|
+|60|guro|猎奇|
+|61|halloween|万圣节前夜|
+|62|handjob|打手枪|
+|63|headphones|耳机|
+|64|heels|高跟鞋|
+|65|heterochromia|虹膜异色|
+|66|horns|角|
+|67|japanese clothes|日式服装|
+|68|kimono|和服|
+|69|kitsune|狐狸|
+|70|landscape|风景画|
+|71|leotard|紧身连衣裤|
+|72|lingerie|贴身内衣|
+|73|loli|萝莉|
+|74|lolita fashion|洛丽塔|
+|75|maid|女仆|
+|76|male|男性|
+|77|masturbation|自摸/手淫|
+|78|mecha|机甲|
+|79|megane|眼镜|
+|80|miko|巫女|
+|81|monochrome|单色|
+|82|naked|裸体|
+|83|naked apron|裸体围裙|
+|84|naked cape|裸体披风|
+|85|neko|猫|
+|86|nekomimi|猫耳|
+|87|nipples|乳头|
+|88|no bra|无乳罩|
+|89|nopan|无胖次|
+|90|nurse|护士|
+|91|onsen|温泉|
+|92|open shirt|衬衫敞开|
+|93|paizuri|乳交|
+|94|pajama|睡衣|
+|95|pantsu|胖次|
+|96|panty pull|胖次脱下|
+|97|pantyhose|吊带袜|
+|98|partial scan|局部扫描|
+|99|penis|阴茎|
+|100|pointy ears|尖耳朵|
+|101|pubic hair|阴毛|
+|102|pussy|阴户|
+|103|pussy juice|妹汁|
+|104|school swimsuit|学校泳衣|
+|105|see through|透视|
+|106|seifuku|制服|
+|107|sex|性交|
+|108|sheets|床单|
+|109|shimapan|条纹胖次|
+|110|shirt lift|衬衫掀起|
+|111|shota|正太|
+|112|sketch|素描|
+|113|skirt lift|裙摆掀起|
+|114|stockings|长筒袜|
+|115|string panties|细绳胖次|
+|116|sweater|毛衣|
+|117|swimsuits|泳衣|
+|118|sword|刀剑|
+|119|symmetrical docking|乳乳相接|
+|120|tagme|标签|
+|121|tail|兽尾|
+|122|tan lines|日晒线|
+|123|tattoo|文身|
+|124|tentacles|触手|
+|125|text|文本|
+|126|thighhighs|过膝袜|
+|127|thong|丁字裤|
+|128|topless|上身露出|
+|129|torn clothes|破衣|
+|130|towel|浴巾|
+|131|transparent png|背景透明|
+|132|trap|伪娘|
+|133|umbrella|伞|
+|134|uncensored|无码|
+|135|underboob|南半球/下乳露出|
+|136|undressing|脱衣|
+|137|uniform|制服|
+|138|vibrator|跳蛋|
+|139|waitress|女侍|
+|140|wallpaper|壁纸|
+|141|weapon|武器|
+|142|wedding dress|婚纱|
+|143|wet|湿身|
+|144|wet clothes|湿衣|
+|145|wings|翅膀|
+|146|witch|女巫|
+|147|yaoi|蔷薇/男同|
+|148|yukata|浴衣|
+|149|yuri|百合|
