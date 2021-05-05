@@ -108,8 +108,9 @@ body {
   margin-left: 1em;
 }
 #script-notice-hd {
-  margin-left: 1em;
+  margin-left: 0.5em;
   font-weight: bold;
+  color: #ee8887;
 }
 
 /* 隐藏浏览器默认显示的滚动条 */

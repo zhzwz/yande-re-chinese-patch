@@ -253,8 +253,7 @@ import style from './style.css'
       if (getHDValue() === true) {
         checkbox3.checked = true
         target.insertAdjacentHTML(`beforeend`, `<div id="script-notice-hd">高清模式加载缓慢，可能需要等待一段时间。</div>`)
-        setTimeout(() => document.getElementById(`script-notice-hd`).remove(), 10000)
-
+        // setTimeout(() => document.getElementById(`script-notice-hd`).remove(), 10000)
         const imageList = document.querySelectorAll(`img.preview`)
         imageList.forEach(x => x.src = x.parentNode.parentNode.nextElementSibling.href)
         document.head.insertAdjacentHTML(`beforeend`, `<style>#post-list-posts>li>.inner{zoom:2.5;}</style>`)
