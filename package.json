@@ -1,8 +1,8 @@
 {
   "name": "yande-re-chinese-patch",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "Coder Zhao",
-  "description": "Yande.re Chinese Patch | Yande.re站浏览器端汉化脚本",
+  "description": "Yande.re Chinese Patch | Y 站简体中文补丁",
   "repository": "https://github.com/coderzhaoziwei/yande.re-chinese-patch.git",
   "license": "MIT",
   "private": true,

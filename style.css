@@ -96,12 +96,20 @@ body {
   overflow: hidden;
 }
 
-/* checkbox 显示隐藏的作品 */
-#script-addition-checkbox {
+/* 脚本添加的内容 */
+#script-addition {
   user-select: none;
-  text-align: right;
-  font-weight: 100;
+  /* text-align: right; */
+  /* font-weight: 100; */
   padding: 8px 12px;
+  display: flex;
+}
+#script-addition > input {
+  margin-left: 1em;
+}
+#script-notice-hd {
+  margin-left: 1em;
+  font-weight: bold;
 }
 
 /* 隐藏浏览器默认显示的滚动条 */
