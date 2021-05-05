@@ -1,15 +1,16 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      1.0.7
+// @version      1.0.8
 // @author       Coder Zhao
 // @description  Y 站简体中文补丁 | 界面布局优化 | 显示隐藏作品 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/4/13 17:16:40
+// @modified     2021/5/5 18:16:50
 // @license      MIT
 // @homepage     https://greasyfork.org/zh-CN/scripts/421970
 // @match        https://yande.re/*
 // @exclude      https://yande.re/forum/*
 // @match        https://yande.in/*
+// @match        https://oreno.imouto.us/*
 // @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
 // @grant        none
 // ==/UserScript==

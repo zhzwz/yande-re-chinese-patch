@@ -14,6 +14,7 @@ const banner = `// ==UserScript==
 // @match        https://yande.re/*
 // @exclude      https://yande.re/forum/*
 // @match        https://yande.in/*
+// @match        https://oreno.imouto.us/*
 // @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
 // @grant        none
 // ==/UserScript==
