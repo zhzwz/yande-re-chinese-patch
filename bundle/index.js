@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.3
+// @version      2.0.6
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/15 17:49:24
+// @modified     2021/5/16 00:20:08
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -148,13 +148,14 @@
         imageSelectedIndex: 0,
         params: new URLSearchParams(location.search),
         requestState: false,
+        requestStop: false,
         innerWidth: window.innerWidth,
         innerHeight: window.innerHeight,
       }
     },
     computed: {
       title() {
-        return `共 ${this.imageList.length} 幅作品正在展示${this.requestState ? "（加载中...）" : ""}`
+        return `${this.imageList.length} Posts`
       },
       version() {
         return GM_info.script.version
@@ -191,12 +192,14 @@
           console.log(url);
           jQuery.get(url, data => resolve(data));
         });
-        if (response instanceof Array) {
+        if (response instanceof Array && response.length > 0) {
           response.forEach(item => this.imageList.push(new Post(item)));
           const page = Number(this.params.get("page")) || 1;
           this.params.set("page", page + 1);
+          setTimeout(() => (this.requestState = false), 1000);
+        } else {
+          this.requestStop = true;
         }
-        setTimeout(() => (this.requestState = false), 1000);
       },
       download(url, filename) {
         console.log(url);
@@ -214,7 +217,11 @@
       },
     },
     mounted() {
-      setInterval(() => {
+      const timeInterval = setInterval(() => {
+        if (this.requestStop === true) {
+          clearInterval(timeInterval);
+          return
+        }
         const scrollTop = document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight;
         const height = window.innerHeight;
