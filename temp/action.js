@@ -7,7 +7,6 @@ const version = process.env['npm_package_version'] || ''
 formatTagsFile()
 generateReadMeFile()
 
-
 function formatTagsFile() {
   info('正在格式化标签数据')
   const tagsPath = './tags.json'

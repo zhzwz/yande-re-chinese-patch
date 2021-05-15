@@ -1,9 +1,8 @@
-[![version](https://img.shields.io/github/package-json/v/coderzhaoziwei/yande-re-chinese-patch)](#)
-[![size](https://img.shields.io/github/languages/code-size/coderzhaoziwei/yande-re-chinese-patch)](#)
-[![MIT](https://shields.io/badge/license-MIT-blue)](#)
-[![star](https://img.shields.io/github/stars/coderzhaoziwei/yande-re-chinese-patch?label=star&style=social)](https://github.com/coderzhaoziwei/yande-re-chinese-patch/stargazers)
-
-[![](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png)](https://yande.re/post/show/388833)
+![Version][VersionImage]
+![Size][SizeImage]
+![MIT][MITImage]
+[![Stars][StarsImage]][StarsLink]
+[![Cover][CoverImage]][CoverLink]
 
 <!-- omit in toc -->
 # 目录
@@ -23,10 +22,14 @@
 
 此项目旨在为 ~~LSP~~ 同学们节约查询时间，祝各位有更多的精力好好学习。我只是一位业余选手，翻译主要依靠搜索引擎。如果你是一位~~老司机~~专业学者，知道某单词或词组有更好的翻译方式，请务必提供帮助。
 
-无法访问国际互联网的中国用户，可以使用 Y 站镜像站点浏览。已经兼容以下镜像站点：
+因为 [K 站](https://konachan.com)（`konachan.com`）使用了相同的架构，所以此脚本程序也适配了 K 站。
 
+无法访问国际互联网的中国用户，可以浏览 Y 站的[镜像站点](https://oreno.imouto.us)。
+
+目前兼容以下站点：
 - https://yande.in
 - https://oreno.imouto.us
+- https://konachan.com
 
 # 功能
 
@@ -66,3 +69,11 @@ MIT
 # 附：标签翻译表
 
 [[ TAGS ]]
+
+[VersionImage]: https://img.shields.io/github/package-json/v/coderzhaoziwei/yande-re-chinese-patch
+[SizeImage]: https://img.shields.io/github/languages/code-size/coderzhaoziwei/yande-re-chinese-patch
+[MITImage]: https://shields.io/badge/license-MIT-blue
+[StarsImage]: https://img.shields.io/github/stars/coderzhaoziwei/yande-re-chinese-patch?label=star&style=social
+[StarsLink]: https://github.com/coderzhaoziwei/yande-re-chinese-patch/stargazers
+[CoverImage]: https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/preview.png
+[CoverLink]: https://yande.re/post/show/388833

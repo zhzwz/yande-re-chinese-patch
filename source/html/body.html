@@ -1,0 +1,161 @@
+
+<div id="app"></div>
+
+<script type="text/template" id="app-template">
+<v-app>
+
+  <v-app-bar app dense>
+    <v-app-bar-nav-icon @click="showDrawer=!showDrawer"></v-app-bar-nav-icon>
+    <v-toolbar-title v-text="title"></v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-btn text v-text="'version ' + version" @click=""></v-btn>
+  </v-app-bar>
+
+  <v-navigation-drawer v-model="showDrawer" app>
+    <v-list-item>
+      <v-list-item-content>
+        <v-list-item-title class="title">Yande.re 简体中文</v-list-item-title>
+        <v-list-item-subtitle>浏览器脚本程序</v-list-item-subtitle>
+      </v-list-item-content>
+    </v-list-item>
+
+    <v-divider></v-divider>
+
+    <v-list dense nav>
+      <v-list-item-content>
+        <v-list-item-title class="title">设置分级内容显示</v-list-item-title>
+        <v-list-item-subtitle></v-list-item-subtitle>
+      </v-list-item-content>
+      <!-- s -->
+      <v-list-item link>
+        <v-list-item-icon class="mr-2">
+          <v-icon>mdi-check</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>显示 S 分级内容</v-list-item-title>
+          <v-list-item-subtitle>S(safe) 安全的全年龄内容</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <!-- q -->
+      <v-list-item link @click="showRatingQ=!showRatingQ;">
+        <v-list-item-icon class="mr-2">
+          <v-icon v-text="showRatingQ ? 'mdi-check' : 'mdi-close'"></v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title v-text="showRatingQ ? '显示 Q 分级内容' : '隐藏 Q 分级内容'"></v-list-item-title>
+          <v-list-item-subtitle>Q(questionable) 疑似的成人内容</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <!-- e -->
+      <v-list-item link @click="showRatingE=!showRatingE;">
+        <v-list-item-icon class="mr-2">
+          <v-icon v-text="showRatingE ? 'mdi-check' : 'mdi-close'"></v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title v-text="showRatingE ? '显示 E 分级内容' : '隐藏 E 分级内容'"></v-list-item-title>
+          <v-list-item-subtitle>E(explicit) 明确的成人内容</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
+
+    <v-divider></v-divider>
+    <!-- exit -->
+    <v-list-item link>
+      <v-list-item-icon class="mr-2"><v-icon>mdi-exit-to-app</v-icon></v-list-item-icon>
+      <v-list-item-content><v-list-item-title>退出</v-list-item-title></v-list-item-content>
+    </v-list-item>
+
+    <!-- <v-list-item>
+      <v-list-item-content>
+        <v-list-item-title>分级说明</v-list-item-title>
+      </v-list-item-content>
+    </v-list-item> -->
+  </v-navigation-drawer>
+
+  <v-main app>
+    <v-container class="pa-2">
+      <masonry :cols="{ default: 8, 2000: 7, 1750: 6, 1500: 5, 1250: 4, 1000: 3, 750: 2 }" gutter="8px">
+        <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
+          <v-img
+            :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.sampleUrl : ''"
+            :aspect-ratio="image.aspectRatio"
+            @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
+          >
+            <template v-slot:placeholder>
+              <v-row v-if="image.isRatingS || (image.isRatingQ && showRatingQ) || (image.isRatingE && showRatingE)"
+                class="fill-height ma-0" align="center" justify="center"
+              >
+                <v-progress-circular indeterminate color="#ee8888"></v-progress-circular>
+              </v-row>
+            </template>
+            <!-- <div class="d-flex pa-1">
+              <v-chip v-show="image.isRatingS" color="#ee8888" text-color="#ffffff" x-small>S</v-chip>
+              <v-chip v-show="image.isRatingQ" color="#ee8888" text-color="#ffffff" x-small>Q</v-chip>
+              <v-chip v-show="image.isRatingE" color="#ee8888" text-color="#ffffff" x-small>E</v-chip>
+            </div> -->
+          </v-img>
+        </v-card>
+      </masonry>
+
+      <div class="d-flex justify-center">
+        <v-btn :disabled="requestState===false" color="#ee8888" text v-text="requestState ? '正在加载...' : ''"></v-btn>
+      </div>
+
+      <v-dialog v-model="showImageSelected" :width="imageSelectedWidth" :height="imageSelectedHeight">
+        <v-img :src="imageSelected.sampleUrl" @click="showImageInfo=!showImageInfo;">
+          <div :style="showImageInfo ? '' : 'display: none !important;'" class="d-flex flex-column px-1">
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-text="'编号 ' + imageSelected.id" @click.stop
+            ></v-chip>
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-text="'分级 ' + imageSelected.rating.toUpperCase()" @click.stop
+            ></v-chip>
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-text="'评分 ' + imageSelected.score" @click.stop
+            ></v-chip>
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-text="'创建者 ' + imageSelected.author"
+              @click.stop="window.open('/user/show/' + imageSelected.creatorId)"
+            ></v-chip>
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-text="'创建时间 ' + imageSelected.createdTime"
+              @click.stop
+            ></v-chip>
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-text="'更新时间 ' + imageSelected.updatedTime"
+              @click.stop
+            ></v-chip>
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-if="imageSelected.sourceUrl !== ''"
+              v-text="'来源链接 ' + imageSelected.sourceUrl"
+              @click.stop="window.open(imageSelected.sourceUrl)"
+            ></v-chip>
+            <!-- https://oreno.imouto.us/post/show/785667 -->
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-text="'本站链接 ' + location.origin + '/post/show/' + imageSelected.id"
+              @click.stop="window.open('/post/show/' + imageSelected.id)"
+            ></v-chip>
+            <div style="height:1.25rem;"></div>
+            <!-- 下载三种格式的文件 -->
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-text="imageSelected.sampleDownloadText"
+              @click.stop="download(imageSelected.sampleUrl, imageSelected.sampleDownloadName)"
+            ></v-chip>
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-if="imageSelected.jpegSize !== 0"
+              v-text="imageSelected.jpegDownloadText"
+              @click.stop="download(imageSelected.jpegUrl, imageSelected.jpegDownloadName)"
+            ></v-chip>
+            <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
+              v-text="imageSelected.fileDownloadText"
+              @click.stop="download(imageSelected.fileUrl, imageSelected.fileDownloadName)"
+            ></v-chip>
+          </div>
+        </v-img>
+
+      </v-dialog>
+    </v-container>
+  </v-main>
+
+</v-app>
+</script>

@@ -1,15 +1,16 @@
+
 /* 标签前缀 */
 li.tag-type-artist a:nth-child(4)::before {
-  content: '[画师]';
+  content: "[画师]";
 }
 li.tag-type-copyright a:nth-child(4)::before {
-  content: '[原作]';
+  content: "[原作]";
 }
 li.tag-type-character a:nth-child(4)::before {
-  content: '[角色]';
+  content: "[角色]";
 }
 li.tag-type-circle a:nth-child(4)::before {
-  content: '[公司]';
+  content: "[公司]";
 }
 
 /* 字体大小 */
@@ -65,11 +66,11 @@ body {
   margin: 0 8px 8px 0 !important; /* 图片区域间距 */
   border: 1px solid rgba(0, 0, 0, 0);
 }
-#post-list-posts > li.javascript-hide:not(.set-javascript-hide) {
-  display: block !important;
+/* #post-list-posts > li.javascript-hide:not(.set-javascript-hide) {
+  display: block ;
   position: relative;
-}
-#post-list-posts > li.javascript-hide::after {
+} */
+/* #post-list-posts > li.javascript-hide::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -77,7 +78,7 @@ body {
   top: 0;
   box-shadow: 0px 0px 12px rgb(255, 0, 0) inset;
   pointer-events: none;
-}
+} */
 #post-list-posts > li > .inner {
   width: auto !important;
   height: 150px !important;
@@ -117,4 +118,33 @@ body {
 body::-webkit-scrollbar {
   display: none;
   width: 0px !important;
+}
+
+.sidebar[show-left-bar=true] {
+  display: none !important;
+}
+.javascript-hide[show-rating-e=true] {
+  display: block !important;
+  position: relative;
+}
+.javascript-hide[show-rating-e=true]::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  box-shadow: 0px 0px 12px rgb(255, 0, 0) inset;
+  pointer-events: none;
+}
+#post-list-posts > li > .inner {
+  height: auto !important;
+}
+#post-list-posts > li > .inner[show-image-hd="1"] {
+  zoom: 2;
+}
+#post-list-posts > li > .inner[show-image-hd="2"] {
+  zoom: 3;
+}
+#post-list-posts > li > .inner[show-image-hd="3"] {
+  zoom: 4;
 }
