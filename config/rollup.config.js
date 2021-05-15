@@ -12,12 +12,13 @@ const banner = `// ==UserScript==
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
-// @match        https://yande.in/*
 // @exclude      https://yande.re/forum/*
+// @match        https://oreno.imouto.us/*
+// @exclude      https://oreno.imouto.us/forum/*
 // @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
 // @grant        none
 // ==/UserScript==
-// @match        https://oreno.imouto.us/*
+
 /* eslint-env es6 */
 /* global jQuery:readonly */
 /* global Vue:readonly */

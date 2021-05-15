@@ -1,6 +1,6 @@
 import { enterBrowseMode } from "./browse"
 
-const onChangeLeftBar = function() {
+export const onChangeLeftBar = function() {
   const value = Boolean(document.getElementById("showLeftBar").selectedIndex)
   localStorage.setItem("showLeftBar", JSON.stringify(value))
   const element = document.querySelector("#post-list > .sidebar")
@@ -8,7 +8,7 @@ const onChangeLeftBar = function() {
 
   console.log("showLeftBar", value)
 }
-const onChangeRatingE = function() {
+export const onChangeRatingE = function() {
   const value = Boolean(document.getElementById("showRatingE").selectedIndex)
   localStorage.setItem("showRatingE", JSON.stringify(value))
   const elementList = document.querySelectorAll(".javascript-hide")
@@ -16,7 +16,7 @@ const onChangeRatingE = function() {
 
   console.log("showRatingE", value)
 }
-const onChangeImageHD = function() {
+export const onChangeImageHD = function() {
   const index = document.getElementById("showImageHD").selectedIndex
   const samples = JSON.parse(localStorage.getItem("sample_urls"))
   localStorage.setItem("showImageHD", JSON.stringify(index))
@@ -47,7 +47,7 @@ export const initOptions = function() {
   document.getElementById("showImageHD").addEventListener("change", onChangeImageHD)
 
   // 获取本地记录
-  const showLeftBar = JSON.parse(localStorage.getItem("showLeftBar") || "true")
+  const showLeftBar = JSON.parse(localStorage.getItem("showLeftBar") || "false")
   const showRatingE = JSON.parse(localStorage.getItem("showRatingE") || "true")
   const showImageHD = JSON.parse(localStorage.getItem("showImageHD") || "0")
   document.getElementById("showLeftBar").selectedIndex = showLeftBar

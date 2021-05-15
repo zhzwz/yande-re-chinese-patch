@@ -1,19 +1,20 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.1
+// @version      2.0.2
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/15 17:15:12
+// @modified     2021/5/15 17:35:08
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
-// @match        https://yande.in/*
 // @exclude      https://yande.re/forum/*
+// @match        https://oreno.imouto.us/*
+// @exclude      https://oreno.imouto.us/forum/*
 // @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
 // @grant        none
 // ==/UserScript==
-// @match        https://oreno.imouto.us/*
+
 /* eslint-env es6 */
 /* global jQuery:readonly */
 /* global Vue:readonly */
@@ -627,7 +628,7 @@ body::-webkit-scrollbar {
     document.getElementById("showLeftBar").addEventListener("change", onChangeLeftBar);
     document.getElementById("showRatingE").addEventListener("change", onChangeRatingE);
     document.getElementById("showImageHD").addEventListener("change", onChangeImageHD);
-    const showLeftBar = JSON.parse(localStorage.getItem("showLeftBar") || "true");
+    const showLeftBar = JSON.parse(localStorage.getItem("showLeftBar") || "false");
     const showRatingE = JSON.parse(localStorage.getItem("showRatingE") || "true");
     const showImageHD = JSON.parse(localStorage.getItem("showImageHD") || "0");
     document.getElementById("showLeftBar").selectedIndex = showLeftBar;
