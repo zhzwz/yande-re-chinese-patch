@@ -2,19 +2,19 @@
 
 - 样式优化，高清图源，尺寸自选。
 
-![1](https://https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/1.png)
+![1](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/1.png)
 
 - 流体布局，自动加载，一屏到底。
 
-![2](https://https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/2.png)
+![2](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/2.png)
 
 - 单图预览，聚合详情，一键下载。
 
-![3](https://https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/3.png)
+![3](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/3.png)
 
 - 显隐自如，更多功能，等你体验。
 
-![4](https://https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/4.png)
+![4](https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/4.png)
 
 
 ![Version][VersionImage]
