@@ -97,7 +97,7 @@ const App = {
       const scrollTop = document.documentElement.scrollTop
       const scrollHeight = document.documentElement.scrollHeight
       const height = window.innerHeight
-      if (scrollTop + height >= scrollHeight * 0.5) {
+      if (scrollTop + height >= scrollHeight * 0.75) {
         if (this.requestState === false) {
           this.request()
         }

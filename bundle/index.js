@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.6
+// @version      2.0.9
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/16 00:20:08
+// @modified     2021/5/16 12:18:15
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -69,6 +69,7 @@
       this.sampleSize = data.sample_file_size || 0;
       this.sampleWidth = data.sample_width || 0;
       this.sampleHeight = data.sample_height || 0;
+      this.previewUrl = data.preview_url;
     }
     get isRatingS() {
       return this.rating === "s"
@@ -225,7 +226,7 @@
         const scrollTop = document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight;
         const height = window.innerHeight;
-        if (scrollTop + height >= scrollHeight * 0.5) {
+        if (scrollTop + height >= scrollHeight * 0.9) {
           if (this.requestState === false) {
             this.request();
           }

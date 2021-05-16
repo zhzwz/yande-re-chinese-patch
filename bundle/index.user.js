@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.6
+// @version      2.0.9
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/16 00:20:08
+// @modified     2021/5/16 12:18:15
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -147,14 +147,16 @@ body::-webkit-scrollbar {
   width: 0px !important;
 }
 
+/* show-left-bar */
 .sidebar[show-left-bar=true] {
   display: none !important;
 }
+/* show-rating-e */
 .javascript-hide[show-rating-e=true] {
   display: block !important;
   position: relative;
 }
-.javascript-hide[show-rating-e=true]::after {
+.javascript-hide[show-rating-e=true] > .inner::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -163,6 +165,7 @@ body::-webkit-scrollbar {
   box-shadow: 0px 0px 12px rgb(255, 0, 0) inset;
   pointer-events: none;
 }
+/* show-image-hd */
 #post-list-posts > li > .inner {
   height: auto !important;
 }
@@ -219,6 +222,7 @@ body::-webkit-scrollbar {
       this.sampleSize = data.sample_file_size || 0;
       this.sampleWidth = data.sample_width || 0;
       this.sampleHeight = data.sample_height || 0;
+      this.previewUrl = data.preview_url;
     }
     get isRatingS() {
       return this.rating === "s"
@@ -375,7 +379,7 @@ body::-webkit-scrollbar {
         const scrollTop = document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight;
         const height = window.innerHeight;
-        if (scrollTop + height >= scrollHeight * 0.5) {
+        if (scrollTop + height >= scrollHeight * 0.9) {
           if (this.requestState === false) {
             this.request();
           }
@@ -489,7 +493,8 @@ body::-webkit-scrollbar {
       <masonry :cols="{ default: 8, 2000: 7, 1750: 6, 1500: 5, 1250: 4, 1000: 3, 750: 2 }" gutter="8px">
         <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
           <v-img
-            :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.sampleUrl : ''"
+            :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.sampleUrl:''"
+            :lazy-src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
             :aspect-ratio="image.aspectRatio"
             @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
           >

@@ -50,6 +50,8 @@ export default class Post {
     this.sampleSize = data.sample_file_size || 0
     this.sampleWidth = data.sample_width || 0
     this.sampleHeight = data.sample_height || 0
+    // 小图
+    this.previewUrl = data.preview_url
   }
   // 全年龄 safe
   get isRatingS() {

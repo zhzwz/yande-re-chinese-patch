@@ -120,9 +120,11 @@ body::-webkit-scrollbar {
   width: 0px !important;
 }
 
+/* show-left-bar */
 .sidebar[show-left-bar=true] {
   display: none !important;
 }
+/* show-rating-e */
 .javascript-hide[show-rating-e=true] {
   display: block !important;
   position: relative;
@@ -136,6 +138,7 @@ body::-webkit-scrollbar {
   box-shadow: 0px 0px 12px rgb(255, 0, 0) inset;
   pointer-events: none;
 }
+/* show-image-hd */
 #post-list-posts > li > .inner {
   height: auto !important;
 }
