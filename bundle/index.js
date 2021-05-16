@@ -1,16 +1,17 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.10
+// @version      2.0.41
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/16 12:30:54
+// @modified     2021/5/16 20:26:19
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
 // @exclude      https://yande.re/forum/*
 // @match        https://oreno.imouto.us/*
 // @exclude      https://oreno.imouto.us/forum/*
+// @match        https://konachan.com/*
 // @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
 // @grant        none
 // ==/UserScript==
@@ -273,27 +274,31 @@
   };
   const onChangeImageHD = function() {
     const index = document.getElementById("showImageHD").selectedIndex;
-    const samples = JSON.parse(localStorage.getItem("sample_urls"));
+    const elementList = document.querySelectorAll("#post-list-posts > li > .inner");
+    elementList.forEach(element => element.setAttribute("show-image-hd", index));
     localStorage.setItem("showImageHD", JSON.stringify(index));
-    const imageList = document.querySelectorAll("img.preview");
-    imageList.forEach(element => {
-      if (element.getAttribute("preview-url") === null) {
-        element.setAttribute("preview-url", element.src);
-      }
-      const id = element.parentNode.href.split("/").pop();
-      element.src = (index > 0) ? samples[id] : element.getAttribute("preview-url");
-      element.parentNode.parentNode.setAttribute("show-image-hd", index);
-    });
     console.log("showImageHD", index);
+    document.querySelector("#post-list-posts").style.gridTemplateColumns = `repeat(auto-fill, ${(index + 1) * 150}px)`;
   };
   const initOptions = function() {
     if (/^\/user\/show\/[\d]{1,}/.test(location.pathname)) return
     if (document.getElementById("post-list-posts") === null) return
     document.getElementById("post-list-posts").insertAdjacentHTML("beforebegin", `[{ path: "source/html/options.html" }]`);
+    const imageList = document.querySelectorAll("img.preview");
+    const samples = JSON.parse(localStorage.getItem("sample_urls"));
+    imageList.forEach(element => {
+      if (/\/post\/show\/([\d]{1,})/.test(element.nextElementSibling.innerText)) {
+        const id = RegExp.$1;
+        const sampleUrl = samples[id];
+        if (sampleUrl !== undefined) {
+          element.src = sampleUrl;
+        }
+      }
+    });
     document.getElementById("showLeftBar").addEventListener("change", onChangeLeftBar);
     document.getElementById("showRatingE").addEventListener("change", onChangeRatingE);
     document.getElementById("showImageHD").addEventListener("change", onChangeImageHD);
-    const showLeftBar = JSON.parse(localStorage.getItem("showLeftBar") || "false");
+    const showLeftBar = JSON.parse(localStorage.getItem("showLeftBar") || "true");
     const showRatingE = JSON.parse(localStorage.getItem("showRatingE") || "true");
     const showImageHD = JSON.parse(localStorage.getItem("showImageHD") || "0");
     document.getElementById("showLeftBar").selectedIndex = showLeftBar;

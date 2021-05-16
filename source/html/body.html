@@ -8,10 +8,10 @@
     <v-app-bar-nav-icon @click="showDrawer=!showDrawer"></v-app-bar-nav-icon>
     <v-toolbar-title v-text="title"></v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-btn text v-text="'version ' + version" @click=""></v-btn>
+    <v-btn text v-text="'version ' + version" color="#ffffff" disabled></v-btn>
   </v-app-bar>
 
-  <v-navigation-drawer v-model="showDrawer" app>
+  <v-navigation-drawer v-model="showDrawer" app temporary>
     <v-list-item>
       <v-list-item-content>
         <v-list-item-title class="title">Yande.re 简体中文</v-list-item-title>
@@ -73,7 +73,7 @@
   </v-navigation-drawer>
 
   <v-main app>
-    <v-container class="pa-2">
+    <v-container class="pa-2" fluid>
       <masonry :cols="{ default: 8, 2000: 7, 1750: 6, 1500: 5, 1250: 4, 1000: 3, 750: 2 }" gutter="8px">
         <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
           <v-img
@@ -83,17 +83,18 @@
             @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
           >
             <template v-slot:placeholder>
-              <v-row v-if="image.isRatingS || (image.isRatingQ && showRatingQ) || (image.isRatingE && showRatingE)"
+              <v-row v-if="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)"
                 class="fill-height ma-0" align="center" justify="center"
               >
                 <v-progress-circular indeterminate color="#ee8888"></v-progress-circular>
               </v-row>
             </template>
-            <!-- <div class="d-flex pa-1">
-              <v-chip v-show="image.isRatingS" color="#ee8888" text-color="#ffffff" x-small>S</v-chip>
-              <v-chip v-show="image.isRatingQ" color="#ee8888" text-color="#ffffff" x-small>Q</v-chip>
-              <v-chip v-show="image.isRatingE" color="#ee8888" text-color="#ffffff" x-small>E</v-chip>
-            </div> -->
+            <v-row
+              v-if="(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE))===false"
+              class="fill-height ma-0 text-h5" align="center" justify="center"
+              style="color:#ee8888;"
+              v-text="image.rating.toUpperCase()"
+            ></v-row>
           </v-img>
         </v-card>
       </masonry>

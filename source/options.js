@@ -17,21 +17,16 @@ export const onChangeRatingE = function() {
   console.log("showRatingE", value)
 }
 export const onChangeImageHD = function() {
+  // 获取 index 值
   const index = document.getElementById("showImageHD").selectedIndex
-  const samples = JSON.parse(localStorage.getItem("sample_urls"))
+  // 修改属性 show-image-hd
+  const elementList = document.querySelectorAll("#post-list-posts > li > .inner")
+  elementList.forEach(element => element.setAttribute("show-image-hd", index))
+  // 缓存 index 值
   localStorage.setItem("showImageHD", JSON.stringify(index))
-
-  const imageList = document.querySelectorAll("img.preview")
-  imageList.forEach(element => {
-    if (element.getAttribute("preview-url") === null) {
-      // 保存小图链接
-      element.setAttribute("preview-url", element.src)
-    }
-    const id = element.parentNode.href.split("/").pop()
-    element.src = (index > 0) ? samples[id] : element.getAttribute("preview-url")
-    element.parentNode.parentNode.setAttribute("show-image-hd", index)
-  })
   console.log("showImageHD", index)
+  // 设置网格布局宽
+  document.querySelector("#post-list-posts").style.gridTemplateColumns = `repeat(auto-fill, ${(index + 1) * 150}px)`
 }
 
 export const initOptions = function() {
@@ -40,6 +35,18 @@ export const initOptions = function() {
   if (document.getElementById("post-list-posts") === null) return
   // 插入文档元素
   document.getElementById("post-list-posts").insertAdjacentHTML("beforebegin", `[{ path: "source/html/options.html" }]`)
+  // 替换图片元素
+  const imageList = document.querySelectorAll("img.preview")
+  const samples = JSON.parse(localStorage.getItem("sample_urls"))
+  imageList.forEach(element => {
+    if (/\/post\/show\/([\d]{1,})/.test(element.nextElementSibling.innerText)) {
+      const id = RegExp.$1
+      const sampleUrl = samples[id]
+      if (sampleUrl !== undefined) {
+        element.src = sampleUrl
+      }
+    }
+  })
 
   // 监听
   document.getElementById("showLeftBar").addEventListener("change", onChangeLeftBar)
@@ -47,7 +54,7 @@ export const initOptions = function() {
   document.getElementById("showImageHD").addEventListener("change", onChangeImageHD)
 
   // 获取本地记录
-  const showLeftBar = JSON.parse(localStorage.getItem("showLeftBar") || "false")
+  const showLeftBar = JSON.parse(localStorage.getItem("showLeftBar") || "true")
   const showRatingE = JSON.parse(localStorage.getItem("showRatingE") || "true")
   const showImageHD = JSON.parse(localStorage.getItem("showImageHD") || "0")
   document.getElementById("showLeftBar").selectedIndex = showLeftBar

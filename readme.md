@@ -1,12 +1,34 @@
+# 效果预览
+
+- 样式优化，高清图源，尺寸自选。
+
+![1](https://https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/1.png)
+
+- 流体布局，自动加载，一屏到底。
+
+![2](https://https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/2.png)
+
+- 单图预览，聚合详情，一键下载。
+
+![3](https://https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/3.png)
+
+- 显隐自如，更多功能，等你体验。
+
+![4](https://https://cdn.jsdelivr.net/gh/coderzhaoziwei/yande-re-chinese-patch/source/img/4.png)
+
+
 ![Version][VersionImage]
 ![Size][SizeImage]
 ![MIT][MITImage]
 [![Stars][StarsImage]][StarsLink]
 [![Cover][CoverImage]][CoverLink]
 
+
+
 <!-- omit in toc -->
 # 目录
 
+- [效果预览](#效果预览)
 - [前言](#前言)
 - [功能](#功能)
 - [安装](#安装)

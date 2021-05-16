@@ -1,16 +1,17 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.10
+// @version      2.0.41
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/16 12:30:54
+// @modified     2021/5/16 20:26:19
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
 // @exclude      https://yande.re/forum/*
 // @match        https://oreno.imouto.us/*
 // @exclude      https://oreno.imouto.us/forum/*
+// @match        https://konachan.com/*
 // @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
 // @grant        none
 // ==/UserScript==
@@ -26,6 +27,49 @@
 
   const initStyle = function() {
     document.head.insertAdjacentHTML("beforeend", `<style>
+body {
+  font-size: 12px;
+  padding: 0 0.5rem;
+}
+body::-webkit-scrollbar {
+  display: none;
+  width: 0px !important;
+}
+/* 标题居中 */
+div#header {
+  margin: 0;
+}
+div#header > div#title {
+  display: flex;
+  place-content: center;
+  margin: 0 !important;
+  height: fit-content;
+}
+div#header > div#title > h2#site-title {
+  display: flex !important;
+  flex-direction: column;
+}
+div#header > div#title > h2#site-title > span {
+  font-size: 12px;
+  font-weight: normal;
+  text-align: right;
+}
+div#header > div#main-menu {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 2rem;
+  height: 2rem;
+}
+div#header > div#main-menu > ul {
+  margin: 0;
+}
+/* 通知 */
+.status-notice {
+  text-align: center;
+}
 /* 标签前缀 */
 li.tag-type-artist a:nth-child(4)::before {
   content: "[画师]";
@@ -39,35 +83,7 @@ li.tag-type-character a:nth-child(4)::before {
 li.tag-type-circle a:nth-child(4)::before {
   content: "[公司]";
 }
-
-/* 字体大小 */
-body {
-  font-size: 12px;
-  padding: 12px 4px;
-}
-
-/* 标题居中 */
-#title {
-  display: flex;
-  justify-content: center;
-  margin: 0 0 0 0 !important;
-}
-#site-title {
-  display: flex !important;
-}
-#main-menu {
-  padding: 0 !important;
-  margin: 0 !important;
-  display: flex !important;
-  justify-content: center;
-}
-
-/* 通知居中 */
-.status-notice {
-  text-align: center;
-}
-
-/* 图片区域 */
+/* 图区 */
 #post-list {
   display: flex;
   flex-direction: row;
@@ -79,76 +95,68 @@ body {
 }
 #post-list > .content {
   width: auto;
-  flex: 0 1 auto;
+  flex: 1 1 auto;
 }
-
-#post-list-posts {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
+#post-list > div.lsidebar {
+  display: none;
 }
-#post-list-posts > li {
-  width: auto !important;
-  height: auto !important;
-  margin: 0 8px 8px 0 !important; /* 图片区域间距 */
-  border: 1px solid rgba(0, 0, 0, 0);
-}
-/* #post-list-posts > li.javascript-hide:not(.set-javascript-hide) {
-  display: block ;
-  position: relative;
-} */
-/* #post-list-posts > li.javascript-hide::after {
-  content: "";
-  position: absolute;
+ul#post-list-posts {
   width: 100%;
-  height: 100%;
-  top: 0;
-  box-shadow: 0px 0px 12px rgb(255, 0, 0) inset;
-  pointer-events: none;
-} */
-#post-list-posts > li > .inner {
-  width: auto !important;
-  height: 150px !important;
-  display: flex;
-  align-items: center;
+  display: grid;
+  gap: 0.5rem;
+  place-content: center;
+  grid-template-columns: repeat(auto-fill, 150px);
 }
-#post-list-posts > li > .inner > .thumb {
+ul#post-list-posts > li {
+  width: fit-content !important;
+  height: 100%;
+  margin: 0 !important;
+  border: none;
+}
+ul#post-list-posts > li > div.inner {
+  width: auto !important;
+  height: fit-content !important;
+}
+ul#post-list-posts > li > a.directlink {
+  font-size: 12px;
+  height: 12px;
+  line-height: 12px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: rgb(16, 16, 16);
+}
+ul#post-list-posts > li > a.directlink > span.directlink-res {
+  display: inline;
+}
+ul#post-list-posts > li > a.directlink > span.directlink-info {
+  display: none;
+}
+ul#post-list-posts > li > div.inner > a.thumb {
   height: auto;
 }
-#post-list-posts > li > .largeimg.directlink {
-  height: 12px;
-  font-size: 12px;
-  line-height: 12px;
+ul#post-list-posts > li > div.inner > a.thumb > img.preview {
+  margin: 0 !important; /* @konachan */
+  border: none;
+}
+/* 分页器 */
+div#paginator {
   padding: 0;
-  margin: 2px 0 0 0;
-  overflow: hidden;
 }
-
-/* 脚本添加的内容 */
-#script-addition {
-  user-select: none;
-  /* text-align: right; */
-  /* font-weight: 100; */
-  padding: 8px 12px;
-  display: flex;
+div#paginator > div.pagination {
+  line-height: 2rem;
 }
-#script-addition > input {
-  margin-left: 1em;
-}
-#script-notice-hd {
-  margin-left: 0.5em;
-  font-weight: bold;
-  color: #ee8887;
-}
-
-/* 隐藏浏览器默认显示的滚动条 */
-body::-webkit-scrollbar {
+/* 页脚 */
+#content > div:nth-child(2) > div.sidebar {
   display: none;
-  width: 0px !important;
+}
+#content > div:nth-child(2) > div.footer {
+  font-size: 14px;
+  margin: 1rem;
 }
 
 /* show-left-bar */
-.sidebar[show-left-bar=true] {
+.sidebar[show-left-bar=false] {
   display: none !important;
 }
 /* show-rating-e */
@@ -166,9 +174,6 @@ body::-webkit-scrollbar {
   pointer-events: none;
 }
 /* show-image-hd */
-#post-list-posts > li > .inner {
-  height: auto !important;
-}
 #post-list-posts > li > .inner[show-image-hd="1"] {
   zoom: 2;
 }
@@ -424,10 +429,10 @@ body::-webkit-scrollbar {
     <v-app-bar-nav-icon @click="showDrawer=!showDrawer"></v-app-bar-nav-icon>
     <v-toolbar-title v-text="title"></v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-btn text v-text="'version ' + version" @click=""></v-btn>
+    <v-btn text v-text="'version ' + version" color="#ffffff" disabled></v-btn>
   </v-app-bar>
 
-  <v-navigation-drawer v-model="showDrawer" app>
+  <v-navigation-drawer v-model="showDrawer" app temporary>
     <v-list-item>
       <v-list-item-content>
         <v-list-item-title class="title">Yande.re 简体中文</v-list-item-title>
@@ -489,7 +494,7 @@ body::-webkit-scrollbar {
   </v-navigation-drawer>
 
   <v-main app>
-    <v-container class="pa-2">
+    <v-container class="pa-2" fluid>
       <masonry :cols="{ default: 8, 2000: 7, 1750: 6, 1500: 5, 1250: 4, 1000: 3, 750: 2 }" gutter="8px">
         <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
           <v-img
@@ -499,17 +504,18 @@ body::-webkit-scrollbar {
             @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
           >
             <template v-slot:placeholder>
-              <v-row v-if="image.isRatingS || (image.isRatingQ && showRatingQ) || (image.isRatingE && showRatingE)"
+              <v-row v-if="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)"
                 class="fill-height ma-0" align="center" justify="center"
               >
                 <v-progress-circular indeterminate color="#ee8888"></v-progress-circular>
               </v-row>
             </template>
-            <!-- <div class="d-flex pa-1">
-              <v-chip v-show="image.isRatingS" color="#ee8888" text-color="#ffffff" x-small>S</v-chip>
-              <v-chip v-show="image.isRatingQ" color="#ee8888" text-color="#ffffff" x-small>Q</v-chip>
-              <v-chip v-show="image.isRatingE" color="#ee8888" text-color="#ffffff" x-small>E</v-chip>
-            </div> -->
+            <v-row
+              v-if="(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE))===false"
+              class="fill-height ma-0 text-h5" align="center" justify="center"
+              style="color:#ee8888;"
+              v-text="image.rating.toUpperCase()"
+            ></v-row>
           </v-img>
         </v-card>
       </masonry>
@@ -606,45 +612,49 @@ body::-webkit-scrollbar {
   };
   const onChangeImageHD = function() {
     const index = document.getElementById("showImageHD").selectedIndex;
-    const samples = JSON.parse(localStorage.getItem("sample_urls"));
+    const elementList = document.querySelectorAll("#post-list-posts > li > .inner");
+    elementList.forEach(element => element.setAttribute("show-image-hd", index));
     localStorage.setItem("showImageHD", JSON.stringify(index));
-    const imageList = document.querySelectorAll("img.preview");
-    imageList.forEach(element => {
-      if (element.getAttribute("preview-url") === null) {
-        element.setAttribute("preview-url", element.src);
-      }
-      const id = element.parentNode.href.split("/").pop();
-      element.src = (index > 0) ? samples[id] : element.getAttribute("preview-url");
-      element.parentNode.parentNode.setAttribute("show-image-hd", index);
-    });
     console.log("showImageHD", index);
+    document.querySelector("#post-list-posts").style.gridTemplateColumns = `repeat(auto-fill, ${(index + 1) * 150}px)`;
   };
   const initOptions = function() {
     if (/^\/user\/show\/[\d]{1,}/.test(location.pathname)) return
     if (document.getElementById("post-list-posts") === null) return
     document.getElementById("post-list-posts").insertAdjacentHTML("beforebegin", `
-<div style="padding: 0.5rem; user-select: none;">
+<div style="padding: 1rem; user-select: none; text-align: center;">
   <select id="showLeftBar" style="height: 1.5rem; line-height: 1.5rem;">
-    <option>默认左栏</option>
     <option>隐藏左栏</option>
+    <option>显示左栏</option>
   </select>
-  <select id="showRatingE" style="height: 1.5rem; line-height: 1.5rem;">
-    <option>默认隐藏</option>
-    <option>全部显示</option>
+  <select id="showRatingE" style="height: 1.5rem; line-height: 1.5rem; margin-left: 0.25rem;">
+    <option>隐藏默认</option>
+    <option>显示全部</option>
   </select>
   <select id="showImageHD" style="height: 1.5rem; line-height: 1.5rem; margin-left: 0.25rem;">
     <option>默认尺寸</option>
-    <option>两倍大图</option>
-    <option>三倍大图</option>
-    <option>四倍大图</option>
+    <option>二倍尺寸</option>
+    <option>三倍尺寸</option>
+    <option>四倍尺寸</option>
   </select>
   <button id="enterBrowseMode" style="margin-left: 0.25rem;">进入浏览模式</button>
 </div>
 `);
+    const imageList = document.querySelectorAll("img.preview");
+    const samples = JSON.parse(localStorage.getItem("sample_urls"));
+    imageList.forEach(element => {
+      if (/\/post\/show\/([\d]{1,})/.test(element.nextElementSibling.innerText)) {
+        const id = RegExp.$1;
+        const sampleUrl = samples[id];
+        if (sampleUrl !== undefined) {
+          element.src = sampleUrl;
+        }
+      }
+    });
     document.getElementById("showLeftBar").addEventListener("change", onChangeLeftBar);
     document.getElementById("showRatingE").addEventListener("change", onChangeRatingE);
     document.getElementById("showImageHD").addEventListener("change", onChangeImageHD);
-    const showLeftBar = JSON.parse(localStorage.getItem("showLeftBar") || "false");
+    const showLeftBar = JSON.parse(localStorage.getItem("showLeftBar") || "true");
     const showRatingE = JSON.parse(localStorage.getItem("showRatingE") || "true");
     const showImageHD = JSON.parse(localStorage.getItem("showImageHD") || "0");
     document.getElementById("showLeftBar").selectedIndex = showLeftBar;
