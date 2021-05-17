@@ -3,7 +3,6 @@ actual_preview_height: 300
 actual_preview_width: 300
 approver_id: null
 change: 4106973
-creator_id: 335993
 frames: []
 frames_pending: []
 frames_pending_string: ""
@@ -50,7 +49,7 @@ export default class Post {
     this.sampleSize = data.sample_file_size || 0
     this.sampleWidth = data.sample_width || 0
     this.sampleHeight = data.sample_height || 0
-    // 小图
+    // 预览图 用作懒加载的占位图
     this.previewUrl = data.preview_url
   }
   // 全年龄 safe
@@ -119,9 +118,10 @@ export default class Post {
     return `${date.toLocaleDateString()} ${date.toLocaleTimeString("en-DE")}`
   }
 
+  // 解析图源 i.pximg.net => pixiv.net
+  // https://i.pximg.net/img-original/img/2021/05/15/09/41/42/89846615_p0.jpg
+  // https://www.pixiv.net/artworks/89846615
   get sourceUrl() {
-    // https://i.pximg.net/img-original/img/2021/05/15/09/41/42/89846615_p0.jpg
-    // https://www.pixiv.net/artworks/89846615
     if (/^https:\/\/i\.pximg\.net\/img-original\/img\/[\d\/]{19}\/([\d]{1,})_p[\d]{1,}\.(jpg|png)$/.test(this.source)) {
       const pid = RegExp.$1
       return `https://pixiv.net/artworks/${pid}`

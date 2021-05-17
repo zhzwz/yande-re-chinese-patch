@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.43
+// @version      2.0.47
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/17 09:39:03
+// @modified     2021/5/17 11:49:04
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -150,7 +150,7 @@ div#paginator > div.pagination {
 #content > div:nth-child(2) > div.sidebar {
   display: none;
 }
-#content > div:nth-child(2) > div.footer {
+#content div.footer {
   font-size: 14px;
   margin: 1rem;
 }
@@ -190,16 +190,36 @@ div#paginator > div.pagination {
     window.addEventListener("keyup", function(event) {
       if (/^(TEXTAREA|INPUT|SELECT|BUTTON)$/.test(document.activeElement.tagName)) return
       const prev = document.querySelector(".pagination>.previous_page");
-      if (event.key == "ArrowLeft" && prev) {
+      if (prev && (event.key == "ArrowLeft" || event.key == "a" || event.key == "A")) {
         prev.click();
         return event.preventDefault()
       }
       const next = document.querySelector(".pagination>.next_page");
-      if (event.key == "ArrowRight" && next) {
+      if (next && (event.key == "ArrowRight" || event.key === "d" || event.key == "D")) {
         next.click();
         return event.preventDefault()
       }
+      const show = document.querySelector("#png") || document.querySelector("highres");
+      if (show && (event.key === "s" || event.key === "S")) {
+        show.click();
+        return event.preventDefault()
+      }
+      const where = jQuery("li:contains('Source:') a")[0];
+      if (where && (event.key === "w" || event.key === "W")) {
+        where.click();
+        return event.preventDefault()
+      }
     });
+    const sidebar = document.querySelector("#post-view > div.sidebar");
+    if (sidebar) {
+      sidebar.insertAdjacentHTML("beforeend", "<div>" +
+        "<h5>快捷键说明</h5>" +
+        "<div style='color: #ee8888'>上一页：A / ←</div>" +
+        "<div style='color: #ee8888'>下一页：D / →</div>" +
+        "<div style='color: #ee8888'>显示大图：S</div>" +
+        "<div style='color: #ee8888'>显示来源：W</div>" +
+      "</div>");
+    }
   };
 
   class Post {

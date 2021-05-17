@@ -122,7 +122,7 @@ div#paginator > div.pagination {
 #content > div:nth-child(2) > div.sidebar {
   display: none;
 }
-#content > div:nth-child(2) > div.footer {
+#content div.footer {
   font-size: 14px;
   margin: 1rem;
 }
