@@ -16,6 +16,9 @@ const banner = `// ==UserScript==
 // @match        https://oreno.imouto.us/*
 // @exclude      https://oreno.imouto.us/forum/*
 // @match        https://konachan.com/*
+// @exclude      https://konachan.com/forum/*
+// @match        https://konachan.net/*
+// @exclude      https://konachan.net/forum/*
 // @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
 // @grant        none
 // ==/UserScript==
