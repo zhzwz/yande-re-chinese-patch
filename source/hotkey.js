@@ -30,7 +30,7 @@ export const initHotKey = function() {
     }
   })
 
-  const sidebar = document.querySelector("#post-view > div.sidebar")
+  const sidebar = document.querySelector("#post-list > div.sidebar") || document.querySelector("#post-view > div.sidebar")
   if (sidebar) {
     sidebar.insertAdjacentHTML("beforeend", "<div>" +
       "<h5>快捷键说明</h5>" +
