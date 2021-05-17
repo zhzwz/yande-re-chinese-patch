@@ -73,11 +73,11 @@ li.tag-type-circle a:nth-child(4)::before {
   display: none;
 }
 ul#post-list-posts {
-  width: 100%;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   place-content: center;
-  grid-template-columns: repeat(auto-fill, 150px);
+  place-items: center;
 }
 ul#post-list-posts > li {
   width: fit-content !important;

@@ -26,7 +26,7 @@ export const onChangeImageHD = function() {
   localStorage.setItem("showImageHD", JSON.stringify(index))
   console.log("showImageHD", index)
   // 设置网格布局宽
-  document.querySelector("#post-list-posts").style.gridTemplateColumns = `repeat(auto-fill, ${(index + 1) * 150}px)`
+  // document.querySelector("#post-list-posts").style.gridTemplateColumns = `repeat(auto-fill, ${(index + 1) * 150}px)`
 }
 
 export const initOptions = function() {

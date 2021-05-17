@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.41
+// @version      2.0.43
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/16 20:26:19
+// @modified     2021/5/17 09:39:03
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -278,7 +278,6 @@
     elementList.forEach(element => element.setAttribute("show-image-hd", index));
     localStorage.setItem("showImageHD", JSON.stringify(index));
     console.log("showImageHD", index);
-    document.querySelector("#post-list-posts").style.gridTemplateColumns = `repeat(auto-fill, ${(index + 1) * 150}px)`;
   };
   const initOptions = function() {
     if (/^\/user\/show\/[\d]{1,}/.test(location.pathname)) return
