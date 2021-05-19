@@ -17,7 +17,7 @@ export const initHotKey = function() {
       return event.preventDefault()
     }
     // 显示 s S
-    const show = document.querySelector("#png") || document.querySelector("highres")
+    const show = document.querySelector("#png") || document.querySelector("#highres")
     if (show && (event.key === "s" || event.key === "S")) {
       show.click()
       return event.preventDefault()
@@ -36,8 +36,8 @@ export const initHotKey = function() {
       "<h5>快捷键说明</h5>" +
       "<div style='color: #ee8888'>上一页：A / ←</div>" +
       "<div style='color: #ee8888'>下一页：D / →</div>" +
-      "<div style='color: #ee8888'>显示大图：S</div>" +
-      "<div style='color: #ee8888'>显示来源：W</div>" +
+      "<div style='color: #ee8888'>显示当前作品原图：S</div>" +
+      "<div style='color: #ee8888'>显示当前作品来源：W</div>" +
     "</div>")
   }
 

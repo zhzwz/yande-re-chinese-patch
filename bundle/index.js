@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.49
+// @version      2.0.58
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/17 14:53:19
+// @modified     2021/5/19 18:22:30
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -45,7 +45,7 @@
         next.click();
         return event.preventDefault()
       }
-      const show = document.querySelector("#png") || document.querySelector("highres");
+      const show = document.querySelector("#png") || document.querySelector("#highres");
       if (show && (event.key === "s" || event.key === "S")) {
         show.click();
         return event.preventDefault()
@@ -62,8 +62,8 @@
         "<h5>快捷键说明</h5>" +
         "<div style='color: #ee8888'>上一页：A / ←</div>" +
         "<div style='color: #ee8888'>下一页：D / →</div>" +
-        "<div style='color: #ee8888'>显示大图：S</div>" +
-        "<div style='color: #ee8888'>显示来源：W</div>" +
+        "<div style='color: #ee8888'>显示当前作品原图：S</div>" +
+        "<div style='color: #ee8888'>显示当前作品来源：W</div>" +
       "</div>");
     }
   };

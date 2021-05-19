@@ -23,7 +23,7 @@
 
     <v-list dense nav>
       <v-list-item-content>
-        <v-list-item-title class="title">设置分级内容显示</v-list-item-title>
+        <v-list-item-title class="title">设置</v-list-item-title>
         <v-list-item-subtitle></v-list-item-subtitle>
       </v-list-item-content>
       <!-- s -->
@@ -59,17 +59,49 @@
     </v-list>
 
     <v-divider></v-divider>
-    <!-- exit -->
-    <!-- <v-list-item link>
-      <v-list-item-icon class="mr-2"><v-icon>mdi-exit-to-app</v-icon></v-list-item-icon>
-      <v-list-item-content><v-list-item-title>退出</v-list-item-title></v-list-item-content>
-    </v-list-item> -->
 
-    <!-- <v-list-item>
+    <v-list dense nav>
       <v-list-item-content>
-        <v-list-item-title>分级说明</v-list-item-title>
+        <v-list-item-title class="title">关于</v-list-item-title>
+        <v-list-item-subtitle></v-list-item-subtitle>
       </v-list-item-content>
-    </v-list-item> -->
+      <v-list-item link @click="window.open('https://github.com/coderzhaoziwei/yande-re-chinese-patch/blob/main/readme.md')">
+        <v-list-item-icon class="mr-2"><v-icon>mdi-file-document-outline</v-icon></v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>简介</v-list-item-title>
+          <v-list-item-subtitle>说明文档 / 功能介绍</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link @click="window.open('https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues')">
+        <v-list-item-icon class="mr-2"><v-icon>mdi-github</v-icon></v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>反馈</v-list-item-title>
+          <v-list-item-subtitle>发现错误 / 提出建议</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link @click="window.open('https://github.com/coderzhaoziwei/yande-re-chinese-patch')">
+        <v-list-item-icon class="mr-2"><v-icon>mdi-star</v-icon></v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>仓库</v-list-item-title>
+          <v-list-item-subtitle>觉得好用就 Star 支持一下</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link @click="window.open('http://wpa.qq.com/msgrd?v=3&uin=3158492760&site=qq&menu=yes')">
+        <v-list-item-icon class="mr-2"><v-icon>mdi-google-controller</v-icon></v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>作者</v-list-item-title>
+          <v-list-item-subtitle>加Q 3158492760 找我玩儿</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link>
+        <v-list-item-icon class="mr-2"><v-icon>mdi-email</v-icon></v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>邮箱</v-list-item-title>
+          <v-list-item-subtitle>coderzhaoziwei@outlook.com</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <!-- <v-list-item-subtitle>QQ: 3158492760</v-list-item-subtitle> -->
+    </v-list>
   </v-navigation-drawer>
 
   <v-main app>

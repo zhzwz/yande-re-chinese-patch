@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.49
+// @version      2.0.58
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/17 14:53:19
+// @modified     2021/5/19 18:22:30
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -202,7 +202,7 @@ div#paginator > div.pagination {
         next.click();
         return event.preventDefault()
       }
-      const show = document.querySelector("#png") || document.querySelector("highres");
+      const show = document.querySelector("#png") || document.querySelector("#highres");
       if (show && (event.key === "s" || event.key === "S")) {
         show.click();
         return event.preventDefault()
@@ -219,8 +219,8 @@ div#paginator > div.pagination {
         "<h5>快捷键说明</h5>" +
         "<div style='color: #ee8888'>上一页：A / ←</div>" +
         "<div style='color: #ee8888'>下一页：D / →</div>" +
-        "<div style='color: #ee8888'>显示大图：S</div>" +
-        "<div style='color: #ee8888'>显示来源：W</div>" +
+        "<div style='color: #ee8888'>显示当前作品原图：S</div>" +
+        "<div style='color: #ee8888'>显示当前作品来源：W</div>" +
       "</div>");
     }
   };
@@ -467,7 +467,7 @@ div#paginator > div.pagination {
 
     <v-list dense nav>
       <v-list-item-content>
-        <v-list-item-title class="title">设置分级内容显示</v-list-item-title>
+        <v-list-item-title class="title">设置</v-list-item-title>
         <v-list-item-subtitle></v-list-item-subtitle>
       </v-list-item-content>
       <!-- s -->
@@ -503,17 +503,49 @@ div#paginator > div.pagination {
     </v-list>
 
     <v-divider></v-divider>
-    <!-- exit -->
-    <!-- <v-list-item link>
-      <v-list-item-icon class="mr-2"><v-icon>mdi-exit-to-app</v-icon></v-list-item-icon>
-      <v-list-item-content><v-list-item-title>退出</v-list-item-title></v-list-item-content>
-    </v-list-item> -->
 
-    <!-- <v-list-item>
+    <v-list dense nav>
       <v-list-item-content>
-        <v-list-item-title>分级说明</v-list-item-title>
+        <v-list-item-title class="title">关于</v-list-item-title>
+        <v-list-item-subtitle></v-list-item-subtitle>
       </v-list-item-content>
-    </v-list-item> -->
+      <v-list-item link @click="window.open('https://github.com/coderzhaoziwei/yande-re-chinese-patch/blob/main/readme.md')">
+        <v-list-item-icon class="mr-2"><v-icon>mdi-file-document-outline</v-icon></v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>简介</v-list-item-title>
+          <v-list-item-subtitle>说明文档 / 功能介绍</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link @click="window.open('https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues')">
+        <v-list-item-icon class="mr-2"><v-icon>mdi-github</v-icon></v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>反馈</v-list-item-title>
+          <v-list-item-subtitle>发现错误 / 提出建议</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link @click="window.open('https://github.com/coderzhaoziwei/yande-re-chinese-patch')">
+        <v-list-item-icon class="mr-2"><v-icon>mdi-star</v-icon></v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>仓库</v-list-item-title>
+          <v-list-item-subtitle>觉得好用就 Star 支持一下</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link @click="window.open('http://wpa.qq.com/msgrd?v=3&uin=3158492760&site=qq&menu=yes')">
+        <v-list-item-icon class="mr-2"><v-icon>mdi-google-controller</v-icon></v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>作者</v-list-item-title>
+          <v-list-item-subtitle>加Q 3158492760 找我玩儿</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link>
+        <v-list-item-icon class="mr-2"><v-icon>mdi-email</v-icon></v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>邮箱</v-list-item-title>
+          <v-list-item-subtitle>coderzhaoziwei@outlook.com</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <!-- <v-list-item-subtitle>QQ: 3158492760</v-list-item-subtitle> -->
+    </v-list>
   </v-navigation-drawer>
 
   <v-main app>
