@@ -1,6 +1,5 @@
 /*
-actual_preview_height: 300
-actual_preview_width: 300
+
 approver_id: null
 change: 4106973
 frames: []
@@ -51,6 +50,8 @@ export default class Post {
     this.sampleHeight = data.sample_height || 0
     // 预览图 用作懒加载的占位图
     this.previewUrl = data.preview_url
+    this.previewWidth = data.actual_preview_width || 0
+    this.previewHeight = data.actual_preview_height || 0
   }
   // 全年龄 safe
   get isRatingS() {

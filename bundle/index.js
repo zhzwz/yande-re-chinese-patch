@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.58
+// @version      2.0.67
 // @author       Coder Zhao coderzhaoziwei@outlook.com
-// @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/19 18:22:30
+// @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
+// @modified     2021/5/22 15:23:25
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -94,6 +94,8 @@
       this.sampleWidth = data.sample_width || 0;
       this.sampleHeight = data.sample_height || 0;
       this.previewUrl = data.preview_url;
+      this.previewWidth = data.actual_preview_width || 0;
+      this.previewHeight = data.actual_preview_height || 0;
     }
     get isRatingS() {
       return this.rating === "s"
@@ -176,6 +178,28 @@
         requestStop: false,
         innerWidth: window.innerWidth,
         innerHeight: window.innerHeight,
+        columnCount: {
+          300: 1,
+          450: 2,
+          600: 3,
+          750: 4,
+          900: 5,
+          1050: 6,
+          1200: 7,
+          1350: 8,
+          1500: 9,
+          1650: 10,
+          1800: 11,
+          1950: 12,
+          2100: 13,
+          2250: 14,
+          2400: 15,
+          2550: 16,
+          2700: 17,
+          2850: 18,
+          3000: 19,
+          default: 20,
+        },
       }
     },
     computed: {
@@ -189,14 +213,14 @@
         return this.imageList[this.imageSelectedIndex] || new Post()
       },
       imageSelectedWidth() {
-        const width = parseInt(Math.min(this.innerWidth*0.9, this.imageSelected.width));
-        const height = Math.min(this.innerHeight*0.9, this.imageSelected.height);
+        const width = parseInt(Math.min(this.innerWidth * 0.9, this.imageSelected.sampleWidth));
+        const height = Math.min(this.innerHeight * 0.9, this.imageSelected.sampleHeight);
         const width2 = parseInt(height * this.imageSelected.aspectRatio);
         return Math.min(width, width2)
       },
       imageSelectedHeight() {
-        const width = Math.min(this.innerWidth*0.9, this.imageSelected.width);
-        const height = parseInt(Math.min(this.innerHeight*0.9, this.imageSelected.height));
+        const width = Math.min(this.innerWidth * 0.9, this.imageSelected.sampleWidth);
+        const height = parseInt(Math.min(this.innerHeight * 0.9, this.imageSelected.sampleHeight));
         const height2 = parseInt(width / this.imageSelected.aspectRatio);
         return Math.min(height, height2)
       },
@@ -230,12 +254,12 @@
         console.log(url);
         jQuery.ajax({
           url,
-          xhrFields:{ responseType: 'blob' },
+          xhrFields:{ responseType: "blob" },
           success(data) {
             const element = document.createElement("a");
             element.href = URL.createObjectURL(data);
             element.download = filename;
-            const event = new MouseEvent('click');
+            const event = new MouseEvent("click");
             element.dispatchEvent(event);
           },
         });

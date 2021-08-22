@@ -7,7 +7,7 @@ const banner = `// ==UserScript==
 // @namespace    com.coderzhaoziwei.yandere
 // @version      ${ version }
 // @author       Coder Zhao coderzhaoziwei@outlook.com
-// @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
+// @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @modified     ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString('en-DE')}
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT

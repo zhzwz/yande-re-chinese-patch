@@ -82,15 +82,15 @@
       <v-list-item link @click="window.open('https://github.com/coderzhaoziwei/yande-re-chinese-patch')">
         <v-list-item-icon class="mr-2"><v-icon>mdi-star</v-icon></v-list-item-icon>
         <v-list-item-content>
-          <v-list-item-title>仓库</v-list-item-title>
+          <v-list-item-title>Github</v-list-item-title>
           <v-list-item-subtitle>觉得好用就 Star 支持一下</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item link @click="window.open('http://wpa.qq.com/msgrd?v=3&uin=3158492760&site=qq&menu=yes')">
+      <v-list-item link>
         <v-list-item-icon class="mr-2"><v-icon>mdi-google-controller</v-icon></v-list-item-icon>
         <v-list-item-content>
-          <v-list-item-title>作者</v-list-item-title>
-          <v-list-item-subtitle>加Q 3158492760 找我玩儿</v-list-item-subtitle>
+          <v-list-item-title>QQ</v-list-item-title>
+          <v-list-item-subtitle>3158492760</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
       <v-list-item link>
@@ -100,17 +100,15 @@
           <v-list-item-subtitle>coderzhaoziwei@outlook.com</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-      <!-- <v-list-item-subtitle>QQ: 3158492760</v-list-item-subtitle> -->
     </v-list>
   </v-navigation-drawer>
 
   <v-main app>
     <v-container class="pa-2" fluid>
-      <masonry :cols="{ default: 8, 2000: 7, 1750: 6, 1500: 5, 1250: 4, 1000: 3, 750: 2 }" gutter="8px">
+      <masonry :cols="columnCount" gutter="8px">
         <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
           <v-img
-            :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.sampleUrl:''"
-            :lazy-src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
+            :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
             :aspect-ratio="image.aspectRatio"
             @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
           >
@@ -140,7 +138,11 @@
       </div>
 
       <v-dialog v-model="showImageSelected" :width="imageSelectedWidth" :height="imageSelectedHeight">
-        <v-img :src="imageSelected.sampleUrl" @click="showImageInfo=!showImageInfo;">
+        <v-img
+          :src="imageSelected.sampleUrl"
+          :lazy-src="imageSelected.previewUrl"
+          @click="showImageInfo=!showImageInfo;"
+        >
           <div :style="showImageInfo ? '' : 'display: none !important;'" class="d-flex flex-column px-1">
             <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
               v-text="'编号 ' + imageSelected.id" @click.stop

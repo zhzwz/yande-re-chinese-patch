@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.58
+// @version      2.0.67
 // @author       Coder Zhao coderzhaoziwei@outlook.com
-// @description  Y 站简体中文补丁| 显示隐藏作品 | 高清大图模式 | 界面布局优化 | 方向键翻页 | Simplified Chinese patch for Yande.re
-// @modified     2021/5/19 18:22:30
+// @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
+// @modified     2021/5/22 15:23:25
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -251,6 +251,8 @@ div#paginator > div.pagination {
       this.sampleWidth = data.sample_width || 0;
       this.sampleHeight = data.sample_height || 0;
       this.previewUrl = data.preview_url;
+      this.previewWidth = data.actual_preview_width || 0;
+      this.previewHeight = data.actual_preview_height || 0;
     }
     get isRatingS() {
       return this.rating === "s"
@@ -333,6 +335,28 @@ div#paginator > div.pagination {
         requestStop: false,
         innerWidth: window.innerWidth,
         innerHeight: window.innerHeight,
+        columnCount: {
+          300: 1,
+          450: 2,
+          600: 3,
+          750: 4,
+          900: 5,
+          1050: 6,
+          1200: 7,
+          1350: 8,
+          1500: 9,
+          1650: 10,
+          1800: 11,
+          1950: 12,
+          2100: 13,
+          2250: 14,
+          2400: 15,
+          2550: 16,
+          2700: 17,
+          2850: 18,
+          3000: 19,
+          default: 20,
+        },
       }
     },
     computed: {
@@ -346,14 +370,14 @@ div#paginator > div.pagination {
         return this.imageList[this.imageSelectedIndex] || new Post()
       },
       imageSelectedWidth() {
-        const width = parseInt(Math.min(this.innerWidth*0.9, this.imageSelected.width));
-        const height = Math.min(this.innerHeight*0.9, this.imageSelected.height);
+        const width = parseInt(Math.min(this.innerWidth * 0.9, this.imageSelected.sampleWidth));
+        const height = Math.min(this.innerHeight * 0.9, this.imageSelected.sampleHeight);
         const width2 = parseInt(height * this.imageSelected.aspectRatio);
         return Math.min(width, width2)
       },
       imageSelectedHeight() {
-        const width = Math.min(this.innerWidth*0.9, this.imageSelected.width);
-        const height = parseInt(Math.min(this.innerHeight*0.9, this.imageSelected.height));
+        const width = Math.min(this.innerWidth * 0.9, this.imageSelected.sampleWidth);
+        const height = parseInt(Math.min(this.innerHeight * 0.9, this.imageSelected.sampleHeight));
         const height2 = parseInt(width / this.imageSelected.aspectRatio);
         return Math.min(height, height2)
       },
@@ -387,12 +411,12 @@ div#paginator > div.pagination {
         console.log(url);
         jQuery.ajax({
           url,
-          xhrFields:{ responseType: 'blob' },
+          xhrFields:{ responseType: "blob" },
           success(data) {
             const element = document.createElement("a");
             element.href = URL.createObjectURL(data);
             element.download = filename;
-            const event = new MouseEvent('click');
+            const event = new MouseEvent("click");
             element.dispatchEvent(event);
           },
         });
@@ -432,7 +456,7 @@ div#paginator > div.pagination {
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 <title>Yande.re 简体中文</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/necolas/normalize.css/normalize.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.5.0/dist/vuetify.min.css">
 <style>
@@ -526,15 +550,15 @@ div#paginator > div.pagination {
       <v-list-item link @click="window.open('https://github.com/coderzhaoziwei/yande-re-chinese-patch')">
         <v-list-item-icon class="mr-2"><v-icon>mdi-star</v-icon></v-list-item-icon>
         <v-list-item-content>
-          <v-list-item-title>仓库</v-list-item-title>
+          <v-list-item-title>Github</v-list-item-title>
           <v-list-item-subtitle>觉得好用就 Star 支持一下</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item link @click="window.open('http://wpa.qq.com/msgrd?v=3&uin=3158492760&site=qq&menu=yes')">
+      <v-list-item link>
         <v-list-item-icon class="mr-2"><v-icon>mdi-google-controller</v-icon></v-list-item-icon>
         <v-list-item-content>
-          <v-list-item-title>作者</v-list-item-title>
-          <v-list-item-subtitle>加Q 3158492760 找我玩儿</v-list-item-subtitle>
+          <v-list-item-title>QQ</v-list-item-title>
+          <v-list-item-subtitle>3158492760</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
       <v-list-item link>
@@ -544,17 +568,15 @@ div#paginator > div.pagination {
           <v-list-item-subtitle>coderzhaoziwei@outlook.com</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-      <!-- <v-list-item-subtitle>QQ: 3158492760</v-list-item-subtitle> -->
     </v-list>
   </v-navigation-drawer>
 
   <v-main app>
     <v-container class="pa-2" fluid>
-      <masonry :cols="{ default: 8, 2000: 7, 1750: 6, 1500: 5, 1250: 4, 1000: 3, 750: 2 }" gutter="8px">
+      <masonry :cols="columnCount" gutter="8px">
         <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
           <v-img
-            :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.sampleUrl:''"
-            :lazy-src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
+            :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
             :aspect-ratio="image.aspectRatio"
             @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
           >
@@ -584,7 +606,11 @@ div#paginator > div.pagination {
       </div>
 
       <v-dialog v-model="showImageSelected" :width="imageSelectedWidth" :height="imageSelectedHeight">
-        <v-img :src="imageSelected.sampleUrl" @click="showImageInfo=!showImageInfo;">
+        <v-img
+          :src="imageSelected.sampleUrl"
+          :lazy-src="imageSelected.previewUrl"
+          @click="showImageInfo=!showImageInfo;"
+        >
           <div :style="showImageInfo ? '' : 'display: none !important;'" class="d-flex flex-column px-1">
             <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
               v-text="'编号 ' + imageSelected.id" @click.stop

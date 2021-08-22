@@ -20,6 +20,30 @@ const App = {
 
       innerWidth: window.innerWidth,
       innerHeight: window.innerHeight,
+
+      // :cols="{ default: 16, 2100: 14, 1800: 12, 1500: 10, 1200: 8, 900: 6, 600: 4, 300: 2 }"
+      columnCount: {
+        300: 1,
+        450: 2,
+        600: 3,
+        750: 4,
+        900: 5,
+        1050: 6,
+        1200: 7,
+        1350: 8,
+        1500: 9,
+        1650: 10,
+        1800: 11,
+        1950: 12,
+        2100: 13,
+        2250: 14,
+        2400: 15,
+        2550: 16,
+        2700: 17,
+        2850: 18,
+        3000: 19,
+        default: 20,
+      },
     }
   },
   computed: {
@@ -33,14 +57,14 @@ const App = {
       return this.imageList[this.imageSelectedIndex] || new Post()
     },
     imageSelectedWidth() {
-      const width = parseInt(Math.min(this.innerWidth*0.9, this.imageSelected.width))
-      const height = Math.min(this.innerHeight*0.9, this.imageSelected.height)
+      const width = parseInt(Math.min(this.innerWidth * 0.9, this.imageSelected.sampleWidth))
+      const height = Math.min(this.innerHeight * 0.9, this.imageSelected.sampleHeight)
       const width2 = parseInt(height * this.imageSelected.aspectRatio)
       return Math.min(width, width2)
     },
     imageSelectedHeight() {
-      const width = Math.min(this.innerWidth*0.9, this.imageSelected.width)
-      const height = parseInt(Math.min(this.innerHeight*0.9, this.imageSelected.height))
+      const width = Math.min(this.innerWidth * 0.9, this.imageSelected.sampleWidth)
+      const height = parseInt(Math.min(this.innerHeight * 0.9, this.imageSelected.sampleHeight))
       const height2 = parseInt(width / this.imageSelected.aspectRatio)
       return Math.min(height, height2)
     },
@@ -76,12 +100,12 @@ const App = {
 
       jQuery.ajax({
         url,
-        xhrFields:{ responseType: 'blob' },
+        xhrFields:{ responseType: "blob" },
         success(data) {
           const element = document.createElement("a")
           element.href = URL.createObjectURL(data)
           element.download = filename
-          const event = new MouseEvent('click')
+          const event = new MouseEvent("click")
           element.dispatchEvent(event)
         },
       })
