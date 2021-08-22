@@ -43,16 +43,16 @@ div#header > div#main-menu > ul {
   text-align: center;
 }
 /* 标签前缀 */
-li.tag-type-artist a:nth-child(4)::before {
+li.tag-type-artist a[href^="/post"]::before {
   content: "[画师]";
 }
-li.tag-type-copyright a:nth-child(4)::before {
+li.tag-type-copyright a[href^="/post"]::before {
   content: "[原作]";
 }
-li.tag-type-character a:nth-child(4)::before {
+li.tag-type-character a[href^="/post"]::before {
   content: "[角色]";
 }
-li.tag-type-circle a:nth-child(4)::before {
+li.tag-type-circle a[href^="/post"]::before {
   content: "[公司]";
 }
 /* 图区 */

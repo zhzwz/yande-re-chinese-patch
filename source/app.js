@@ -112,6 +112,9 @@ const App = {
         },
       })
     },
+    // play() {
+    //   this.imageSelectedIndex ++
+    // },
   },
   mounted() {
     // 自动加载数据
