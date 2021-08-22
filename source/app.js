@@ -100,7 +100,9 @@ const App = {
 
       jQuery.ajax({
         url,
-        xhrFields:{ responseType: "blob" },
+        xhrFields:{
+          responseType: "blob",
+        },
         success(data) {
           const element = document.createElement("a")
           element.href = URL.createObjectURL(data)

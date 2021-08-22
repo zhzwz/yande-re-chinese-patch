@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.67
+// @version      2.0.68
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
-// @modified     2021/5/22 15:23:25
+// @modified     2021/8/22 10:29:06
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -254,7 +254,9 @@
         console.log(url);
         jQuery.ajax({
           url,
-          xhrFields:{ responseType: "blob" },
+          xhrFields:{
+            responseType: "blob",
+          },
           success(data) {
             const element = document.createElement("a");
             element.href = URL.createObjectURL(data);
@@ -294,6 +296,7 @@
     await getScript("https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js");
     await getScript("https://cdn.jsdelivr.net/npm/vuetify@2.5.0/dist/vuetify.min.js");
     await getScript("https://cdn.jsdelivr.net/npm/vue-masonry-css@1.0.3/dist/vue-masonry.min.js");
+    await getScript("https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js");
     document.head.innerHTML = `[{ path: "source/html/head.html" }]`;
     document.body.innerHTML = `[{ path: "source/html/body.html" }]`;
     Vue.use(VueMasonry);
