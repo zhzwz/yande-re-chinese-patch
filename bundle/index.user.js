@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.69
+// @version      2.0.71
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
-// @modified     2021/8/22 11:49:52
+// @modified     2021/9/6 21:45:10
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -74,16 +74,16 @@ div#header > div#main-menu > ul {
   text-align: center;
 }
 /* 标签前缀 */
-li.tag-type-artist a[href^="/post"]::before {
+li.tag-type-artist a[href^="/post"]:not(.no-browser-link)::before {
   content: "[画师]";
 }
-li.tag-type-copyright a[href^="/post"]::before {
+li.tag-type-copyright a[href^="/post"]:not(.no-browser-link)::before {
   content: "[原作]";
 }
-li.tag-type-character a[href^="/post"]::before {
+li.tag-type-character a[href^="/post"]:not(.no-browser-link)::before {
   content: "[角色]";
 }
-li.tag-type-circle a[href^="/post"]::before {
+li.tag-type-circle a[href^="/post"]:not(.no-browser-link)::before {
   content: "[公司]";
 }
 /* 图区 */
