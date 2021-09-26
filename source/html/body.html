@@ -111,6 +111,7 @@
             :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
             :aspect-ratio="image.aspectRatio"
             @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
+            @click.middle="imageSelectedIndex=index;window.open('/post/show/' + imageSelected.id)"
           >
             <template v-slot:placeholder>
               <v-row v-if="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)"
