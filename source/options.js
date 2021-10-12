@@ -28,7 +28,33 @@ export const onChangeImageHD = function() {
   // 设置网格布局宽
   // document.querySelector("#post-list-posts").style.gridTemplateColumns = `repeat(auto-fill, ${(index + 1) * 150}px)`
 }
-
+// 网站域名 例如'https://oreno.imouto.us'
+const origin = window.location.origin
+let taskArray = []
+// 'https://oreno.imouto.us'域名下每秒钟尝试加载的Sample图片数
+let maxLoadingSampleNum = 4
+let doLoadSampleUrl = () => {
+  let loadingNum = 0
+  let loadSampleUrl = () => {
+    if (taskArray.length == 0) return
+    loadingNum++
+    let { element, sampleUrl } = taskArray.shift()
+    element.onerror = () => {
+      element.src = sampleUrl
+    }
+    element.onload = () => {
+      loadingNum--
+    }
+    element.src = sampleUrl
+  }
+  setInterval(() => {
+    if (taskArray.length == 0) return
+    let needloadNum = maxLoadingSampleNum - loadingNum
+    while (needloadNum--) {
+      loadSampleUrl()
+    }
+  }, 1000)
+}
 export const initOptions = function() {
   // https://yande.re/user/show/507475
   if (/^\/user\/show\/[\d]{1,}/.test(location.pathname)) return
@@ -43,10 +69,19 @@ export const initOptions = function() {
       const id = RegExp.$1
       const sampleUrl = samples[id]
       if (sampleUrl !== undefined) {
-        element.src = sampleUrl
+        // 'https://oreno.imouto.us'镜像站点延迟加载sample图片 避免请求429
+        switch (origin) {
+          case 'https://oreno.imouto.us':
+            taskArray.push({ element, sampleUrl })
+            break;
+          default:
+            element.src = sampleUrl
+            break;
+        }
       }
     }
   })
+  doLoadSampleUrl()
 
   // 监听
   document.getElementById("showLeftBar").addEventListener("change", onChangeLeftBar)
