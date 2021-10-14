@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.71
+// @version      2.0.72
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
-// @modified     2021/9/6 21:45:10
+// @modified     2021/10/14 09:01:35
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -582,6 +582,7 @@ div#paginator > div.pagination {
             :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
             :aspect-ratio="image.aspectRatio"
             @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
+            @click.middle="imageSelectedIndex=index;window.open('/post/show/' + imageSelected.id)"
           >
             <template v-slot:placeholder>
               <v-row v-if="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)"
@@ -701,6 +702,31 @@ div#paginator > div.pagination {
     localStorage.setItem("showImageHD", JSON.stringify(index));
     console.log("showImageHD", index);
   };
+  const origin = window.location.origin;
+  let taskArray = [];
+  let maxLoadingSampleNum = 4;
+  let doLoadSampleUrl = () => {
+    let loadingNum = 0;
+    let loadSampleUrl = () => {
+      if (taskArray.length == 0) return
+      loadingNum++;
+      let { element, sampleUrl } = taskArray.shift();
+      element.onerror = () => {
+        element.src = sampleUrl;
+      };
+      element.onload = () => {
+        loadingNum--;
+      };
+      element.src = sampleUrl;
+    };
+    setInterval(() => {
+      if (taskArray.length == 0) return
+      let needloadNum = maxLoadingSampleNum - loadingNum;
+      while (needloadNum--) {
+        loadSampleUrl();
+      }
+    }, 1000);
+  };
   const initOptions = function() {
     if (/^\/user\/show\/[\d]{1,}/.test(location.pathname)) return
     if (document.getElementById("post-list-posts") === null) return
@@ -730,10 +756,18 @@ div#paginator > div.pagination {
         const id = RegExp.$1;
         const sampleUrl = samples[id];
         if (sampleUrl !== undefined) {
-          element.src = sampleUrl;
+          switch (origin) {
+            case 'https://oreno.imouto.us':
+              taskArray.push({ element, sampleUrl });
+              break;
+            default:
+              element.src = sampleUrl;
+              break;
+          }
         }
       }
     });
+    doLoadSampleUrl();
     document.getElementById("showLeftBar").addEventListener("change", onChangeLeftBar);
     document.getElementById("showRatingE").addEventListener("change", onChangeRatingE);
     document.getElementById("showImageHD").addEventListener("change", onChangeImageHD);
