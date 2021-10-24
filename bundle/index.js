@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.72
+// @version      2.0.75
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
-// @modified     2021/10/14 09:01:35
+// @modified     2021/10/24 11:15:21
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -34,13 +34,14 @@
 
   const initHotKey = function() {
     window.addEventListener("keyup", function(event) {
+      console.log('keyup:', event.key);
       if (/^(TEXTAREA|INPUT|SELECT|BUTTON)$/.test(document.activeElement.tagName)) return
-      const prev = document.querySelector(".pagination>.previous_page");
+      const prev = document.querySelector(".pagination>.previous_page") || jQuery("li:contains('Previous') a[href]")[0];
       if (prev && (event.key == "ArrowLeft" || event.key == "a" || event.key == "A")) {
         prev.click();
         return event.preventDefault()
       }
-      const next = document.querySelector(".pagination>.next_page");
+      const next = document.querySelector(".pagination>.next_page") || jQuery("li:contains('Next') a[href]")[0];
       if (next && (event.key == "ArrowRight" || event.key === "d" || event.key == "D")) {
         next.click();
         return event.preventDefault()

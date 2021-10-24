@@ -1,17 +1,18 @@
 export const initHotKey = function() {
 
   window.addEventListener("keyup", function(event) {
+    console.log('keyup:', event.key)
     // 有输入框被激活时，禁止触发方向键。
     if (/^(TEXTAREA|INPUT|SELECT|BUTTON)$/.test(document.activeElement.tagName)) return
 
     // 上一页 ← a A
-    const prev = document.querySelector(".pagination>.previous_page")
+    const prev = document.querySelector(".pagination>.previous_page") || jQuery("li:contains('Previous') a[href]")[0]
     if (prev && (event.key == "ArrowLeft" || event.key == "a" || event.key == "A")) {
       prev.click()
       return event.preventDefault()
     }
     // 下一页 → d D
-    const next = document.querySelector(".pagination>.next_page")
+    const next = document.querySelector(".pagination>.next_page") || jQuery("li:contains('Next') a[href]")[0]
     if (next && (event.key == "ArrowRight" || event.key === "d" || event.key == "D")) {
       next.click()
       return event.preventDefault()
