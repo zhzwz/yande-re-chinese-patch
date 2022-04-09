@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.75
+// @version      2.0.105
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
-// @modified     2021/10/24 11:15:21
+// @modified     2022/4/10 03:06:07
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -408,21 +408,9 @@ div#paginator > div.pagination {
           this.requestStop = true;
         }
       },
-      download(url, filename) {
-        console.log(url);
-        jQuery.ajax({
-          url,
-          xhrFields:{
-            responseType: "blob",
-          },
-          success(data) {
-            const element = document.createElement("a");
-            element.href = URL.createObjectURL(data);
-            element.download = filename;
-            const event = new MouseEvent("click");
-            element.dispatchEvent(event);
-          },
-        });
+      download(src, filename) {
+        console.log(src);
+        window.open(src);
       },
     },
     mounted() {
@@ -663,6 +651,8 @@ div#paginator > div.pagination {
               v-text="imageSelected.fileDownloadText"
               @click.stop="download(imageSelected.fileUrl, imageSelected.fileDownloadName)"
             ></v-chip>
+            <div style="width: fit-content; color: #FFF000; background-color: #EE8888; border-radius: 99px; margin-top: 4px; padding: 0px 12px; font-size: 12px;">由于 https://files.yande.re 修改了跨域政策，目前无法一键下载图片。</div>
+            <div style="width: fit-content; color: #FFF000; background-color: #EE8888; border-radius: 99px; margin-top: 4px; padding: 0px 12px; font-size: 12px;">知道如何优雅解决该问题的朋友，可以联系我。</div>
           </div>
         </v-img>
 

@@ -95,22 +95,59 @@ const App = {
         this.requestStop = true
       }
     },
-    download(url, filename) {
-      console.log(url)
+    download(src, filename) {
+      console.log(src)
 
-      jQuery.ajax({
-        url,
-        xhrFields:{
-          responseType: "blob",
-        },
-        success(data) {
-          const element = document.createElement("a")
-          element.href = URL.createObjectURL(data)
-          element.download = filename
-          const event = new MouseEvent("click")
-          element.dispatchEvent(event)
-        },
-      })
+      window.open(src)
+
+      // 由于跨域的问题，这个方法行不通了。
+      // jQuery.ajax({
+      //   url,
+      //   xhrFields:{
+      //     responseType: "blob",
+      //   },
+      //   success(data) {
+      //     const element = document.createElement("a")
+      //     element.href = URL.createObjectURL(data)
+      //     element.download = filename
+      //     const event = new MouseEvent("click")
+      //     element.dispatchEvent(event)
+      //   },
+      // })
+
+      // 试了这个方法也不行啊，还是会有 files.yande.re 的跨域问题
+      // const image = new Image()
+      // image.crossOrigin = "Anonymous"
+      // image.onload = () => {
+      //   const canvas = document.createElement("canvas")
+      //   canvas.width = image.width
+      //   canvas.height = image.height
+      //   const context = canvas.getContext("2d")
+      //   context.drawImage(image, 0, 0, image.width, image.height)
+      //   canvas.toBlob(blob => {
+      //     console.log(blob)
+      //   })
+      //   const url = canvas.toDataURL("image/png") // base64 图片
+      //   const a = document.createElement("a")
+      //   const event = new MouseEvent("click")
+      //   a.download = filename || "qrcode.jpg"
+      //   a.href = url
+      //   a.dispatchEvent(event)
+      // }
+      // image.src = src
+
+      // fetch(src, {
+      //   method: "GET",
+      //   mode: "no-cors", // 请求模式 cors / no-cors / same-origin
+      //   referrer: "https://yande.re/",
+      //   referrerPolicy: "no-referrer",
+      // }).then(response => {
+      //   console.log(response)
+      //   return response.blob()
+      // }).then(blob => {
+      //   const url = URL.createObjectURL(blob)
+      //   console.log(url)
+      // })
     },
     // play() {
     //   this.imageSelectedIndex ++
