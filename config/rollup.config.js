@@ -13,8 +13,6 @@ const banner = `// ==UserScript==
 // @license      MIT
 // @match        https://yande.re/*
 // @exclude      https://yande.re/forum/*
-// @match        https://oreno.imouto.us/*
-// @exclude      https://oreno.imouto.us/forum/*
 // @match        https://konachan.com/*
 // @exclude      https://konachan.com/forum/*
 // @match        https://konachan.net/*
@@ -41,3 +39,5 @@ export default {
 }
 
 // @match https://konachan.com/*
+// @match        https://oreno.imouto.us/*
+// @exclude      https://oreno.imouto.us/forum/*

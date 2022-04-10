@@ -1,16 +1,14 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.105
+// @version      2.0.106
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
-// @modified     2022/4/10 03:06:07
+// @modified     2022/4/10 11:08:21
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
 // @exclude      https://yande.re/forum/*
-// @match        https://oreno.imouto.us/*
-// @exclude      https://oreno.imouto.us/forum/*
 // @match        https://konachan.com/*
 // @exclude      https://konachan.com/forum/*
 // @match        https://konachan.net/*

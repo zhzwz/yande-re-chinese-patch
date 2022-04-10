@@ -30,7 +30,7 @@
 终于，舒服了。
 
 - https://yande.re
-- https://oreno.imouto.us （Y 站镜像，无需魔法上网）
+- ~~https://oreno.imouto.us （Y 站镜像，无需魔法上网）~~（已失效）
 - https://konachan.com （K 站已兼容）
 - https://konachan.net （K 站安全模式，.net 域名下默认隐藏成人内容）
 
