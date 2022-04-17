@@ -9,4 +9,5 @@ jQuery(document).ready(function() {
   initHotKey()
   initOptions()
   initTranslate()
+
 })

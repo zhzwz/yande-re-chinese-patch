@@ -8,7 +8,6 @@ const banner = `// ==UserScript==
 // @version      ${ version }
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
-// @modified     ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString('en-DE')}
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -18,7 +17,7 @@ const banner = `// ==UserScript==
 // @match        https://konachan.net/*
 // @exclude      https://konachan.net/forum/*
 // @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
-// @grant        none
+// @grant        GM_download
 // ==/UserScript==
 
 /* eslint-env es6 */

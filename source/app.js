@@ -97,8 +97,8 @@ const App = {
     },
     download(src, filename) {
       console.log(src)
-
-      window.open(src)
+      // window.open(src)
+      GM_download(src, filename)
 
       // 由于跨域的问题，这个方法行不通了。
       // jQuery.ajax({

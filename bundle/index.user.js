@@ -1,10 +1,9 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.106
+// @version      2.0.119
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
-// @modified     2022/4/10 11:08:21
 // @homepage     https://greasyfork.org/scripts/421970
 // @license      MIT
 // @match        https://yande.re/*
@@ -14,7 +13,7 @@
 // @match        https://konachan.net/*
 // @exclude      https://konachan.net/forum/*
 // @supportURL   https://github.com/coderzhaoziwei/yande-re-chinese-patch/issues
-// @grant        none
+// @grant        GM_download
 // ==/UserScript==
 
 /* eslint-env es6 */
@@ -408,7 +407,7 @@ div#paginator > div.pagination {
       },
       download(src, filename) {
         console.log(src);
-        window.open(src);
+        GM_download(src, filename);
       },
     },
     mounted() {
@@ -649,8 +648,8 @@ div#paginator > div.pagination {
               v-text="imageSelected.fileDownloadText"
               @click.stop="download(imageSelected.fileUrl, imageSelected.fileDownloadName)"
             ></v-chip>
-            <div style="width: fit-content; color: #FFF000; background-color: #EE8888; border-radius: 99px; margin-top: 4px; padding: 0px 12px; font-size: 12px;">由于 https://files.yande.re 修改了跨域政策，目前无法一键下载图片。</div>
-            <div style="width: fit-content; color: #FFF000; background-color: #EE8888; border-radius: 99px; margin-top: 4px; padding: 0px 12px; font-size: 12px;">如果有朋友知道如何优雅地解决该问题，请联系我。</div>
+            <!-- <div style="width: fit-content; color: #FFF000; background-color: #EE8888; border-radius: 99px; margin-top: 4px; padding: 0px 12px; font-size: 12px;">由于 https://files.yande.re 修改了跨域政策，目前无法一键下载图片。</div>
+            <div style="width: fit-content; color: #FFF000; background-color: #EE8888; border-radius: 99px; margin-top: 4px; padding: 0px 12px; font-size: 12px;">如果有朋友知道如何优雅地解决该问题，请联系我。</div> -->
           </div>
         </v-img>
 
