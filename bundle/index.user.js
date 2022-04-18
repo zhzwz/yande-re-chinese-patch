@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.133
+// @version      2.0.134
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @homepage     https://greasyfork.org/scripts/421970
@@ -334,6 +334,7 @@ div#paginator > div.pagination {
         innerWidth: window.innerWidth,
         innerHeight: window.innerHeight,
         imageCountInRow: JSON.parse(localStorage.getItem("imageCountInRow") || "3"),
+        imageQualityHigh: JSON.parse(localStorage.getItem("imageShowHD") || "false"),
       }
     },
     computed: {
@@ -447,6 +448,7 @@ div#paginator > div.pagination {
   <v-app-bar app dense>
     <v-app-bar-nav-icon @click="showDrawer=!showDrawer"></v-app-bar-nav-icon>
     <v-toolbar-title v-text="title"></v-toolbar-title>
+    <!-- 设置每行几张 -->
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
         <v-btn class="white--text ml-4" dark v-bind="attrs" v-on="on">每行 {{imageCountInRow}} 张</v-btn>
@@ -455,6 +457,24 @@ div#paginator > div.pagination {
         <v-list-item v-for="number in [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16]" :key="number">
           <v-list-item-title style="cursor: pointer;" @click="imageCountInRow = number;">
             每行 {{ number }} 张
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+    <!-- 设置图片质量 -->
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn class="white--text ml-4" dark v-bind="attrs" v-on="on">{{ imageQualityHigh ? '高清' : '速览' }}</v-btn>
+      </template>
+      <v-list>
+        <v-list-item>
+          <v-list-item-title style="cursor: pointer;" @click="imageQualityHigh = false;">
+            图片质量：速览（推荐）
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title style="cursor: pointer;" @click="imageQualityHigh = true;">
+            图片质量：高清（卡顿可能）
           </v-list-item-title>
         </v-list-item>
       </v-list>
@@ -561,10 +581,13 @@ div#paginator > div.pagination {
       <masonry ref="masonry" :cols="imageCountInRow" gutter="8px" :key="imageCountInRow">
         <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
           <v-img
-            :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
+            :src="
+              image.isRatingS || (image.isRatingQ && showRatingQ) || (image.isRatingE && showRatingE)
+                ? (imageQualityHigh ? image.sampleUrl : image.previewUrl) : ''
+            "
             :aspect-ratio="image.aspectRatio"
             @click="if(image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)){imageSelectedIndex=index;showImageSelected=true;}"
-            @click.middle="imageSelectedIndex=index;window.open('/post/show/' + imageSelected.id)"
+            @click.middle="imageSelectedIndex = index; window.open('/post/show/' + imageSelected.id)"
           >
             <template v-slot:placeholder>
               <v-row v-if="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)"

@@ -22,6 +22,7 @@ const App = {
       innerHeight: window.innerHeight,
 
       imageCountInRow: JSON.parse(localStorage.getItem("imageCountInRow") || "3"),
+      imageQualityHigh: JSON.parse(localStorage.getItem("imageQualityHigh") || "false"),
     }
   },
   computed: {
@@ -55,8 +56,10 @@ const App = {
       localStorage.setItem("showRatingE", JSON.stringify(value))
     },
     imageCountInRow(value) {
-      console.log("imageCountInRow=", value)
       localStorage.setItem("imageCountInRow", JSON.stringify(value))
+    },
+    imageQualityHigh(value) {
+      localStorage.setItem("imageQualityHigh", JSON.stringify(value))
     },
   },
   methods: {
