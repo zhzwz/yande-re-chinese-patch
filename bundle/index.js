@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.134
+// @version      2.1.6
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @homepage     https://greasyfork.org/scripts/421970
@@ -177,7 +177,7 @@
         innerWidth: window.innerWidth,
         innerHeight: window.innerHeight,
         imageCountInRow: JSON.parse(localStorage.getItem("imageCountInRow") || "3"),
-        imageQualityHigh: JSON.parse(localStorage.getItem("imageShowHD") || "false"),
+        imageQualityHigh: JSON.parse(localStorage.getItem("imageQualityHigh") || "false"),
       }
     },
     computed: {
@@ -211,8 +211,10 @@
         localStorage.setItem("showRatingE", JSON.stringify(value));
       },
       imageCountInRow(value) {
-        console.log("imageCountInRow=", value);
         localStorage.setItem("imageCountInRow", JSON.stringify(value));
+      },
+      imageQualityHigh(value) {
+        localStorage.setItem("imageQualityHigh", JSON.stringify(value));
       },
     },
     methods: {

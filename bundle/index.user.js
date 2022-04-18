@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.134
+// @version      2.1.6
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @homepage     https://greasyfork.org/scripts/421970
@@ -334,7 +334,7 @@ div#paginator > div.pagination {
         innerWidth: window.innerWidth,
         innerHeight: window.innerHeight,
         imageCountInRow: JSON.parse(localStorage.getItem("imageCountInRow") || "3"),
-        imageQualityHigh: JSON.parse(localStorage.getItem("imageShowHD") || "false"),
+        imageQualityHigh: JSON.parse(localStorage.getItem("imageQualityHigh") || "false"),
       }
     },
     computed: {
@@ -368,8 +368,10 @@ div#paginator > div.pagination {
         localStorage.setItem("showRatingE", JSON.stringify(value));
       },
       imageCountInRow(value) {
-        console.log("imageCountInRow=", value);
         localStorage.setItem("imageCountInRow", JSON.stringify(value));
+      },
+      imageQualityHigh(value) {
+        localStorage.setItem("imageQualityHigh", JSON.stringify(value));
       },
     },
     methods: {
@@ -448,15 +450,22 @@ div#paginator > div.pagination {
   <v-app-bar app dense>
     <v-app-bar-nav-icon @click="showDrawer=!showDrawer"></v-app-bar-nav-icon>
     <v-toolbar-title v-text="title"></v-toolbar-title>
-    <!-- 设置每行几张 -->
+    <!-- 设置分级制度 -->
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn class="white--text ml-4" dark v-bind="attrs" v-on="on">每行 {{imageCountInRow}} 张</v-btn>
+        <v-btn class="white--text ml-2" dark v-bind="attrs" v-on="on">
+          S{{ showRatingQ ? 'Q' : '' }}{{ showRatingE ? 'E' : '' }}
+        </v-btn>
       </template>
       <v-list>
-        <v-list-item v-for="number in [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16]" :key="number">
-          <v-list-item-title style="cursor: pointer;" @click="imageCountInRow = number;">
-            每行 {{ number }} 张
+        <v-list-item>
+          <v-list-item-title style="cursor: pointer;" @click="showRatingQ = !showRatingQ;">
+            {{ showRatingQ ? '隐藏 Q 级内容' : '显示 Q 级内容' }}
+          </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title style="cursor: pointer;" @click="showRatingE = !showRatingE;">
+            {{ showRatingE ? '隐藏 E 级内容' : '显示 E 级内容' }}
           </v-list-item-title>
         </v-list-item>
       </v-list>
@@ -464,17 +473,30 @@ div#paginator > div.pagination {
     <!-- 设置图片质量 -->
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn class="white--text ml-4" dark v-bind="attrs" v-on="on">{{ imageQualityHigh ? '高清' : '速览' }}</v-btn>
+        <v-btn class="white--text ml-2" dark v-bind="attrs" v-on="on">{{ imageQualityHigh ? '高清' : '速览' }}</v-btn>
       </template>
       <v-list>
         <v-list-item>
           <v-list-item-title style="cursor: pointer;" @click="imageQualityHigh = false;">
-            图片质量：速览（推荐）
+            图片质量：速览
           </v-list-item-title>
         </v-list-item>
         <v-list-item>
           <v-list-item-title style="cursor: pointer;" @click="imageQualityHigh = true;">
-            图片质量：高清（卡顿可能）
+            图片质量：高清
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+    <!-- 设置每行几张 -->
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn class="white--text ml-2" dark v-bind="attrs" v-on="on">每行 {{imageCountInRow}} 张</v-btn>
+      </template>
+      <v-list>
+        <v-list-item v-for="number in [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16]" :key="number">
+          <v-list-item-title style="cursor: pointer;" @click="imageCountInRow = number;">
+            每行 {{ number }} 张
           </v-list-item-title>
         </v-list-item>
       </v-list>
