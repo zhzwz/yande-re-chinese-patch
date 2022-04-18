@@ -7,6 +7,19 @@
   <v-app-bar app dense>
     <v-app-bar-nav-icon @click="showDrawer=!showDrawer"></v-app-bar-nav-icon>
     <v-toolbar-title v-text="title"></v-toolbar-title>
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn class="white--text ml-4" dark v-bind="attrs" v-on="on">每行 {{imageCountInRow}} 张</v-btn>
+      </template>
+      <v-list>
+        <v-list-item v-for="number in [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16]" :key="number">
+          <v-list-item-title style="cursor: pointer;" @click="imageCountInRow = number;">
+            每行 {{ number }} 张
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+
     <v-spacer></v-spacer>
     <v-btn text v-text="'version ' + version" color="#ffffff" disabled></v-btn>
   </v-app-bar>
@@ -105,7 +118,7 @@
 
   <v-main app>
     <v-container class="pa-2" fluid>
-      <masonry :cols="columnCount" gutter="8px">
+      <masonry ref="masonry" :cols="imageCountInRow" gutter="8px" :key="imageCountInRow">
         <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
           <v-img
             :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
@@ -191,14 +204,10 @@
               v-text="imageSelected.fileDownloadText"
               @click.stop="download(imageSelected.fileUrl, imageSelected.fileDownloadName)"
             ></v-chip>
-            <!-- <div style="width: fit-content; color: #FFF000; background-color: #EE8888; border-radius: 99px; margin-top: 4px; padding: 0px 12px; font-size: 12px;">由于 https://files.yande.re 修改了跨域政策，目前无法一键下载图片。</div>
-            <div style="width: fit-content; color: #FFF000; background-color: #EE8888; border-radius: 99px; margin-top: 4px; padding: 0px 12px; font-size: 12px;">如果有朋友知道如何优雅地解决该问题，请联系我。</div> -->
           </div>
         </v-img>
-
       </v-dialog>
     </v-container>
   </v-main>
-
 </v-app>
 </script>

@@ -69,15 +69,7 @@ export const initOptions = function() {
       const id = RegExp.$1
       const sampleUrl = samples[id]
       if (sampleUrl !== undefined) {
-        // 'https://oreno.imouto.us'镜像站点延迟加载sample图片 避免请求429
-        switch (origin) {
-          case 'https://oreno.imouto.us':
-            taskArray.push({ element, sampleUrl })
-            break;
-          default:
-            element.src = sampleUrl
-            break;
-        }
+        element.src = sampleUrl
       }
     }
   })

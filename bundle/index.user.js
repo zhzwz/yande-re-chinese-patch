@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.119
+// @version      2.0.133
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @homepage     https://greasyfork.org/scripts/421970
@@ -333,28 +333,7 @@ div#paginator > div.pagination {
         requestStop: false,
         innerWidth: window.innerWidth,
         innerHeight: window.innerHeight,
-        columnCount: {
-          300: 1,
-          450: 2,
-          600: 3,
-          750: 4,
-          900: 5,
-          1050: 6,
-          1200: 7,
-          1350: 8,
-          1500: 9,
-          1650: 10,
-          1800: 11,
-          1950: 12,
-          2100: 13,
-          2250: 14,
-          2400: 15,
-          2550: 16,
-          2700: 17,
-          2850: 18,
-          3000: 19,
-          default: 20,
-        },
+        imageCountInRow: JSON.parse(localStorage.getItem("imageCountInRow") || "3"),
       }
     },
     computed: {
@@ -386,6 +365,10 @@ div#paginator > div.pagination {
       },
       showRatingE(value) {
         localStorage.setItem("showRatingE", JSON.stringify(value));
+      },
+      imageCountInRow(value) {
+        console.log("imageCountInRow=", value);
+        localStorage.setItem("imageCountInRow", JSON.stringify(value));
       },
     },
     methods: {
@@ -464,6 +447,19 @@ div#paginator > div.pagination {
   <v-app-bar app dense>
     <v-app-bar-nav-icon @click="showDrawer=!showDrawer"></v-app-bar-nav-icon>
     <v-toolbar-title v-text="title"></v-toolbar-title>
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn class="white--text ml-4" dark v-bind="attrs" v-on="on">每行 {{imageCountInRow}} 张</v-btn>
+      </template>
+      <v-list>
+        <v-list-item v-for="number in [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16]" :key="number">
+          <v-list-item-title style="cursor: pointer;" @click="imageCountInRow = number;">
+            每行 {{ number }} 张
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+
     <v-spacer></v-spacer>
     <v-btn text v-text="'version ' + version" color="#ffffff" disabled></v-btn>
   </v-app-bar>
@@ -562,7 +558,7 @@ div#paginator > div.pagination {
 
   <v-main app>
     <v-container class="pa-2" fluid>
-      <masonry :cols="columnCount" gutter="8px">
+      <masonry ref="masonry" :cols="imageCountInRow" gutter="8px" :key="imageCountInRow">
         <v-card class="mb-2" v-for="(image, index) in imageList" :key="index">
           <v-img
             :src="image.isRatingS||(image.isRatingQ && showRatingQ)||(image.isRatingE && showRatingE)?image.previewUrl:''"
@@ -648,15 +644,11 @@ div#paginator > div.pagination {
               v-text="imageSelected.fileDownloadText"
               @click.stop="download(imageSelected.fileUrl, imageSelected.fileDownloadName)"
             ></v-chip>
-            <!-- <div style="width: fit-content; color: #FFF000; background-color: #EE8888; border-radius: 99px; margin-top: 4px; padding: 0px 12px; font-size: 12px;">由于 https://files.yande.re 修改了跨域政策，目前无法一键下载图片。</div>
-            <div style="width: fit-content; color: #FFF000; background-color: #EE8888; border-radius: 99px; margin-top: 4px; padding: 0px 12px; font-size: 12px;">如果有朋友知道如何优雅地解决该问题，请联系我。</div> -->
           </div>
         </v-img>
-
       </v-dialog>
     </v-container>
   </v-main>
-
 </v-app>
 </script>
 `;
@@ -690,7 +682,6 @@ div#paginator > div.pagination {
     localStorage.setItem("showImageHD", JSON.stringify(index));
     console.log("showImageHD", index);
   };
-  const origin = window.location.origin;
   let taskArray = [];
   let maxLoadingSampleNum = 4;
   let doLoadSampleUrl = () => {
@@ -744,14 +735,7 @@ div#paginator > div.pagination {
         const id = RegExp.$1;
         const sampleUrl = samples[id];
         if (sampleUrl !== undefined) {
-          switch (origin) {
-            case 'https://oreno.imouto.us':
-              taskArray.push({ element, sampleUrl });
-              break;
-            default:
-              element.src = sampleUrl;
-              break;
-          }
+          element.src = sampleUrl;
         }
       }
     });

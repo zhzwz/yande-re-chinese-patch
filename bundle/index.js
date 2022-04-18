@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.0.119
+// @version      2.0.133
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @homepage     https://greasyfork.org/scripts/421970
@@ -176,28 +176,7 @@
         requestStop: false,
         innerWidth: window.innerWidth,
         innerHeight: window.innerHeight,
-        columnCount: {
-          300: 1,
-          450: 2,
-          600: 3,
-          750: 4,
-          900: 5,
-          1050: 6,
-          1200: 7,
-          1350: 8,
-          1500: 9,
-          1650: 10,
-          1800: 11,
-          1950: 12,
-          2100: 13,
-          2250: 14,
-          2400: 15,
-          2550: 16,
-          2700: 17,
-          2850: 18,
-          3000: 19,
-          default: 20,
-        },
+        imageCountInRow: JSON.parse(localStorage.getItem("imageCountInRow") || "3"),
       }
     },
     computed: {
@@ -229,6 +208,10 @@
       },
       showRatingE(value) {
         localStorage.setItem("showRatingE", JSON.stringify(value));
+      },
+      imageCountInRow(value) {
+        console.log("imageCountInRow=", value);
+        localStorage.setItem("imageCountInRow", JSON.stringify(value));
       },
     },
     methods: {
@@ -315,7 +298,6 @@
     localStorage.setItem("showImageHD", JSON.stringify(index));
     console.log("showImageHD", index);
   };
-  const origin = window.location.origin;
   let taskArray = [];
   let maxLoadingSampleNum = 4;
   let doLoadSampleUrl = () => {
@@ -351,14 +333,7 @@
         const id = RegExp.$1;
         const sampleUrl = samples[id];
         if (sampleUrl !== undefined) {
-          switch (origin) {
-            case 'https://oreno.imouto.us':
-              taskArray.push({ element, sampleUrl });
-              break;
-            default:
-              element.src = sampleUrl;
-              break;
-          }
+          element.src = sampleUrl;
         }
       }
     });
