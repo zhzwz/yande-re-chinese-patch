@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.1.6
+// @version      2.1.18
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @homepage     https://greasyfork.org/scripts/421970
@@ -94,6 +94,7 @@
       this.previewUrl = data.preview_url;
       this.previewWidth = data.actual_preview_width || 0;
       this.previewHeight = data.actual_preview_height || 0;
+      this.favorite = false;
     }
     get isRatingS() {
       return this.rating === "s"
@@ -178,6 +179,7 @@
         innerHeight: window.innerHeight,
         imageCountInRow: JSON.parse(localStorage.getItem("imageCountInRow") || "3"),
         imageQualityHigh: JSON.parse(localStorage.getItem("imageQualityHigh") || "false"),
+        showFavoriteSuccess: false,
       }
     },
     computed: {
@@ -216,6 +218,9 @@
       imageQualityHigh(value) {
         localStorage.setItem("imageQualityHigh", JSON.stringify(value));
       },
+      showFavoriteSuccess(value) {
+        console.log('showFavoriteSuccess: ', value);
+      },
     },
     methods: {
       async request() {
@@ -235,8 +240,20 @@
         }
       },
       download(src, filename) {
-        console.log(src);
         GM_download(src, filename);
+      },
+      onFavorite(id) {
+        $.ajax({
+          method: 'POST',
+          url: "https://yande.re/post/vote.json",
+          beforeSend: xhr => xhr.setRequestHeader('x-csrf-token', window.csrfToken),
+          data: { id, score: 3 },
+          success: data => {
+            if (data.success === true) {
+              this.imageList[this.imageSelectedIndex].favorite = true;
+            }
+          },
+        });
       },
     },
     mounted() {
@@ -269,6 +286,7 @@
     await getScript("https://cdn.jsdelivr.net/npm/vuetify@2.5.0/dist/vuetify.min.js");
     await getScript("https://cdn.jsdelivr.net/npm/vue-masonry-css@1.0.3/dist/vue-masonry.min.js");
     await getScript("https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js");
+    window.csrfToken = jQuery('[name="csrf-token"]').attr('content');
     document.head.innerHTML = `[{ path: "source/html/head.html" }]`;
     document.body.innerHTML = `[{ path: "source/html/body.html" }]`;
     Vue.use(VueMasonry);

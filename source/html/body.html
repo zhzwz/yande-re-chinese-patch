@@ -14,7 +14,7 @@
           S{{ showRatingQ ? 'Q' : '' }}{{ showRatingE ? 'E' : '' }}
         </v-btn>
       </template>
-      <v-list>
+      <v-list dense>
         <v-list-item>
           <v-list-item-title style="cursor: pointer;" @click="showRatingQ = !showRatingQ;">
             {{ showRatingQ ? '隐藏 Q 级内容' : '显示 Q 级内容' }}
@@ -32,7 +32,7 @@
       <template v-slot:activator="{ on, attrs }">
         <v-btn class="white--text ml-2" dark v-bind="attrs" v-on="on">{{ imageQualityHigh ? '高清' : '速览' }}</v-btn>
       </template>
-      <v-list>
+      <v-list dense>
         <v-list-item>
           <v-list-item-title style="cursor: pointer;" @click="imageQualityHigh = false;">
             图片质量：速览
@@ -50,8 +50,8 @@
       <template v-slot:activator="{ on, attrs }">
         <v-btn class="white--text ml-2" dark v-bind="attrs" v-on="on">每行 {{imageCountInRow}} 张</v-btn>
       </template>
-      <v-list>
-        <v-list-item v-for="number in [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16]" :key="number">
+      <v-list dense>
+        <v-list-item v-for="number in [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16, 20]" :key="number">
           <v-list-item-title style="cursor: pointer;" @click="imageCountInRow = number;">
             每行 {{ number }} 张
           </v-list-item-title>
@@ -245,6 +245,12 @@
             <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
               v-text="imageSelected.fileDownloadText"
               @click.stop="download(imageSelected.fileUrl, imageSelected.fileDownloadName)"
+            ></v-chip>
+
+            <v-chip class="mt-1" style="width:fit-content;" text-color="#ffffff" small
+              :color="imageSelected.favorite ? '#009000' : '#ee8888'"
+              v-text="imageSelected.favorite ? '收藏成功' : '添加收藏'"
+              @click.stop="imageSelected.favorite ? (void 0) : onFavorite(imageSelected.id)"
             ></v-chip>
           </div>
         </v-img>

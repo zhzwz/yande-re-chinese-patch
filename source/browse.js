@@ -10,6 +10,8 @@ export async function enterBrowseMode() {
   await getScript("https://cdn.jsdelivr.net/npm/vue-masonry-css@1.0.3/dist/vue-masonry.min.js")
   await getScript("https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js")
 
+  window.csrfToken = jQuery('[name="csrf-token"]').attr('content')
+
   document.head.innerHTML = `[{ path: "source/html/head.html" }]`
   document.body.innerHTML = `[{ path: "source/html/body.html" }]`
 

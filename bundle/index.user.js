@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.1.6
+// @version      2.1.18
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @homepage     https://greasyfork.org/scripts/421970
@@ -251,6 +251,7 @@ div#paginator > div.pagination {
       this.previewUrl = data.preview_url;
       this.previewWidth = data.actual_preview_width || 0;
       this.previewHeight = data.actual_preview_height || 0;
+      this.favorite = false;
     }
     get isRatingS() {
       return this.rating === "s"
@@ -335,6 +336,7 @@ div#paginator > div.pagination {
         innerHeight: window.innerHeight,
         imageCountInRow: JSON.parse(localStorage.getItem("imageCountInRow") || "3"),
         imageQualityHigh: JSON.parse(localStorage.getItem("imageQualityHigh") || "false"),
+        showFavoriteSuccess: false,
       }
     },
     computed: {
@@ -373,6 +375,9 @@ div#paginator > div.pagination {
       imageQualityHigh(value) {
         localStorage.setItem("imageQualityHigh", JSON.stringify(value));
       },
+      showFavoriteSuccess(value) {
+        console.log('showFavoriteSuccess: ', value);
+      },
     },
     methods: {
       async request() {
@@ -392,8 +397,20 @@ div#paginator > div.pagination {
         }
       },
       download(src, filename) {
-        console.log(src);
         GM_download(src, filename);
+      },
+      onFavorite(id) {
+        $.ajax({
+          method: 'POST',
+          url: "https://yande.re/post/vote.json",
+          beforeSend: xhr => xhr.setRequestHeader('x-csrf-token', window.csrfToken),
+          data: { id, score: 3 },
+          success: data => {
+            if (data.success === true) {
+              this.imageList[this.imageSelectedIndex].favorite = true;
+            }
+          },
+        });
       },
     },
     mounted() {
@@ -426,6 +443,7 @@ div#paginator > div.pagination {
     await getScript("https://cdn.jsdelivr.net/npm/vuetify@2.5.0/dist/vuetify.min.js");
     await getScript("https://cdn.jsdelivr.net/npm/vue-masonry-css@1.0.3/dist/vue-masonry.min.js");
     await getScript("https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js");
+    window.csrfToken = jQuery('[name="csrf-token"]').attr('content');
     document.head.innerHTML = `
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -457,7 +475,7 @@ div#paginator > div.pagination {
           S{{ showRatingQ ? 'Q' : '' }}{{ showRatingE ? 'E' : '' }}
         </v-btn>
       </template>
-      <v-list>
+      <v-list dense>
         <v-list-item>
           <v-list-item-title style="cursor: pointer;" @click="showRatingQ = !showRatingQ;">
             {{ showRatingQ ? '隐藏 Q 级内容' : '显示 Q 级内容' }}
@@ -475,7 +493,7 @@ div#paginator > div.pagination {
       <template v-slot:activator="{ on, attrs }">
         <v-btn class="white--text ml-2" dark v-bind="attrs" v-on="on">{{ imageQualityHigh ? '高清' : '速览' }}</v-btn>
       </template>
-      <v-list>
+      <v-list dense>
         <v-list-item>
           <v-list-item-title style="cursor: pointer;" @click="imageQualityHigh = false;">
             图片质量：速览
@@ -493,8 +511,8 @@ div#paginator > div.pagination {
       <template v-slot:activator="{ on, attrs }">
         <v-btn class="white--text ml-2" dark v-bind="attrs" v-on="on">每行 {{imageCountInRow}} 张</v-btn>
       </template>
-      <v-list>
-        <v-list-item v-for="number in [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16]" :key="number">
+      <v-list dense>
+        <v-list-item v-for="number in [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16, 20]" :key="number">
           <v-list-item-title style="cursor: pointer;" @click="imageCountInRow = number;">
             每行 {{ number }} 张
           </v-list-item-title>
@@ -688,6 +706,12 @@ div#paginator > div.pagination {
             <v-chip class="mt-1" style="width:fit-content;" color="#ee8888" text-color="#ffffff" small
               v-text="imageSelected.fileDownloadText"
               @click.stop="download(imageSelected.fileUrl, imageSelected.fileDownloadName)"
+            ></v-chip>
+
+            <v-chip class="mt-1" style="width:fit-content;" text-color="#ffffff" small
+              :color="imageSelected.favorite ? '#009000' : '#ee8888'"
+              v-text="imageSelected.favorite ? '收藏成功' : '添加收藏'"
+              @click.stop="imageSelected.favorite ? (void 0) : onFavorite(imageSelected.id)"
             ></v-chip>
           </div>
         </v-img>

@@ -1,5 +1,4 @@
 /*
-
 approver_id: null
 change: 4106973
 frames: []
@@ -52,6 +51,8 @@ export default class Post {
     this.previewUrl = data.preview_url
     this.previewWidth = data.actual_preview_width || 0
     this.previewHeight = data.actual_preview_height || 0
+
+    this.favorite = false
   }
   // 全年龄 safe
   get isRatingS() {
