@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.1.38
+// @version      2.1.39
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @homepage     https://greasyfork.org/scripts/421970
@@ -679,35 +679,36 @@ div#paginator > div.pagination {
           >
             <div style="height: 100%; flex: 1 1 auto;"></div>
 
-            <v-chip class="mt-1" style="width:fit-content;" color="#009ff088" text-color="#ffffff" small
-              v-text="imageSelected.sampleDownloadText"
-              @click.stop="download(imageSelected.sampleUrl, imageSelected.sampleDownloadName)"
-            ></v-chip>
-            <v-chip class="mt-1" style="width:fit-content;" color="#009ff088" text-color="#ffffff" small
-              v-if="imageSelected.jpegSize !== 0"
-              v-text="imageSelected.jpegDownloadText"
-              @click.stop="download(imageSelected.jpegUrl, imageSelected.jpegDownloadName)"
-            ></v-chip>
-            <v-chip class="mt-1" style="width:fit-content;" color="#009ff088" text-color="#ffffff" small
-              v-text="imageSelected.fileDownloadText"
-              @click.stop="download(imageSelected.fileUrl, imageSelected.fileDownloadName)"
-            ></v-chip>
-
-            <div style="display: flex; grid-gap: 4px;">
+            <div style="display: flex; flex-direction: column; grid-gap: 4px;">
+              <v-chip style="width: fit-content;" color="#009ff088" text-color="#ffffff" small
+                v-text="imageSelected.sampleDownloadText"
+                @click.stop="download(imageSelected.sampleUrl, imageSelected.sampleDownloadName)"
+              ></v-chip>
+              <v-chip style="width: fit-content;" color="#009ff088" text-color="#ffffff" small
+                v-if="imageSelected.jpegSize !== 0"
+                v-text="imageSelected.jpegDownloadText"
+                @click.stop="download(imageSelected.jpegUrl, imageSelected.jpegDownloadName)"
+              ></v-chip>
+              <v-chip style="width: fit-content;" color="#009ff088" text-color="#ffffff" small
+                v-text="imageSelected.fileDownloadText"
+                @click.stop="download(imageSelected.fileUrl, imageSelected.fileDownloadName)"
+              ></v-chip>
+            </div>
+            <div style="display: flex; grid-gap: 4px; flex-wrap: wrap;">
               <v-chip
-                style="width:fit-content;" color="#ee888888" text-color="#ffffff" small
+                style="width: fit-content;" color="#ee888888" text-color="#ffffff" small
                 v-text="imageSelected.id + ' ' + imageSelected.rating.toUpperCase()" @click.stop
               ></v-chip>
-              <v-chip class="mr-1" style="width:fit-content;" color="#009ff088" text-color="#ffffff" small
+              <v-chip class="mr-1" style="width: fit-content;" color="#009ff088" text-color="#ffffff" small
                 v-if="imageSelected.sourceUrl !== ''"
                 v-text="'来源链接'"
                 @click.stop="window.open(imageSelected.sourceUrl)"
               ></v-chip>
-              <v-chip class="mr-1" style="width:fit-content;" color="#009ff088" text-color="#ffffff" small
+              <v-chip class="mr-1" style="width: fit-content;" color="#009ff088" text-color="#ffffff" small
                 v-text="'本站链接'"
                 @click.stop="window.open('/post/show/' + imageSelected.id)"
               ></v-chip>
-              <v-chip class="mr-1" style="width:fit-content;" text-color="#ffffff" small
+              <v-chip class="mr-1" style="width: fit-content;" text-color="#ffffff" small
                 :color="imageSelected.favorite ? '#00900088' : '#009ff088'"
                 v-text="imageSelected.favorite ? '收藏成功' : '添加收藏'"
                 @click.stop="imageSelected.favorite ? (void 0) : onFavorite(imageSelected.id)"
