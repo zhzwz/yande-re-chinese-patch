@@ -28,6 +28,9 @@ const App = {
     }
   },
   computed: {
+    isMobile() {
+      return this.$vuetify.breakpoint.mobile
+    },
     title() {
       return `${this.imageList.length} Posts`
     },
