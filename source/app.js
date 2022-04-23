@@ -86,7 +86,14 @@ const App = {
       }
     },
     download(src, filename) {
-      GM_download(src, filename)
+      // 添加文件后缀
+      const match = src.match(/[.](?<extension>png|jpg|jpeg)$/)
+      if (match) {
+        const extension = match.groups.extension
+        GM_download(src, filename + "." + extension)
+      } else {
+        GM_download(src, filename)
+      }
     },
     // 添加收藏
     onFavorite(id) {
