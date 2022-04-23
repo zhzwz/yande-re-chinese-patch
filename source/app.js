@@ -29,7 +29,11 @@ const App = {
   },
   computed: {
     isMobile() {
-      return this.$vuetify.breakpoint.mobile
+      try {
+        return this.$vuetify.breakpoint.mobile
+      } catch(error) {
+        return false
+      }
     },
     title() {
       return `${this.imageList.length} Posts`

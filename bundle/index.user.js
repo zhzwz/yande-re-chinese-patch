@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.1.39
+// @version      2.1.41
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @homepage     https://greasyfork.org/scripts/421970
@@ -341,7 +341,11 @@ div#paginator > div.pagination {
     },
     computed: {
       isMobile() {
-        return this.$vuetify.breakpoint.mobile
+        try {
+          return this.$vuetify.breakpoint.mobile
+        } catch(error) {
+          return false
+        }
       },
       title() {
         return `${this.imageList.length} Posts`
@@ -500,7 +504,7 @@ div#paginator > div.pagination {
     <!-- 设置图片质量 -->
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn :x-small="isMobile" class="white--text ml-2" dark v-bind="attrs" v-on="on">{{ imageQualityHigh ? '高清' : '速览' }}</v-btn>
+        <v-btn :x-small="isMobile" class="white--text ml-2" dark v-bind="attrs" v-on="on">{{ imageQualityHigh ? 'HD' : '速' }}</v-btn>
       </template>
       <v-list dense>
         <v-list-item dense>
@@ -518,12 +522,12 @@ div#paginator > div.pagination {
     <!-- 设置每行几张 -->
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn :x-small="isMobile" class="white--text ml-2" dark v-bind="attrs" v-on="on">每行 {{imageCountInRow}} 张</v-btn>
+        <v-btn :x-small="isMobile" class="white--text ml-2" dark v-bind="attrs" v-on="on">{{imageCountInRow}}列</v-btn>
       </template>
       <v-list dense>
         <v-list-item dense v-for="number in [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16, 20]" :key="number">
           <v-list-item-title style="cursor: pointer;" @click="imageCountInRow = number;">
-            每行 {{ number }} 张
+            {{ number }}列
           </v-list-item-title>
         </v-list-item>
       </v-list>
