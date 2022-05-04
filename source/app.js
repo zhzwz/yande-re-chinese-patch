@@ -83,6 +83,7 @@ const App = {
         jQuery.get(url, data => resolve(data))
       })
       if (response instanceof Array && response.length > 0) {
+        window.history.pushState("", "", location.pathname + "?" + this.params.toString())
         response.forEach(item => this.imageList.push(new Post(item)))
         const page = Number(this.params.get("page")) || 1
         this.params.set("page", page + 1)
