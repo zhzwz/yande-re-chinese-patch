@@ -20,7 +20,7 @@ const banner = `// ==UserScript==
 // @grant        GM_download
 // ==/UserScript==
 
-/* eslint-env es6 */
+/* eslint-env es2022 */
 /* global jQuery:readonly */
 /* global Vue:readonly */
 /* global Vuetify:readonly */
@@ -36,7 +36,3 @@ export default {
   },
   plugins: [ cleanup(), json() ],
 }
-
-// @match https://konachan.com/*
-// @match        https://oreno.imouto.us/*
-// @exclude      https://oreno.imouto.us/forum/*

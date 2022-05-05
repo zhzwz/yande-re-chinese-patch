@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yande.re 简体中文
 // @namespace    com.coderzhaoziwei.yandere
-// @version      2.1.41
+// @version      2.1.42
 // @author       Coder Zhao coderzhaoziwei@outlook.com
 // @description  中文标签 | 界面优化 | 高清大图 | 键盘翻页 | 流体布局
 // @homepage     https://greasyfork.org/scripts/421970
@@ -16,7 +16,7 @@
 // @grant        GM_download
 // ==/UserScript==
 
-/* eslint-env es6 */
+/* eslint-env es2022 */
 /* global jQuery:readonly */
 /* global Vue:readonly */
 /* global Vuetify:readonly */
@@ -238,6 +238,7 @@
           jQuery.get(url, data => resolve(data));
         });
         if (response instanceof Array && response.length > 0) {
+          window.history.pushState("", "", location.pathname + "?" + this.params.toString());
           response.forEach(item => this.imageList.push(new Post(item)));
           const page = Number(this.params.get("page")) || 1;
           this.params.set("page", page + 1);
