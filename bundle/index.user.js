@@ -1126,6 +1126,10 @@ div#paginator > div.pagination {
     initHotKey();
     initOptions();
     initTranslate();
+    if (document.cookie.includes('locale=zh_CN') === false) {
+      document.cookie = "locale=zh_CN";
+      location.href = location.href;
+    }
   });
 
-}());
+})();
