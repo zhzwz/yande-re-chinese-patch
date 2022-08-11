@@ -1,7 +1,11 @@
 # clear
 echo "\033[2J"
+
 # version
 yarn version --no-git-tag-version --patch
+
+node script/action.js
+
 # rollup
 yarn rollup --config config/rollup.config.js
 
