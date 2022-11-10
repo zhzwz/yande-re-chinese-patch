@@ -172,6 +172,7 @@
         showRatingE: JSON.parse(localStorage.getItem("showRatingE") || "false"),
         imageList: [],
         imageSelectedIndex: 0,
+        imageSelectedDetail: {},
         params: new URLSearchParams(location.search),
         requestState: false,
         requestStop: false,
@@ -228,6 +229,16 @@
       showFavoriteSuccess(value) {
         console.log('showFavoriteSuccess: ', value);
       },
+      showImageSelected(value) {
+        if (!value) {
+          this.imageSelectedDetail = {};
+          return
+        }
+        this.getPostDetail(this.imageSelected.id).then(res => {
+          if (!res) return
+          this.imageSelectedDetail = res;
+        });
+      }
     },
     methods: {
       async request() {
@@ -265,10 +276,24 @@
           success: data => {
             if (data.success === true) {
               this.imageList[this.imageSelectedIndex].favorite = true;
+              this.imageSelectedDetail.favorite = true;
             }
           },
         });
       },
+      async getPostDetail(id) {
+        try {
+          if (!id) return
+          const response = await fetch(`/post.json?api_version=2&tags=id:${id}&include_tags=1&include_votes=1`);
+          const result = await response.json();
+          return {
+            favorite: result.votes[id] == 3,
+            artist: Object.keys(result.tags).find(k => result.tags[k] == 'artist')
+          }
+        } catch (error) {
+          console.log('getPostDetail error:', error);
+        }
+      }
     },
     mounted() {
       const timeInterval = setInterval(() => {

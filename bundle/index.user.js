@@ -329,6 +329,7 @@ div#paginator > div.pagination {
         showRatingE: JSON.parse(localStorage.getItem("showRatingE") || "false"),
         imageList: [],
         imageSelectedIndex: 0,
+        imageSelectedDetail: {},
         params: new URLSearchParams(location.search),
         requestState: false,
         requestStop: false,
@@ -385,6 +386,16 @@ div#paginator > div.pagination {
       showFavoriteSuccess(value) {
         console.log('showFavoriteSuccess: ', value);
       },
+      showImageSelected(value) {
+        if (!value) {
+          this.imageSelectedDetail = {};
+          return
+        }
+        this.getPostDetail(this.imageSelected.id).then(res => {
+          if (!res) return
+          this.imageSelectedDetail = res;
+        });
+      }
     },
     methods: {
       async request() {
@@ -422,10 +433,24 @@ div#paginator > div.pagination {
           success: data => {
             if (data.success === true) {
               this.imageList[this.imageSelectedIndex].favorite = true;
+              this.imageSelectedDetail.favorite = true;
             }
           },
         });
       },
+      async getPostDetail(id) {
+        try {
+          if (!id) return
+          const response = await fetch(`/post.json?api_version=2&tags=id:${id}&include_tags=1&include_votes=1`);
+          const result = await response.json();
+          return {
+            favorite: result.votes[id] == 3,
+            artist: Object.keys(result.tags).find(k => result.tags[k] == 'artist')
+          }
+        } catch (error) {
+          console.log('getPostDetail error:', error);
+        }
+      }
     },
     mounted() {
       const timeInterval = setInterval(() => {
@@ -705,6 +730,10 @@ div#paginator > div.pagination {
                 v-text="imageSelected.id + ' ' + imageSelected.rating.toUpperCase()" @click.stop
               ></v-chip>
               <v-chip class="mr-1" style="width: fit-content;" color="#009ff088" text-color="#ffffff" small
+                v-if="imageSelectedDetail.artist"
+                @click.stop="window.open('/post?tags='+imageSelectedDetail.artist)"
+              >画师 {{imageSelectedDetail.artist}}</v-chip>
+              <v-chip class="mr-1" style="width: fit-content;" color="#009ff088" text-color="#ffffff" small
                 v-if="imageSelected.sourceUrl !== ''"
                 v-text="'来源链接'"
                 @click.stop="window.open(imageSelected.sourceUrl)"
@@ -714,9 +743,9 @@ div#paginator > div.pagination {
                 @click.stop="window.open('/post/show/' + imageSelected.id)"
               ></v-chip>
               <v-chip class="mr-1" style="width: fit-content;" text-color="#ffffff" small
-                :color="imageSelected.favorite ? '#00900088' : '#009ff088'"
-                v-text="imageSelected.favorite ? '收藏成功' : '添加收藏'"
-                @click.stop="imageSelected.favorite ? (void 0) : onFavorite(imageSelected.id)"
+                :color="imageSelectedDetail.favorite ? '#00900088' : '#009ff088'"
+                v-text="imageSelectedDetail.favorite ? '已收藏' : '添加收藏'"
+                @click.stop="imageSelectedDetail.favorite ? (void 0) : onFavorite(imageSelected.id)"
               ></v-chip>
             </div>
           </div>
