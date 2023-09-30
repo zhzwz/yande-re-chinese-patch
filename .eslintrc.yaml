@@ -1,0 +1,14 @@
+extends:
+  - '@antfu'
+  - '@unocss'
+
+rules:
+  no-console:
+    - warn
+    - allow: [warn, error, debug, groupCollapsed, groupEnd]
+  '@stylistic/ts/brace-style': off
+
+overrides:
+  - files: package.json
+    rules:
+      jsonc/sort-keys: off

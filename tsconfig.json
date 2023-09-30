@@ -1,0 +1,20 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "types": [
+      "vite/client"
+    ],
+    "allowJs": true
+  },
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "include": [
+    "./**/*.ts",
+    "./**/*.vue",
+    "./types/**/*.d.ts",
+    "./index.tsx"
+  ]
+}

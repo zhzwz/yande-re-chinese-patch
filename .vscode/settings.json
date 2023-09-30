@@ -1,0 +1,22 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "eslint.enable": true,
+  "eslint.validate": [
+    "html",
+    "json",
+    "json5",
+    "jsonc",
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "yaml"
+  ],
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "vue-router"
+  ],
+  "iconify.inplace": false,
+  "window.titleSeparator": " ➤ ",
+}
