@@ -56,7 +56,7 @@ export default defineConfig((config) => {
         },
       }),
       pluginImport({
-        dirs: ['components', 'composables', 'stores'],
+        dirs: ['common', 'components', 'composables', 'stores'],
         imports: [
           'vue',
           'pinia',

@@ -3,8 +3,12 @@ import { type GlobalThemeOverrides, NConfigProvider, darkTheme } from 'naive-ui'
 
 const themeOverrides: GlobalThemeOverrides = {
   common: {
-    primaryColor: 'rgb(251, 113, 133)', // color-rose-400
-    primaryColorHover: 'rgb(244, 63, 94)', // color-rose-500
+    primaryColor,
+    primaryColorHover,
+  },
+  Scrollbar: {
+    color: primaryColor,
+    colorHover: primaryColorHover,
   },
   // Menu: {
   //   itemTextColor: 'rgb(251, 113, 133)', // color-rose-400
@@ -38,5 +42,9 @@ body {
 
 body > #app {
   --uno: flex flex-col w-screen h-screen bg-stone-800 overflow-hidden;
+}
+
+.n-scrollbar > .n-scrollbar-rail.n-scrollbar-rail--vertical {
+  right: 1px;
 }
 </style>

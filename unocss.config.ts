@@ -10,7 +10,7 @@ export default defineConfig({
     presetUno(),
     presetAttributify(),
     presetIcons({ scale: 1.2, warn: true }),
-    presetTypography(), // prose
+    presetTypography(),
     presetWebFonts({
       fonts: { sans: 'DM Sans', serif: 'DM Serif Display', mono: 'DM Mono' },
     }),
